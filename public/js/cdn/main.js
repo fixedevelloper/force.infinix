@@ -11,7 +11,7 @@ import { Web3Modal } from "https://unpkg.com/@web3modal/html@2.5.0";
 
 // 0. Import wagmi dependencies
 const { mainnet, polygon, avalanche, arbitrum } = WagmiCoreChains;
-const { configureChains, createConfig } = WagmiCore;
+const { configureChains, createConfig,getAccount } = WagmiCore;
 
 // 1. Define chains
 const chains = [mainnet, polygon, avalanche, arbitrum];
@@ -26,7 +26,7 @@ const wagmiConfig = createConfig({
     new WagmiCoreConnectors.CoinbaseWalletConnector({
       chains,
       options: {
-        appName: "html wagmi example",
+        appName: "Infinix force",
       },
     }),
   ],
@@ -44,3 +44,46 @@ export const web3Modal = new Web3Modal(
   },
   ethereumClient
 );
+const account = getAccount()
+console.log("************************************")
+statusRegister(account)
+function statusRegister(account){
+    var user = document.getElementById("user_id");
+    user.innerText=account.address;
+    if (account.isConnected){
+        var element = document.getElementById("wallet_connect");
+        element.classList.remove("list-group-item-danger");
+        element.classList.add("list-group-item-success");
+        element.innerText="Wallet connected"
+    }else {
+        var element = document.getElementById("wallet_connect");
+        element.classList.remove("list-group-item-success");
+        element.classList.add("list-group-item-danger");
+        element.innerText="Wallet not connected"
+    }
+    if (account.isConnected){
+        var element = document.getElementById("wallet_connect");
+        element.classList.remove("list-group-item-danger");
+        element.classList.add("list-group-item-success");
+    }else {
+        var element = document.getElementById("wallet_connect");
+        element.classList.remove("list-group-item-success");
+        element.classList.add("list-group-item-danger");
+    }
+}
+/**
+ * address: undefined
+ ​
+ connector: undefined
+ ​
+ isConnected: false
+ ​
+ isConnecting: true
+ ​
+ isDisconnected: false
+ ​
+ isReconnecting: false
+ ​
+ status: "connecting"
+ */
+console.log(account)

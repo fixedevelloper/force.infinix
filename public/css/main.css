@@ -3376,7 +3376,7 @@ footer .copyright span:nth-child(1) {
 
 .form-wrap form {
   overflow: hidden;
-  width: 770px;
+  width: 1080px;
   background-color: #152c6a;
   border-radius: 10px;
   padding: 40px 10px;
@@ -3390,7 +3390,7 @@ footer .copyright span:nth-child(1) {
 }
 
 .form-wrap form .form-image {
-  width: 300px;
+  width: 500px;
   position: relative;
   -webkit-animation: move-image 4000ms infinite;
   animation: move-image 4000ms infinite;
@@ -4416,7 +4416,7 @@ footer .copyright span:nth-child(1) {
    header{
 	   z-index: 999
    }
-}		
+}
 @media only screen and (max-width: 768px) {
 
   .home_blue .header_sources {

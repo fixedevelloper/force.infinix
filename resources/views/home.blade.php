@@ -243,10 +243,10 @@
                 </div>
             </div>
         </section>
-
-
+        <button id="btn">Connect</button>
+        <span id="user"></span>
 
 @endsection
 @push('scripts')
-    <script src="{{asset('js/custom.js')}}"></script>
+
 @endpush

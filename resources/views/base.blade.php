@@ -48,8 +48,11 @@
 @yield('content')
 @include('_partials._footer')
 <a href="#app" id="back-to-top" title="Back to top"><i class="fas fa-angle-up"></i></a>
-<script type="module" src="js/cdn/main.js"></script>
-<script src="{{asset('libs/jquery-3.3.1.min.js')}}"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+<script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="{{asset('js/jquery-3.7.min.js')}}"></script>
 <script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('libs/wow.min.js')}}"></script>
 <script src="{{asset('libs/owl/owl.carousel.min.js')}}"></script>
@@ -57,8 +60,9 @@
 <script src="{{asset('libs/jquery.scrollify.js')}}"></script>
 <script src="{{asset('js/common.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
-
-<script src="{{asset('libs/charts/Chart.bundle.min.js')}}"></script>
-<script src="{{asset('libs/charts/chartjs-plugin-deferred.min.js')}}"></script>
+{{--<script type="module" src="{{asset('js/cdn/main.js')}}"></script>
+<script src="{{asset('js/cdn/web3.min.js')}}"></script>
+<script src="{{asset('js/cdn/truffle-contract.min.js')}}"></script>--}}
+@stack('scripts')
 </body>
 </html>
