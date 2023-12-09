@@ -223,10 +223,10 @@ async function buy() {
     //// var refaddrs = document.getElementById("referralid1").value;
 
     if (document.getElementById("referralid").value == '') {
-        alert("Enter Referral ID")
+        alert("Enter your iD")
     }
     else if (isNaN(document.getElementById("referralid").value)) {
-        alert("Enter Referral ID as numeric value")
+        alert("Enter your ID as numeric value")
     }
     else {
         //const ref = await window.mxgfcontract.methods.userIds(document.getElementById("referralid").value).call({ from: accountss });
@@ -239,13 +239,7 @@ async function buy() {
             //  console.log('mahix ' + x);
 
             const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
-            // const gas = await calcGas(gasEstimated);
-            //$.get('https://gasstation-mainnet.matic.network/v2', async function (resultgas) {
-            //    gas.maxFeePerGas = parse(resultgas.fast.maxFee);
-            //    gas.maxPriorityFeePerGas = parse(resultgas.fast.maxPriorityFee);
-
-
-            const result = await window.mxgfcontract.methods.subCore(ref).send({
+              const result = await window.mxgfcontract.methods.subCore(ref).send({
                 from: accountss,
                 //gasLimit: gas.gasLimit,
                 ////gas: 400000,
@@ -255,8 +249,8 @@ async function buy() {
             console.log('Buy result : -' + result);
             if (result.transactionHash) {
                 alert('Registration Successfully ');
-                var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
-                window.location.href = url;
+               // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
+              //  window.location.href = url;
             }
             else { alert('Registration failed' + result); }
 
