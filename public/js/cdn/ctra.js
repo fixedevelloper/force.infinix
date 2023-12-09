@@ -3,12 +3,11 @@ $(document).ready(async function () {
     console.log("ready!");
 
     if (window.ethereum) {
-        console.log("mahi1");
+        console.log("-----------------INFINIX init------------");
         window.web3 = new Web3(ethereum);
         try {
             // Request account access if needed
             await ethereum.enable();
-            console.log(web3);
 
             var networkid = await web3.eth.net.getId()
             console.log("networkid " + networkid);
@@ -115,7 +114,7 @@ async function coinrate() {
     const account = await getCurrentAccount();
  //   debugger
 
-    window.mxgfcontract = await new window.web3.eth.Contract(tokenmatrixAbi.responseText, tokenaddress);
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(tokenmatrixAbi.responseText), tokenaddress);
 
     var balance = await window.mxgfcontract.methods.allowance(account, stakingaddress).call({ from: account });
    // debugger
@@ -215,7 +214,7 @@ async function buy() {
 
     const accountss = await getCurrentAccount();
 
-    window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(tokenmatrixAbi.responseText), stakingaddress);
 
     var refid = document.getElementById("referralid").value;
     //console.log('mahi' + x);

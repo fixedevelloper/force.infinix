@@ -60,8 +60,8 @@
 <script src="{{asset('libs/jquery.scrollify.js')}}"></script>
 <script src="{{asset('js/common.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
-{{--<script type="module" src="{{asset('js/cdn/main.js')}}"></script>
-<script src="{{asset('js/cdn/web3.min.js')}}"></script>
+<script type="module" src="{{asset('js/cdn/main.js')}}"></script>
+{{--<script src="{{asset('js/cdn/web3.min.js')}}"></script>
 <script src="{{asset('js/cdn/truffle-contract.min.js')}}"></script>--}}
 @stack('scripts')
 </body>
