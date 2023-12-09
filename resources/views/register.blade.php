@@ -25,10 +25,10 @@
                     <ul class="list-group">
                         <span hidden id="user_id"></span>
                         <li class="list-group-item list-group-item-danger" id="wallet_connect">Wallet not connected</li>
-                        <li class="list-group-item list-group-item-danger" id="network">Network</li>
+                        <li class="list-group-item list-group-item-danger" id="network_approuve">Network</li>
                         <li class="list-group-item list-group-item-success">Registration Available</li>
-                        <li class="list-group-item list-group-item-danger">Balance is less than 10 USDT and 0.004 BNB</li>
-                        <li class="list-group-item list-group-item-danger">Approve USDT</li>
+                        <li class="list-group-item list-group-item-danger" id="balance_id">Balance is less than 10 USDT and 0.004 BNB</li>
+                        <li class="list-group-item list-group-item-danger" id="usdt_approve_id">Approve USDT</li>
                     </ul>
                 </div>
                 <img src="{{asset('img/image-form.png')}}" alt="">
@@ -39,7 +39,7 @@
                     <label class="mat-label">Your upline</label>
                     <input placeholder="EX: 10" type="text" class="mat-input" id="referralid">
                 </div>
-                <button onclick="approve()" type="button" class="btn gradient_button" id="approuve">Approuve</button>
+                <button onclick="approve()" type="button" class="btn gradient_button " id="approuve"><i class="fa fa-spinner fa-spin" id="spinner_approuve"></i> Approuve</button>
                 <button type="button" onclick="register()" class="btn gradient_button" value="REGISTER">Register</button>
 
             </div>
