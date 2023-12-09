@@ -127,7 +127,7 @@ async function coinrate() {
 
         }
         else {
-            alert('First approve wallet')
+            alert('Wallet is not approved')
             $('#tknapprove1').show();
             $('#regnbtn1').hide();
         }
