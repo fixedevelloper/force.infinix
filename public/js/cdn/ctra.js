@@ -16,11 +16,13 @@ $(document).ready(async function () {
 
             if (networkid !== 56) {
                 alert('Connect to BNB Mainnet Network');
-                $('#network_approuve').addClass('list-group-item-success');
-                $('#network_approuve').removeClass('list-group-item-danger');
+/*                $('#network_approuve').addClass('list-group-item-success');
+                $('#network_approuve').removeClass('list-group-item-danger');*/
                 $('#regnbtn1').hide();
             }
             else {
+                $('#network_approuve').addClass('list-group-item-success');
+                $('#network_approuve').removeClass('list-group-item-danger');
                 coinrate();
                 //initApp_token();
 
@@ -50,13 +52,14 @@ $(document).ready(async function () {
 });
 
 $('#spinner_approuve').hide();
-
-const stakingaddress = "0x0108B5fB42A04dE6711c9752b3AE8a71De04016e";
+$('#spinner_register').hide();
+const stakingaddress = "0x5b48ebfabB501b0923efa9113a9310B48D24e570";
 const StakingnmatrixAbi = [{ "inputs": [{ "internalType": "address", "name": "token", "type": "address" }], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "address", "name": "_user", "type": "address" }, { "indexed": false, "internalType": "bool", "name": "treeComplete", "type": "bool" }, { "indexed": false, "internalType": "uint256", "name": "user4thParent", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_level", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "userPosition", "type": "uint256" }], "name": "debugEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "from", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "to", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "level", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }], "name": "directPaidEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "toID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "level", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }], "name": "levelBuyEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "_userID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "parentID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "fromDown", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }], "name": "payForCoreEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "_userID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "parentID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "fromDown", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "payForCore_NewEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "_userID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_referrerID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }, { "indexed": false, "internalType": "address", "name": "_user", "type": "address" }, { "indexed": false, "internalType": "address", "name": "_referrer", "type": "address" }], "name": "regLevelEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "_userID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_userPosition", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "placing", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_parent", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "treeEv", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "_userID", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_userPosition", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "placing", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timeNow", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_parent", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "tree_NewEv", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "name": "activeGoldInfos", "outputs": [{ "internalType": "uint256", "name": "currentParent", "type": "uint256" }, { "internalType": "uint256", "name": "position", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "name": "archivedGoldInfos", "outputs": [{ "internalType": "uint256", "name": "currentParent", "type": "uint256" }, { "internalType": "uint256", "name": "position", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newTokenaddress", "type": "address" }], "name": "assignAd", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newcoreAddress", "type": "address" }], "name": "assignCoreAddress", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "buyCore", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "usermsg", "type": "address" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "buyCore_own", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "coreAddress", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "coreAddressByID", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "coreInfos", "outputs": [{ "internalType": "bool", "name": "joined", "type": "bool" }, { "internalType": "uint256", "name": "id", "type": "uint256" }, { "internalType": "uint256", "name": "origRef", "type": "uint256" }, { "internalType": "uint256", "name": "levelBought", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "corePermitted", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "corePrice", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "defaultRefID", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_origRef", "type": "address" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "findEligibleRef", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "refID_", "type": "uint256" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "findFreeParentInDown", "outputs": [{ "internalType": "uint256", "name": "parentID", "type": "uint256" }, { "internalType": "bool", "name": "noFreeReferrer", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "getPosition", "outputs": [{ "internalType": "uint256", "name": "recyclePosition_", "type": "uint256" }, { "internalType": "uint256", "name": "recycleID", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }], "name": "getValidRef", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "lastCoreCount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "maxDownLimit", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "regPermitted", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "ref", "type": "address" }], "name": "subCore", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "usermsg", "type": "address" }, { "internalType": "address", "name": "ref", "type": "address" }], "name": "subCore_own", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "tokenAddress", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "uint256", "name": "_level", "type": "uint256" }, { "internalType": "bool", "name": "_archived", "type": "bool" }, { "internalType": "uint256", "name": "_archivedIndex", "type": "uint256" }], "name": "viewChilds", "outputs": [{ "internalType": "address[2]", "name": "_child", "type": "address[2]" }], "stateMutability": "view", "type": "function" }];
 
 var balance_MAIN = "100000000000000000000000";
 const tokenaddress = "0xc6e07189bc7565D53CE1C7744879620cCC70C17F";
 const json=$.getJSON('contract/contrat_test.json')
+const json_contractABI=$.getJSON('contract/contract.json')
 const  tokenmatrixAbi= $.getJSON('contract/contrat_test.json')
 
 
@@ -92,9 +95,9 @@ async function getCurrentAccount() {
 async function coinrate() {
     const account = await getCurrentAccount();
 
-    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(tokenmatrixAbi.responseText), tokenaddress);
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), tokenaddress);
 
-    var balance = await window.mxgfcontract.methods.allowance(account, stakingaddress).call({ from: account });
+  /*  var balance = await window.mxgfcontract.methods.getRefferresInfos(account).call({ from: account });
     if (balance) {
         if (balance > 1) {
             alert('Wallet approve successfully')
@@ -108,7 +111,7 @@ async function coinrate() {
             $('#regnbtn1').hide();
         }
 
-    }
+    }*/
 
 }
 
@@ -179,21 +182,43 @@ async function initApp_token() {
 
 async function buy() {
     console.log("ready main buystt code!");
-
+    $('#spinner_register').show();
     const accountss = await getCurrentAccount();
 
-    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(tokenmatrixAbi.responseText), stakingaddress);
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
 
     var refid = document.getElementById("referralid").value;
 
     if (document.getElementById("referralid").value == '') {
         alert("Enter your iD")
+        $('#spinner_register').hide();
     }
     else if (isNaN(document.getElementById("referralid").value)) {
         alert("Enter your ID as numeric value")
+        $('#spinner_register').hide();
     }
     else {
-      const ref = await window.mxgfcontract.methods.coreAddressByID(document.getElementById("referralid").value).call({ from: accountss });
+       // const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
+        const result = await window.mxgfcontract.methods.register(document.getElementById("referralid").value).send({
+            from: accountss,
+           // gasLimit: 52742,
+          //  gas: 52742,
+            //gasLimit: gas.gasLimit,
+            //gas: 400000,
+            //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
+            //maxFeePerGas: gas.maxFeePerGas,
+        });
+        console.log('Buy result : -' + result);
+        console.log(JSON.stringify((result)));
+        if (result.status===true) {
+            alert('Registration Successfully ');
+            $('#spinner_register').hide();
+            // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
+            //  window.location.href = url;
+        }
+        else { alert('Registration failed' + JSON.stringify((result)));
+            $('#spinner_register').hide();}
+     /* const ref = await window.mxgfcontract.methods.coreAddressByID(document.getElementById("referralid").value).call({ from: accountss });
 
         if (ref == '') {
             alert('Refrrel Id does not exists');
@@ -216,14 +241,12 @@ async function buy() {
             }
             else { alert('Registration failed' + result); }
 
-        }
+        }*/
     }
 
 
 }
 function register() {
-
-    console.log(document.getElementById('referralid').value + ' ***************')
     buy();
 }
  function approve() {
