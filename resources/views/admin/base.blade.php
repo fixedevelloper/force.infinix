@@ -25,44 +25,31 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/og.png">
 
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/vendors/core/core.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-    <!-- main css for template -->
-    <link rel="stylesheet" href="{{asset('admin/css/style.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/css/custom_admin.css')}}">
+    <link rel="stylesheet" href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('libs/spacing.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 </head>
 
 <body>
-<div class="main-wrapper">
-@include('admin._partials._siderbar')
-    <div class="page-wrapper">
-@include('admin._partials._header')
-        <div class="page-content">
-@yield('content')
+<div class="home_dark">
+    <div class="row">
+        <div class="col-md-2 border-right">
+            @include('admin._partials._siderbar')
         </div>
-@include('admin._partials._footer')
+        <div class="col-md-10">
+            @include('admin._partials._header')
+            @yield('content')
+        </div>
     </div>
+    @include('admin._partials._footer')
 </div>
-
-
-<!-- ===============>> scrollToTop start here <<================= -->
-<a href="#" class="scrollToTop scrollToTop--style1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
-<!-- ===============>> scrollToTop ending here <<================= -->
-
-
-
 
 
 <!-- vendor plugins -->
 @stack('scripts')
-<script src="{{asset('admin/vendors/core/core.js')}}"></script>
-<script src="{{asset('admin/vendors/feather-icons/feather.min.js')}}"></script>
-<script src="{{asset('admin/js/template.js')}}"></script>
-<script src="{{asset('admin/js/dashboard-dark.js')}}"></script>
-
-<script src="{{asset('admin/js/custom.js')}}"></script>
+<script src="{{asset('js/jquery-3.7.min.js')}}"></script>
+<script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
 
 </body>
 

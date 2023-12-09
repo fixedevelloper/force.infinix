@@ -1,0 +1,18 @@
+.card {
+    background-color: #041240 !important;
+    margin: 10px !important;
+    border: solid;
+    color: #f7fafc;
+}
+.card_img_dark{
+    height: 100px;
+}
+.nav-link img{
+    height: 22px !important;
+}
+.header a{
+    margin-right: 4px !important;
+}
+.footer img{
+    height: 40px !important;
+}
