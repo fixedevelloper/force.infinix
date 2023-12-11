@@ -10,8 +10,6 @@ $(document).ready(async function () {
             await ethereum.enable();
 
             var networkid = await web3.eth.net.getId()
-            // var networkname = await web3.eth.net.getChainId()
-            console.log("networkid " + networkid);
             $('#network_approuve').text("Network: "+networkid)
 
             if (networkid !== 56) {
@@ -24,8 +22,11 @@ $(document).ready(async function () {
                 $('#network_approuve').addClass('list-group-item-success');
                 $('#network_approuve').removeClass('list-group-item-danger');
                 coinrate();
-                getIDUser(1);
-                //initApp_token();
+                var id_user=$('#id_user_smart').text();
+                console.log(id_user)
+                var address= await getIDUser(Number.parseInt(id_user))
+                $('#address_user_smart').text(address)
+                console.log("addresse:"+address);
 
             }
 
@@ -36,15 +37,10 @@ $(document).ready(async function () {
             // User denied account access...
         }
     }
-    // Legacy dapp browsers...
     else if (window.web3) {
         window.web3 = new Web3(web3.currentProvider);
-        // console.log(web3);
-
-        // Acccounts always exposed
         web3.eth.sendTransaction({/* ... */ });
     }
-    // Non-dapp browsers...
     else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         alert('Requires ETH purse to interact smart contract You should consider trying MetaMask!');

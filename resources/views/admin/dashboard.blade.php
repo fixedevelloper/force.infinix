@@ -15,7 +15,8 @@
                                    </div>
                                     <div class="col-md-8 text-start">
                                         <h6 class="card-title fw-bolder mt-2">Username</h6>
-                                        <h6 class="card-title fw-bolder mt-2">ID: {{$id}} </h6>
+                                        <h6 class="card-title fw-bolder mt-2">ID: <span id="id_user_smart">{{$id}}</span> </h6>
+                                        <h6 class="card-title fw-bolder mt-2" id="address_user_smart"></h6>
                                     </div>
                             </div>
                         </div>
@@ -32,7 +33,7 @@
                                     <h6 class="card-title mb-0">Personal link</h6>
                                 </div>
                                 <div class="">
-                                    <span>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                                    <span>{{$link}}</span>
                                 </div>
                             </div>
                         </div>
@@ -129,4 +130,10 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('js/cdn/ctra_admin.js') }}"></script>
+    <script>
+        $(function () {
+            var address= getIDUser($('#id_user_smart').text())
+            console.log("addresse:"+address);
+        })
+    </script>
 @endpush
