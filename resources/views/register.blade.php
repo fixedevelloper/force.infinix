@@ -36,6 +36,10 @@
             <div class="form-content">
                 <h2>Register</h2>
                 <div class="mat-div">
+                    <label class="mat-label">New user</label>
+                    <input placeholder="EX: 10" type="text" class="mat-input" id="newuserID" readonly>
+                </div>
+                <div class="mat-div">
                     <label class="mat-label">Your upline</label>
                     <input placeholder="EX: 10" type="text" class="mat-input" id="referralid">
                 </div>
