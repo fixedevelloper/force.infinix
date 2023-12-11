@@ -48,10 +48,12 @@
 
 
 <!-- vendor plugins -->
-@stack('scripts')
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+<script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 <script src="{{asset('js/jquery-3.7.min.js')}}"></script>
 <script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
-
+@stack('scripts')
 </body>
 
 </html>

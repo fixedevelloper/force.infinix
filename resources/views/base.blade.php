@@ -46,7 +46,7 @@
 </div>
 @include('_partials._header')
 @yield('content')
-@include('_partials._footer')
+{{--@include('_partials._footer')--}}
 <a href="#app" id="back-to-top" title="Back to top"><i class="fas fa-angle-up"></i></a>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>

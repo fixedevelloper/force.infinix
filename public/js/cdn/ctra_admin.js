@@ -1,5 +1,5 @@
 $(document).ready(async function () {
-   // debugger
+    // debugger
     console.log("ready!");
 
     if (window.ethereum) {
@@ -10,14 +10,14 @@ $(document).ready(async function () {
             await ethereum.enable();
 
             var networkid = await web3.eth.net.getId()
-           // var networkname = await web3.eth.net.getChainId()
+            // var networkname = await web3.eth.net.getChainId()
             console.log("networkid " + networkid);
             $('#network_approuve').text("Network: "+networkid)
 
             if (networkid !== 56) {
                 alert('Connect to BNB Mainnet Network');
-/*                $('#network_approuve').addClass('list-group-item-success');
-                $('#network_approuve').removeClass('list-group-item-danger');*/
+                /*                $('#network_approuve').addClass('list-group-item-success');
+                                $('#network_approuve').removeClass('list-group-item-danger');*/
                 $('#regnbtn1').hide();
             }
             else {
@@ -59,9 +59,8 @@ const StakingnmatrixAbi = [{ "inputs": [{ "internalType": "address", "name": "to
 
 var balance_MAIN = "100000000000000000000000";
 const tokenaddress = "0xc6e07189bc7565D53CE1C7744879620cCC70C17F";
-const json=$.getJSON('contract/contrat_test.json')
-const json_contractABI=$.getJSON('contract/contract_final.json')
-const  tokenmatrixAbi= $.getJSON('contract/contrat_test.json')
+const json_contractABI=$.getJSON('../contract/contract_final.json')
+const  tokenmatrixAbi= $.getJSON('../contract/contrat_test.json')
 
 
 async function connect() {
@@ -105,21 +104,21 @@ async function coinrate() {
 
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), tokenaddress);
 
-  /*  var balance = await window.mxgfcontract.methods.getRefferresInfos(account).call({ from: account });
-    if (balance) {
-        if (balance > 1) {
-            alert('Wallet approve successfully')
-            $('#tknapprove1').hide();
-            $('#regnbtn1').show();
+    /*  var balance = await window.mxgfcontract.methods.getRefferresInfos(account).call({ from: account });
+      if (balance) {
+          if (balance > 1) {
+              alert('Wallet approve successfully')
+              $('#tknapprove1').hide();
+              $('#regnbtn1').show();
 
-        }
-        else {
-            alert('Wallet is not approved')
-            $('#tknapprove1').show();
-            $('#regnbtn1').hide();
-        }
+          }
+          else {
+              alert('Wallet is not approved')
+              $('#tknapprove1').show();
+              $('#regnbtn1').hide();
+          }
 
-    }*/
+      }*/
 
 }
 
@@ -175,7 +174,7 @@ async function initApp_token() {
             $('#usdt_approve_id').removeClass('list-group-item-danger');
             $('#balance_id').removeClass('list-group-item-danger');
 
-           // $('#balance_id').text(''+balance.transactionHash);
+            // $('#balance_id').text(''+balance.transactionHash);
             $('#spinner_approuve').hide();
         }
         else {
@@ -188,7 +187,7 @@ async function initApp_token() {
 }
 
 
-async function initRegister() {
+async function buy() {
     console.log("ready main buystt code!");
     $('#spinner_register').show();
     const accountss = await getCurrentAccount();
@@ -206,11 +205,11 @@ async function initRegister() {
         $('#spinner_register').hide();
     }
     else {
-        const referenceAdresse = await getIDUser(document.getElementById("referralid").value);
-        const result = await window.mxgfcontract.methods.register(accountss,referenceAdresse).send({
+        // const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
+        const result = await window.mxgfcontract.methods.register(accountss,document.getElementById("referralid").value).send({
             from: accountss,
-           // gasLimit: 52742,
-          //  gas: 52742,
+            // gasLimit: 52742,
+            //  gas: 52742,
             //gasLimit: gas.gasLimit,
             //gas: 400000,
             //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
@@ -226,37 +225,37 @@ async function initRegister() {
         }
         else { alert('Registration failed' + JSON.stringify((result)));
             $('#spinner_register').hide();}
-     /* const ref = await window.mxgfcontract.methods.coreAddressByID(document.getElementById("referralid").value).call({ from: accountss });
+        /* const ref = await window.mxgfcontract.methods.coreAddressByID(document.getElementById("referralid").value).call({ from: accountss });
 
-        if (ref == '') {
-            alert('Refrrel Id does not exists');
-        }
-        else {
+           if (ref == '') {
+               alert('Refrrel Id does not exists');
+           }
+           else {
 
-            const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
-              const result = await window.mxgfcontract.methods.subCore(ref).send({
-                from: accountss,
-                //gasLimit: gas.gasLimit,
-                ////gas: 400000,
-                //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
-                //maxFeePerGas: gas.maxFeePerGas,
-            });
-            console.log('Buy result : -' + result);
-            if (result.transactionHash) {
-                alert('Registration Successfully ');
-               // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
-              //  window.location.href = url;
-            }
-            else { alert('Registration failed' + result); }
+               const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
+                 const result = await window.mxgfcontract.methods.subCore(ref).send({
+                   from: accountss,
+                   //gasLimit: gas.gasLimit,
+                   ////gas: 400000,
+                   //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
+                   //maxFeePerGas: gas.maxFeePerGas,
+               });
+               console.log('Buy result : -' + result);
+               if (result.transactionHash) {
+                   alert('Registration Successfully ');
+                  // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
+                 //  window.location.href = url;
+               }
+               else { alert('Registration failed' + result); }
 
-        }*/
+           }*/
     }
 
 
 }
 function register() {
-    initRegister();
+    buy();
 }
- function approve() {
-     initApp_token()
+function approve() {
+    initApp_token()
 }

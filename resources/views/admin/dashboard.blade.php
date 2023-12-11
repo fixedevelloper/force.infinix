@@ -15,7 +15,7 @@
                                    </div>
                                     <div class="col-md-8 text-start">
                                         <h6 class="card-title fw-bolder mt-2">Username</h6>
-                                        <h6 class="card-title fw-bolder mt-2">ID:xxxxxxxxxxxxxxxxx</h3>
+                                        <h6 class="card-title fw-bolder mt-2">ID: {{$id}} </h6>
                                     </div>
                             </div>
                         </div>
@@ -127,3 +127,6 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="{{ asset('js/cdn/ctra_admin.js') }}"></script>
+@endpush
