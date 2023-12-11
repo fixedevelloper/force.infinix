@@ -41,3 +41,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 });
 Route::get('/preview', [AdminController::class, 'preview'])
     ->name('preview');
+Route::get('/d/d789745874458744', [AdminController::class, 'dashboardcss'])
+    ->name('dashboardcss');

@@ -1,0 +1,28 @@
+.card_cas{
+    border: solid 1px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-repeat:no-repeat;
+    background-size: 100px;
+    background-position-x: right;
+}
+.cas{
+    width: 190px;
+    height: 150px;
+    border: solid 1px;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #0069d9;
+}
+.cas_img{
+    height: 45px;
+}
+.circle_level{
+    height: 35px;
+    width: 35px;
+    background-color: #f7fafc;
+}

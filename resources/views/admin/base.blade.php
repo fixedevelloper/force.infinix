@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('libs/spacing.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+    @stack('css_or_js')
 </head>
 
 <body>
