@@ -1,115 +1,98 @@
-
 @extends('base')
 @push('scripts')
-<style>
-
-</style>
+    <style>
+        .content{
+            width: 600px;
+            height: auto;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .nav-pills{
+            width: 600px;
+        }
+        .nav-item{
+            width: 50%;
+        }
+        .nav-pills .nav-link{
+            font-weight: bold;
+            padding-top: 13px;
+            text-align: center;
+            background: #343436;
+            color: #fff;
+            border-radius: 30px;
+            height: 100px;
+        }
+        .nav-pills .nav-link.active{
+            background: #fff;
+            color: #000;
+        }
+        .tab-content{
+            position: absolute;
+            width: 600px;
+            height: auto;
+            margin-top: -50px;
+            background: #fff;
+            color: #000;
+            border-radius: 30px;
+            z-index: 1000;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        .tab-content button{
+            border-radius: 15px;
+            width: 100px;
+            margin: 0 auto;
+            float: right;
+        }
+    </style>
 @endpush
 @section('content')
 
-    <div class="form-wrap">
-    <form class="signin-form">
-        <div class="form-content">
-
-            <div class="container"><h1>Bootstrap  tab panel example (using nav-pills)  </h1></div>
-            <div id="exTab1" class="container">
-                <ul  class="nav nav-pills">
-                    <li class="active">
-                        <a  href="#1a" data-toggle="tab">Overview</a>
-                    </li>
-                    <li><a href="#2a" data-toggle="tab">Using nav-pills</a>
-                    </li>
-                    <li><a href="#3a" data-toggle="tab">Applying clearfix</a>
-                    </li>
-                    <li><a href="#4a" data-toggle="tab">Background color</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content clearfix">
-                    <div class="tab-pane active" id="1a">
-                        <h3>Content's background color is the same for the tab</h3>
-                    </div>
-                    <div class="tab-pane" id="2a">
-                        <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
-                    </div>
-                    <div class="tab-pane" id="3a">
-                        <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-                    </div>
-                    <div class="tab-pane" id="4a">
-                        <h3>We use css to change the background color of the content to be equal to the tab</h3>
-                    </div>
-                </div>
-            </div>
-
-
-            <hr></hr>
-            <div class="container"><h2>Example tab 2 (using standard nav-tabs)</h2></div>
-
-            <div id="exTab2" class="container">
-                <ul class="nav nav-tabs">
-                    <li class="active">
-                        <a  href="#1" data-toggle="tab">Overview</a>
-                    </li>
-                    <li><a href="#2" data-toggle="tab">Without clearfix</a>
-                    </li>
-                    <li><a href="#3" data-toggle="tab">Solution</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content ">
-                    <div class="tab-pane active" id="1">
-                        <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                    </div>
-                    <div class="tab-pane" id="2">
-                        <h3>Notice the gap between the content and tab after applying a background color</h3>
-                    </div>
-                    <div class="tab-pane" id="3">
-                        <h3>add clearfix to tab-content (see the css)</h3>
-                    </div>
-                </div>
-            </div>
-
-            <hr></hr>
-
-            <div class="container"><h2>Example 3 </h2></div>
-            <div id="exTab3" class="container">
-                <ul  class="nav nav-pills">
-                    <li class="active">
-                        <a  href="#1b" data-toggle="tab">Overview</a>
-                    </li>
-                    <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
-                    </li>
-                    <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
-                    </li>
-                    <li><a href="#4a" data-toggle="tab">Background color</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content clearfix">
-                    <div class="tab-pane active" id="1b">
-                        <h3>Same as example 1 but we have now styled the tab's corner</h3>
-                    </div>
-                    <div class="tab-pane" id="2b">
-                        <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
-                    </div>
-                    <div class="tab-pane" id="3b">
-                        <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-                    </div>
-                    <div class="tab-pane" id="4b">
-                        <h3>We use css to change the background color of the content to be equal to the tab</h3>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Bootstrap core JavaScript
-                ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <section class="about-docs about-docs-dark valign-center scroll-section">
+        <div class="parallax-bg" id="scene3">
+            <img class="layer layer-1" data-depth="0.15" src="img/dark-skin/whitepaper/light-1.png" alt="">
+            <img class="layer layer-2" data-depth="0.2" src="img/dark-skin/whitepaper/light-2.png" alt="">
         </div>
-    </form>
+        <div class="container mt-5">
+        <div class="content">
+            <!-- Nav pills -->
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#login">Login With ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#regis">Login with Adresse</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="login" class="container tab-pane active">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Your ID</label>
+                            <input type="text" class="form-control is-valid" id="login_id" placeholder="1">
+                       </div>
+                        <button type="button" class="btn btn-primary" id="submit_by_id" onclick="login()">Submit</button>
+                    </form>
+                </div>
+                <div id="regis" class="container tab-pane fade">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputName">Your Address</label>
+                            <input type="text" class="form-control is-valid" id="InputName" placeholder="Full Name">
+                       </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    </section>
 
 @endsection
 
+@push('scripts')
+    <script src="{{ asset('js/cdn/ctra.js') }}"></script>
+@endpush

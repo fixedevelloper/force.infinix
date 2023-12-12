@@ -84,7 +84,7 @@ async function connect() {
 async function getIDUser(id){
     const account = await getCurrentAccount();
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
-    var adresse = await window.mxgfcontract.methods.idToAddress(id).call();
+    var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
     console.log("*************************************");
     console.log(adresse);
     return adresse;

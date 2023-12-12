@@ -100,6 +100,9 @@ async function getCurrentAccount() {
     return accounts[0];
 }
 
+async function loginById(){
+
+}
 async function coinrate() {
     const account = await getCurrentAccount();
 
@@ -216,13 +219,11 @@ async function initRegister() {
             //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
             //maxFeePerGas: gas.maxFeePerGas,
         });
-        console.log('Buy result : -' + result);
-        console.log(JSON.stringify((result)));
         if (result.status===true) {
             alert('Registration Successfully ');
             $('#spinner_register').hide();
             // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
-            //  window.location.href = url;
+              window.location.href = configs.routes.login;
         }
         else { alert('Registration failed' + JSON.stringify((result)));
             $('#spinner_register').hide();}
@@ -253,6 +254,11 @@ async function initRegister() {
     }
 
 
+}
+async function login() {
+    const id=document.getElementById("login_id").value;
+    const referenceAdresse = await getIDUser(id);
+    window.location.href = configs.routes.dashboard+"?id="+id;
 }
 function register() {
     initRegister();

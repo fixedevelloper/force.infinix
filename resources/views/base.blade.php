@@ -63,6 +63,15 @@
 <script type="module" src="{{asset('js/cdn/main.js')}}"></script>
 {{--<script src="{{asset('js/cdn/web3.min.js')}}"></script>
 <script src="{{asset('js/cdn/truffle-contract.min.js')}}"></script>--}}
+<script>
+    var configs={
+        routes:{
+            index: "{{\Illuminate\Support\Facades\URL::to('/')}}",
+            dashboard: "{{\Illuminate\Support\Facades\URL::route('admin.dashboard')}}",
+            login: "{{\Illuminate\Support\Facades\URL::route('login')}}",
+        }
+    }
+</script>
 @stack('scripts')
 </body>
 </html>

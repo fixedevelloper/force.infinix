@@ -1327,7 +1327,13 @@ input.gradient_button,
 .tabs {
   position: relative;
 }
-
+.tabs div {
+    border: 0;
+    position: absolute;
+    left: 100%;
+    opacity: 0;
+    z-index: 0;
+}
 .tabs table {
   border: 0;
   position: absolute;
@@ -1382,6 +1388,17 @@ input.gradient_button,
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+}
+.tabs div.active {
+    display: table;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .tabs .tab-items {
@@ -4752,6 +4769,11 @@ footer .copyright span:nth-child(1) {
     display: block !important;
     white-space: nowrap;
   }
+    .stats .tabs div {
+        overflow-x: auto;
+        display: block !important;
+        white-space: nowrap;
+    }
   .banner .app-source a img {
     height: 35px;
   }

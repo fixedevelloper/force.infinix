@@ -594,7 +594,7 @@ $(document).ready(function(){
 	};
 
  	//tabs Exchange Skin
-	if ($(".tabs table").length > 0) {
+/*	if ($(".tabs table").length > 0) {
 		$(".tabs table").each(function(){
 		$(".tabs .tab-items").append("<li id='" + $(this).attr("id") + "'><span>" + $(this).attr("id") + "</span></li>");
 		});
@@ -602,15 +602,27 @@ $(document).ready(function(){
 		$(".tabs .tab-items li").on('click', function(){
 			var tableName = $(this).attr("id");
 			$(".tabs table.active").removeClass("active");
+            $(".tabs div.active").removeClass("active");
 			$(".tabs .tab-items li.active").removeClass("active");
 			$(".tabs table#" + tableName).addClass("active");
 
 			$(".tabs .tab-items li#" + tableName).addClass("active");
 		});
-	};
 
+	};
+    if ($(".tabs div").length > 0) {
+        $(".tabs .tab-items li:nth-child(1)").addClass("active");
+        $(".tabs .tab-items li").on('click', function(){
+            var tableName = $(this).attr("id");
+            $(".tabs section.active").removeClass("active");
+            $(".tabs .tab-items li.active").removeClass("active");
+            $(".tabs div#" + tableName).addClass("active");
+
+            $(".tabs .tab-items li#" + tableName).addClass("active");
+        });
+    }*/
 	// Nav Scroll Animate
-	$('a[href^="#"]').bind('click', function(e) {
+/*	$('a[href^="#"]').bind('click', function(e) {
 		e.preventDefault();
 		var target = $(this).attr("href");
 		$('html, body').stop().animate({
@@ -619,7 +631,7 @@ $(document).ready(function(){
 			location.hash = target;
 		});
 		return false;
-	});
+	});*/
 
 	//Nav Active Link
 	$(window).scroll(function() {
