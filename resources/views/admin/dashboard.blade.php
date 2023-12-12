@@ -33,7 +33,7 @@
                                     <h6 class="card-title mb-0">Personal link</h6>
                                 </div>
                                 <div class="">
-                                    <span>{{$link}}</span>
+                                    <span><a href="{{$link}}">{{$link}}</a></span>
                                 </div>
                             </div>
                         </div>

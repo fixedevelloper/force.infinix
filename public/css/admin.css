@@ -1,8 +1,9 @@
 .card {
     background-color: #041240 !important;
     margin: 10px !important;
-    border: solid;
+    border: solid #71dd8a;
     color: #f7fafc;
+
 }
 .card_img_dark{
     height: 100px;

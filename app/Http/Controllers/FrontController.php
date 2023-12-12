@@ -27,6 +27,10 @@ class FrontController extends Controller
         return view('register', []);
 
     }
+    public function login(){
+        return view('login', []);
+
+    }
     public function welcome(){
         return view('welcome', []);
 

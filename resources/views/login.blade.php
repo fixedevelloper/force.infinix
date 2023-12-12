@@ -1,67 +1,115 @@
 
 @extends('base')
+@push('scripts')
+<style>
 
+</style>
+@endpush
 @section('content')
-<!-- ================> Page header start here <================== -->
-<section class="page-header bg--cover" style="background-image:url({{asset('images/breadcrumb_bg-1.png')}})">
-    <div class="container">
-        <div class="page-header__content" data-aos="fade-right" data-aos-duration="1000">
-            <h2>Login</h2>
-            <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item "><a href="{{route('home')}}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Login</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="page-header__shape">
-        <span class="page-header__shape-item page-header__shape-item--1"><img src="{{asset('images/shap2.png')}}"
-                                                                              alt="shape-icon"></span>
-        </div>
-    </div>
-</section>
-<!-- ================> Page header end here <================== -->
 
-<!-- ===============>> account start here <<================= -->
-<section class="account padding-top padding-bottom sec-bg-color2">
-    <div class="container">
-        <div class="account__wrapper" data-aos="fade-up" data-aos-duration="800">
-            <div class="row g-4">
-                <div class="col-lg-12">
-                    <div class="account__content account__content--style1">
+    <div class="form-wrap">
+    <form class="signin-form">
+        <div class="form-content">
 
-                        <!-- account tittle -->
-                        <div class="account__header">
-                            <h2>Welcome back!</h2>
-                            <p>Hey there! Ready to log in? Just enter your username and password below and you'll be back in action
-                                in no time. Let's go!</p>
-                        </div>
+            <div class="container"><h1>Bootstrap  tab panel example (using nav-pills)  </h1></div>
+            <div id="exTab1" class="container">
+                <ul  class="nav nav-pills">
+                    <li class="active">
+                        <a  href="#1a" data-toggle="tab">Overview</a>
+                    </li>
+                    <li><a href="#2a" data-toggle="tab">Using nav-pills</a>
+                    </li>
+                    <li><a href="#3a" data-toggle="tab">Applying clearfix</a>
+                    </li>
+                    <li><a href="#4a" data-toggle="tab">Background color</a>
+                    </li>
+                </ul>
 
-
-                        <!-- account form -->
-                        <form action="#" class="account__form needs-validation" novalidate>
-                            <div class="row g-4">
-                                <div class="col-12">
-                                    <div>
-                                        <label for="account-email" class="form-label">Address</label>
-                                        <input type="text" class="form-control" id="account-email" placeholder="Enter your address"
-                                               required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="trk-btn trk-btn--border trk-btn--primary d-block mt-4">Sign in</button>
-                        </form>
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1a">
+                        <h3>Content's background color is the same for the tab</h3>
+                    </div>
+                    <div class="tab-pane" id="2a">
+                        <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+                    </div>
+                    <div class="tab-pane" id="3a">
+                        <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+                    </div>
+                    <div class="tab-pane" id="4a">
+                        <h3>We use css to change the background color of the content to be equal to the tab</h3>
                     </div>
                 </div>
             </div>
+
+
+            <hr></hr>
+            <div class="container"><h2>Example tab 2 (using standard nav-tabs)</h2></div>
+
+            <div id="exTab2" class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a  href="#1" data-toggle="tab">Overview</a>
+                    </li>
+                    <li><a href="#2" data-toggle="tab">Without clearfix</a>
+                    </li>
+                    <li><a href="#3" data-toggle="tab">Solution</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content ">
+                    <div class="tab-pane active" id="1">
+                        <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+                    </div>
+                    <div class="tab-pane" id="2">
+                        <h3>Notice the gap between the content and tab after applying a background color</h3>
+                    </div>
+                    <div class="tab-pane" id="3">
+                        <h3>add clearfix to tab-content (see the css)</h3>
+                    </div>
+                </div>
+            </div>
+
+            <hr></hr>
+
+            <div class="container"><h2>Example 3 </h2></div>
+            <div id="exTab3" class="container">
+                <ul  class="nav nav-pills">
+                    <li class="active">
+                        <a  href="#1b" data-toggle="tab">Overview</a>
+                    </li>
+                    <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
+                    </li>
+                    <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
+                    </li>
+                    <li><a href="#4a" data-toggle="tab">Background color</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1b">
+                        <h3>Same as example 1 but we have now styled the tab's corner</h3>
+                    </div>
+                    <div class="tab-pane" id="2b">
+                        <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+                    </div>
+                    <div class="tab-pane" id="3b">
+                        <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+                    </div>
+                    <div class="tab-pane" id="4b">
+                        <h3>We use css to change the background color of the content to be equal to the tab</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Bootstrap core JavaScript
+                ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         </div>
+    </form>
     </div>
-    <div class="account__shape">
-      <span class="account__shape-item account__shape-item--1"><img src="{{asset('images/contact_shap04.png')}}"
-                                                                    alt="shape-icon"></span>
-    </div>
-</section>
-<!-- ===============>> account end here <<================= -->
+
 @endsection
 
