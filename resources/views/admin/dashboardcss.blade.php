@@ -5,6 +5,18 @@
 @endpush
 @section('content')
 
+
+
+    <div class="hero">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+
+
     <div class="row">
         <div class="col-12 col-xl-12 stretch-card">
             <div class="row flex-grow-1">
@@ -128,8 +140,6 @@
             </div>
         </div>
     </div>
-
-
         <div class="card" style="background-image: url({{asset('img/admin/5.svg')}})">
             <div class="card-body">
                 <div class="row d-flex justify-content-center">
@@ -400,6 +410,26 @@
             </div>
 
         </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Platform recent activity</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td><i class="fa fa-user"></i></td>
+                            <td><span>new user joined</span><span class="table_span">ID 124</span></td>
+                            <td><span>2min ago</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
+        </div>
+        <div class="col-md-4">
 
+        </div>
+    </div>
 @endsection

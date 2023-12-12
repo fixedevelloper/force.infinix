@@ -1,8 +1,11 @@
 .card {
     background-color: #041240 !important;
     margin: 10px !important;
-    border: solid #71dd8a;
+    border: solid rgb(34,193,195);
     color: #f7fafc;
+}
+.card_gradiant{
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 
 }
 .card_img_dark{

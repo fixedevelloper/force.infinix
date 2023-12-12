@@ -34,6 +34,14 @@
 
 <body>
 <div class="home_dark">
+    <div class="hero">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
     <div class="row">
         <div class="col-md-2 border-right">
             @include('admin._partials._siderbar')
@@ -42,6 +50,14 @@
             @include('admin._partials._header')
             @yield('content')
         </div>
+    </div>
+    <div class="hero">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
     </div>
     @include('admin._partials._footer')
 </div>
