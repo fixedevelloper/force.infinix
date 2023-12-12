@@ -60,7 +60,7 @@
         background-position-x: right;">
         <div class="card-body">
             <h6 class="card-title fw-bolder mt-2">Patners</h6>
-                <h6 class="card-title fw-bolder mt-2">6985741</h6>
+                <h6 class="card-title fw-bolder mt-2"><span id="dash_partners"></span></h6>
             <span class="block"><span class="mdi mdi-arrow-top-right"></span>235</span>
         </div>
     </div>

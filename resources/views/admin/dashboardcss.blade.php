@@ -132,7 +132,7 @@
 
         <div class="card" style="background-image: url({{asset('img/admin/5.svg')}})">
             <div class="card-body">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="cas">
                       <div class="row">
                           <div class="col-md-6">
@@ -159,31 +159,246 @@
                         </div>
                     </div>
                     <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL2</span>
+                            </div>
 
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
                     </div>
                     <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL3</span>
+                            </div>
 
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
                     </div>
                     <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL4</span>
+                            </div>
 
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
                     </div>
                     <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL5</span>
+                            </div>
 
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="row  d-flex justify-content-center">
+                    <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL6</span>
+                            </div>
 
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL7</span>
+                            </div>
+
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL8</span>
+                            </div>
+
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL9</span>
+                            </div>
+
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cas">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><img class="cas_img" src="{{asset('img/admin/1.svg')}}">
+                                    <span>10</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <span>LVL10</span>
+                            </div>
+
+                        </div>
+                        <div class="row container d-flex justify-content-between">
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level rounded-circle"></span>
+                            <span class="circle_level_activate rounded-circle"></span>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 mt-3">
+                                <p><img class="cas_img" src="{{asset('img/admin/3.svg')}}"><span style="">1112</span></p>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <img class="cas_img" src="{{asset('img/admin/8.svg')}}">29
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container mt-3">
+                    <div class="col-md-6">
+                        <p><img class="number_img" src="{{asset('img/admin/3.svg')}}"><span style="">Number of teams</span></p>
+                        <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span style="">Number of Recycling</span></p>
+                        <p><img class="number_img" src="{{asset('img/admin/7.svg')}}"><span style="">Level to upgrade</span></p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p>TOTAL EARNINGS</p>
+                        <p class="h2">1200 USDC</p>
+                    </div>
+                </div>
             </div>
-            <div class="row container">
-                <div class="col-md-6">
-                    <p><img class="number_img" src="{{asset('img/admin/3.svg')}}"><span style="">Number of teams</span></p>
-                    <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span style="">Number of Recycling</span></p>
-                    <p><img class="number_img" src="{{asset('img/admin/7.svg')}}"><span style="">Level to upgrade</span></p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <p>TOTAL EARNINGS</p>
-                    <p class="h2">1200 USDC</p>
-                </div>
-            </div>
+
         </div>
 
 

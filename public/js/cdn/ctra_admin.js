@@ -26,7 +26,7 @@ $(document).ready(async function () {
                 console.log(id_user)
                 var address= await getIDUser(Number.parseInt(id_user))
                 $('#address_user_smart').text(address)
-                console.log("addresse:"+address);
+                setnumberDashboard(Number.parseInt(id_user))
 
             }
 
@@ -89,7 +89,12 @@ async function getIDUser(id){
     console.log(adresse);
     return adresse;
 }
-
+async function setnumberDashboard(id){
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+    var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
+    var patners = await window.mxgfcontract.methods.getDirectPartnersCount(adresse).call();
+    $('#dash_partners').text(patners)
+}
 async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
     return accounts[0];
