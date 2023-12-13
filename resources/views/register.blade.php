@@ -41,7 +41,7 @@
                 </div>
                 <div class="mat-div">
                     <label class="mat-label">Your upline</label>
-                    <input placeholder="EX: 10" type="text" class="mat-input" id="referralid">
+                    <input placeholder="EX: 10" type="text" value="{{$id}}" class="mat-input" id="referralid">
                 </div>
                 <button onclick="approve()" type="button" class="btn gradient_button " id="approuve"><i class="fa fa-spinner fa-spin" id="spinner_approuve"></i> Approuve</button>
                 <button type="button" onclick="register()" class="btn gradient_button" value="REGISTER"><i class="fa fa-spinner fa-spin" id="spinner_register"></i> Register</button>

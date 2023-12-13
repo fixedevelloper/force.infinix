@@ -80,7 +80,19 @@ async function connect() {
         alert(" Wallet Not Connected");
     }
 }
-
+async function buy_machin(level){
+    const account = await getCurrentAccount();
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+    var level_ = await window.mxgfcontract.methods.Buy_Machine_Qore_For(account,Number.parseInt(level)).send({
+        from: account,
+    });
+    console.log(level_)
+    if (level_.status===true){
+        window.location.reload()
+    }else {
+        alert("Echec: Buy Level error")
+    }
+}
 async function getIDUser(id){
     const account = await getCurrentAccount();
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
@@ -100,7 +112,8 @@ async function setnumberDashboard(id){
     var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();
     var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
     var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
-    console.log(getDirectReferrerReward);
+    currentLevel(getUserCurrentLevel)
+    console.log(getUserCurrentLevel);
     $('#dash_partners').text(patners)
     $('#S10_INCOME').text("S10_INCOME:"+convertDiv(S10_INCOME))
     $('#getDirectReferrerReward')
@@ -278,4 +291,29 @@ function convertDiv(amount) {
         return amount/1000000000000000000;
     }
     return amount;
+}
+function currentLevel(level) {
+const levels=[1,2,3,4,5,6,7,8,9,10]
+    for (const i of levels) {
+        if (i<=level){
+            $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
+                '</div><div class="row container d-flex justify-content-between"> <span class="circle_level rounded-circle"></span>' +
+                '<span class="circle_level rounded-circle"></span><span class="circle_level_activate rounded-circle"></span></div>' +
+                '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style="">1112</span></p></div>' +
+                '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg">29</div></div></div>')
+        }else {
+            $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
+                '</div><div class=" container d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
+                '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
+                '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
+        }
+
+    }
+
+}
+async function upGradeLevel(level) {
+    console.log(level)
+    await buy_machin(level);
 }

@@ -59,23 +59,19 @@
             <!-- Nav pills -->
             <ul class="nav nav-pills" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="pill" href="#login">Login With ID</a>
+                    <a class="nav-link active" data-bs-toggle="pill">Login Automatic</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="pill" href="#regis">Login with Adresse</a>
+                    <a class="nav-link" data-bs-toggle="pill" href="{{route('loginwithaddress')}}">Login with Adresse</a>
                 </li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
                 <div id="login" class="container tab-pane active">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Your ID</label>
-                            <input type="text" class="form-control is-valid" id="login_id" placeholder="1">
-                       </div>
-                        <button type="button" class="btn btn-primary" id="submit_by_id" onclick="login()">Submit</button>
-                    </form>
+                    <div class="d-flex justify-content-between">
+                        <a style="width: 100%" type="button" class="btn btn-primary" id="submit_by_id" onclick="login()">Login</a>
+                    </div>
                 </div>
                 <div id="regis" class="container tab-pane fade">
                     <form>

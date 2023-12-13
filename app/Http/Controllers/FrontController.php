@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Http\Request;
+
 class FrontController extends Controller
 {
 
@@ -23,12 +25,18 @@ class FrontController extends Controller
         return view('contact_us', []);
 
     }
-    public function register(){
-        return view('register', []);
+    public function register(Request $request){
+        return view('register', [
+            'id'=>$request->get('tx')
+        ]);
 
     }
     public function login(){
         return view('login', []);
+
+    }
+    public function loginwithaddress(){
+        return view('loginwithaddress', []);
 
     }
     public function welcome(){

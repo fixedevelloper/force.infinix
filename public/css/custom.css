@@ -44,6 +44,9 @@
 .cas_img{
     height: 32px;
 }
+.cas_img_buy{
+    height: 50px;
+}
 .table_span{
     border-radius: 10px;
     background-color: rgba(64,106,255,.3);
