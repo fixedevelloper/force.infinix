@@ -108,11 +108,11 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <div class="row">
-                                @for($i=0; $i<11;$i++)
-                                    <a class="btn btn-sm bg-info col-md-1 col-sm-4 col-6 col-xl-2 m-1">
+                            <div class="row" id="level_gradian">
+                             {{--   @for($i=0; $i<11;$i++)
+                                    <a class="btn btn-sm bg-info col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1">
                                     </a>
-                                @endfor
+                                @endfor--}}
                             </div>
 
                         </div>

@@ -30,7 +30,6 @@
     <!-- owl carousel styles -->
     <link href='{{asset('libs/owl/owl.theme.default.min.css')}}' rel='stylesheet' type='text/css'>
     <link href='{{asset('libs/owl/owl.carousel.min.css')}}' rel='stylesheet' type='text/css'>
-    <link href='{{asset('libs/bootstrap/css/bootstrap.min.css')}}' rel='stylesheet' type='text/css'>
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('libs/spacing.min.css')}}">

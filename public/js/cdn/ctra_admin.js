@@ -113,6 +113,7 @@ async function setnumberDashboard(id){
     var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
     var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
     currentLevel(getUserCurrentLevel)
+    currentLevelGrandiant(getUserCurrentLevel)
     console.log(getUserCurrentLevel);
     $('#dash_partners').text(patners)
     $('#S10_INCOME').text("S10_INCOME:"+convertDiv(S10_INCOME))
@@ -308,6 +309,18 @@ const levels=[1,2,3,4,5,6,7,8,9,10]
                 '</div><div class=" container d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
                 '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
                 '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
+        }
+
+    }
+
+}
+function currentLevelGrandiant(level) {
+    const levels=[1,2,3,4,5,6,7,8,9,10]
+    for (const i of levels) {
+        if (i<=level){
+            $('#level_gradian').append('<a class="btn btn-sm bg-success col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1"></a>')
+        }else {
+            $('#level_gradian').append('<a class="btn btn-sm bg-info col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1"></a>')
         }
 
     }
