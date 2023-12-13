@@ -33,6 +33,11 @@
 </head>
 
 <body>
+<div class="preloader">
+    <div class="top-bg-dark" id="top-bg"></div>
+    <div class="loader-middle" id="loader-middle"></div>
+    <div class="bottom-bg-dark" id="bottom-bg"></div>
+</div>
 <div class="home_dark">
     <div class="hero">
         <div class="cube"></div>
@@ -69,6 +74,18 @@
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 <script src="{{asset('js/jquery-3.7.min.js')}}"></script>
 <script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
+<script>
+    //preloader
+    if ($(".preloader").length > 0) {
+        $('#top-bg').delay(1500).slideUp();
+        $('#bottom-bg').delay(1500).slideUp();
+        $('#loader-middle').delay(1250).fadeOut();
+        // Preloader timeout
+        setTimeout(function() {
+            $('.preloader').addClass('d-none');
+        }, 1750);
+    };
+</script>
 @stack('scripts')
 </body>
 

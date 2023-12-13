@@ -89,6 +89,7 @@
                 <div class="card-body">
                     <h6 class="card-title fw-bolder mt-2">Profits</h6>
                     <h6 class="card-title fw-bolder mt-2">
+                        <i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
                         <p id="randomRewards"></p>
                         <p id="getDirectReferrerReward"></p>
                         <p id="S10_INCOME"></p>
@@ -104,17 +105,14 @@
             <div class="card text-white card_gradiant">
                 <div class="card-body">
                     <div class="row">
-                        <span class="col-md-6 text-start h1">X3</span><span class="col-md-6 h1 text-end">10USD</span>
+                        <span class="col-md-6 text-start h1">X3</span><span class="col-md-6 h1 text-end" id="order_total">10USD</span>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <div class="row" id="level_gradian">
-                             {{--   @for($i=0; $i<11;$i++)
-                                    <a class="btn btn-sm bg-info col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1">
-                                    </a>
-                                @endfor--}}
-                            </div>
 
+                            </div>
+                            <i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
                         </div>
                         <div class="col-md-6">
                             <div class="">

@@ -266,3 +266,10 @@ function register() {
  function approve() {
      initApp_token()
 }
+async function autologin() {
+    var account=getCurrentAccount();
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+    var id = await window.mxgfcontract.methods.userIDs(Number.parseInt(id)).call();
+    window.location.href = configs.routes.dashboard+"?id="+id;
+
+}

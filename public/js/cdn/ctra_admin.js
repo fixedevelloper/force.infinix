@@ -7,31 +7,24 @@ $(document).ready(async function () {
         window.web3 = new Web3(ethereum);
         try {
             // Request account access if needed
-            await ethereum.enable();
+           // await ethereum.enable();
 
             var networkid = await web3.eth.net.getId()
             $('#network_approuve').text("Network: "+networkid)
 
             if (networkid !== 56) {
                 alert('Connect to BNB Mainnet Network');
-                /*                $('#network_approuve').addClass('list-group-item-success');
-                                $('#network_approuve').removeClass('list-group-item-danger');*/
-                $('#regnbtn1').hide();
             }
             else {
                 $('#network_approuve').addClass('list-group-item-success');
                 $('#network_approuve').removeClass('list-group-item-danger');
-                coinrate();
+               // coinrate();
                 var id_user=$('#id_user_smart').text();
-                console.log(id_user)
-                var address= await getIDUser(Number.parseInt(id_user))
-                $('#address_user_smart').text(address)
+/*                var address= await getIDUser(Number.parseInt(id_user))
+                $('#address_user_smart').text(address)*/
                 setnumberDashboard(Number.parseInt(id_user))
-
             }
 
-
-            // Acccounts now exposed
             web3.eth.sendTransaction({/* ... */ });
         } catch (error) {
             // User denied account access...
@@ -94,12 +87,8 @@ async function buy_machin(level){
     }
 }
 async function getIDUser(id){
-    const account = await getCurrentAccount();
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
-    var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
-    console.log("*************************************");
-    console.log(adresse);
-    return adresse;
+    return await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
 }
 async function setnumberDashboard(id){
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
@@ -117,15 +106,21 @@ async function setnumberDashboard(id){
     console.log(childs)
     currentLevel(getUserCurrentLevel,childs)
     currentLevelGrandiant(getUserCurrentLevel)
-   // console.log(getChildAddress[0]);
+    $('#address_user_smart').text(adresse)
     $('#dash_partners').text(patners)
-    $('#S10_INCOME').text("S10_INCOME:"+convertDiv(S10_INCOME))
+    $('#S10_INCOME').text("S10_INCOME:"+roundDecimal(convertDiv(S10_INCOME)))
     $('#getDirectReferrerReward')
-        .text("DirectReferrerReward:"+convertDiv(getDirectReferrerReward))
-    $('#S4_MACHINEIncome').text("S4_MACHINEIncome: "+convertDiv(S4_MACHINEIncome))
-    $('#randomRewards').text("RandomRewards: "+convertDiv(randomRewards))
+        .text("DirectReferrerReward:"+roundDecimal(convertDiv(getDirectReferrerReward)))
+    $('#S4_MACHINEIncome').text("S4_MACHINEIncome: "+roundDecimal(convertDiv(S4_MACHINEIncome)))
+    $('#randomRewards').text("RandomRewards: "+roundDecimal(convertDiv(randomRewards)))
     var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))+Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
-    $('#total_earning').text(total)
+    $('#total_earning').text(roundDecimal(total))
+    $('#order_total').text(roundDecimal(total)+' USD')
+}
+function roundDecimal(nombre, precision){
+    var precision = precision || 2;
+    var tmp = Math.pow(10, precision);
+    return Math.round( nombre*tmp )/tmp;
 }
 async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
@@ -300,17 +295,16 @@ function convertDiv(amount) {
 }
 function currentLevel(level,childs) {
 const levels=[1,2,3,4,5,6,7,8,9,10]
-    const value=childs
-    console.log(value)
     for (const i of levels) {
         if (i<=level){
             const isactivate=childs.includes(level)
-
+            childs = childs.filter(element => element !== "0");
+            let count = childs.filter(x => x === level).length
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
                 '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
                 '</div><div class="row container d-flex justify-content-between"> <span class="circle_level_activate rounded-circle" id="lv1_'+i+'"></span>' +
                 '<span class="circle_level_activate rounded-circle" id="lv2_'+i+'"></span><span class="circle_level_activate rounded-circle" id="lv3_'+i+'"></span></div>' +
-                '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style="">1112</span></p></div>' +
+                '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style="">'+count+'</span></p></div>' +
                 '<div class="col-md-6 mt-3"></div></div></div>')
 
             if (isactivate){
@@ -358,43 +352,10 @@ async function makeActivate(adresse) {
     var arrays=[];
     for (let i = 0; i < childs[0].length; i++) {
         var currentLevelChild = await window.mxgfcontract.methods.getUserCurrentLevel(childs[0][i]).call();
-        console.log(currentLevelChild)
         arrays.push(currentLevelChild)
-        switch (currentLevelChild) {
-            case 1:
-                lv1++;
-                break;
-            case 2:
-                lv2++;
-                break;
-            case 3:
-                lv3++;
-                break;
-            case 4:
-                lv4++;
-                break;
-            case 5:
-                lv5++;
-                break;
-            case 6:
-                lv6++;
-                break;
-            case 7:
-                lv7++;
-                break;
-            case 8:
-                lv8++;
-                break;
-            case 9:
-                lv9++;
-                break;
-            case 10:
-                lv10++;
-                break;
-        }
 
     }
-    return removeDuplicates(arrays)
+    return arrays
 }
 
 function removeDuplicates(arr) {
@@ -405,3 +366,5 @@ function removeDuplicates(arr) {
     }, []);
     return unique;
 }
+
+
