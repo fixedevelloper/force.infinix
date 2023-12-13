@@ -19,6 +19,7 @@
                                     <h6 class="card-title fw-bolder mt-2">Username</h6>
                                     <h6 class="card-title fw-bolder mt-2">ID: <span id="id_user_smart">{{$id}}</span>
                                     </h6>
+                                    <i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
                                     <h6 class="card-title fw-bolder mt-2" id="address_user_smart"></h6>
                                 </div>
                             </div>
@@ -179,10 +180,4 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('js/cdn/ctra_admin.js') }}"></script>
-    <script>
-        $(function () {
-            var address = getIDUser($('#id_user_smart').text())
-            console.log("addresse:" + address);
-        })
-    </script>
 @endpush
