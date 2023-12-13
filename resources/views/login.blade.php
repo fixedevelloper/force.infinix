@@ -1,198 +1,122 @@
+<!doctype html>
+<html lang="en">
 
-@php
-    $config = [
-        'appName' => config('app.name'),
-        'locale' => $locale = app()->getLocale(),
-        'locales' => config('app.locales'),
-    ];
-@endphp
-    <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="light">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    <title>Infinix</title>
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="{{asset('libs/animate.min.css')}}">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
-    <!-- owl carousel styles -->
-    <link href='{{asset('libs/owl/owl.theme.default.min.css')}}' rel='stylesheet' type='text/css'>
-    <link href='{{asset('libs/owl/owl.carousel.min.css')}}' rel='stylesheet' type='text/css'>
-    <section class="about-docs about-docs-dark valign-center scroll-section">
-        <div class="parallax-bg" id="scene3">
-            <img class="layer layer-1" data-depth="0.15" src="img/dark-skin/whitepaper/light-1.png" alt="">
-            <img class="layer layer-2" data-depth="0.2" src="img/dark-skin/whitepaper/light-2.png" alt="">
+    <title>Infinix login</title>
+
+</head>
+
+<body>
+<section class="signinform-scn">
+    <div class="signinform-group">
+        <div class="page-width">
+            <h3 class="text-center">LOGIN</h3>
+            <div class="signinform-inner">
+                <a href="#" class="logo mt-3 mb-3">
+                    <img src="{{asset('img/logo.svg')}}" alt="Coderwrap">
+                </a>
+
+                <div class="form-tabs">
+                    <div class="f-tab-item" data-tab="login-tab">
+                        <div>
+                            <span class="flabel">Automatic login</span>
+                        </div>
+                    </div>
+                    <div class="f-tab-item" data-tab="register-tab">
+                        <div>
+                            <span class="flabel">View By ID</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cw-form-info">
+                    <form action="#" method="post">
+                        <!--Login Form Start-->
+                        <div class="cmn-form-group login-tab">
+                            <h2>Automatic login</h2>
+                            <button class="cmn-btn" type="button">Login</button>
         </div>
-        <div class="container mt-5">
-            <div class="registration-form">
-                <div class="header">
-                    <button class="btn btn-tab btn-ripple active" data-target-tab="#signin">
-                        SIGN IN
-                    </button>
-                    <button class="btn btn-tab btn-ripple" data-target-tab="#signup">
-                        SIGN UP
-                    </button>
-                </div>
-                <div class="body">
-                    <div class="content active" id="signin">
-                        <h1>Sign in to your acccount</h1>
-                        <p class="gray">Sign in to access all free resources</p>
-
-                        <div class="flex justify-between">
-                            <button class="btn btn-oauth">
-                                <i class="fab fa-google"></i> Sign in with Google
-                            </button>
-                            <button class="btn btn-oauth">
-                                <i class="fab fa-twitter"></i> Sign in with Twitter
-                            </button>
+                        <!--Login Form End-->
+                        <!--Create Account Form Start-->
+                        <div class="cmn-form-group register-tab">
+                            <h2>View by ID</h2>
+                            <div class="input-group">
+                                <input type="text" placeholder="05" onfocus="this.placeholder = ''" onblur="this.placeholder = '5'" required="">
+                            </div>
+                            <button class="cmn-btn" type="submit">Preview</button>
                         </div>
-
-                        <div class="bar"></div>
-
-                        <form action="#">
-                            <div class="input-group">
-                                <input
-                                    type="text"
-                                    name=""
-                                    id="name"
-                                    class="input-elem"
-                                    placeholder=" "
-                                    autocomplete="off"
-                                />
-                                <label for="name">Name</label>
-                            </div>
-                            <div class="input-group">
-                                <input
-                                    type="password"
-                                    name=""
-                                    id="password"
-                                    class="input-elem"
-                                    placeholder=" "
-                                    autocomplete="off"
-                                />
-                                <label for="password">Password</label>
-                                <i class="fas fa-eye-slash eye"></i>
-                            </div>
-                            <div class="agreements">
-                                <input type="checkbox" name="" id="rem_pass" />
-                                <label for="rem_pass" class="gray">Remember Password</label>
-                            </div>
-                            <button class="btn btn-register">Sign In</button>
-                            <a href="#" class="reg_link">Forgot your password?</a>
-                        </form>
-                    </div>
-                    <div class="content" id="signup">
-                        <h1>REGISTER</h1>
-                        <p class="gray">
-                            You can use this account to log in to any of our products
-                        </p>
-
-                        <div class="flex justify-between">
-                            <button class="btn btn-oauth">
-                                <i class="fab fa-google"></i> Sign up with Google
-                            </button>
-                            <button class="btn btn-oauth">
-                                <i class="fab fa-twitter"></i> Sign up with Twitter
-                            </button>
-                        </div>
-
-                        <div class="bar"></div>
-
-                        <form action="#">
-                            <div class="input-group">
-                                <input
-                                    type="text"
-                                    name=""
-                                    id="name"
-                                    class="input-elem"
-                                    placeholder=" "
-                                    autocomplete="off"
-                                />
-                                <label for="name">Name</label>
-                            </div>
-                            <div class="input-group">
-                                <input
-                                    type="email"
-                                    name=""
-                                    id="email"
-                                    class="input-elem"
-                                    placeholder=" "
-                                    autocomplete="off"
-                                />
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="input-group">
-                                <input
-                                    type="password"
-                                    name=""
-                                    id="password"
-                                    class="input-elem"
-                                    placeholder=" "
-                                    autocomplete="off"
-                                />
-                                <label for="password">Password</label>
-                                <i class="fas fa-eye-slash eye"></i>
-                            </div>
-                            <div class="agreements">
-                                <input type="checkbox" name="" id="terms" />
-                                <label for="terms" class="gray">Agree to our conditions</label>
-                            </div>
-                            <button class="btn btn-register">Sign Up</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-      {{--  <div class="content">
-            <!-- Nav pills -->
-            <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="pill">Login Automatic</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="pill" href="{{route('loginwithaddress')}}">Login with Adresse</a>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="login" class="container tab-pane active">
-                    <div class="d-flex justify-content-between">
-                        <a style="width: 100%" type="button" class="btn btn-primary" id="submit_by_id" onclick="login()">Login</a>
-                    </div>
-                </div>
-                <div id="regis" class="container tab-pane fade">
-                    <form>
-                        <div class="form-group">
-                            <label for="InputName">Your Address</label>
-                            <input type="text" class="form-control is-valid" id="InputName" placeholder="Full Name">
-                       </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <!--Create Account Form End-->
                     </form>
                 </div>
             </div>
-        </div>--}}
+        </div>
     </div>
-    </section>
-</head>
-<body class="font-sans antialiased" id="app">
-<div class="preloader">
-    <div class="top-bg-dark" id="top-bg"></div>
-    <div class="loader-middle" id="loader-middle"></div>
-    <div class="bottom-bg-dark" id="bottom-bg"></div>
-</div>
+</section>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0lpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script>
+    // First Tab & Tab Data class
+    document.querySelector('.signinform-inner .f-tab-item:first-child').classList.add('active');
+    document.querySelector('.cmn-form-group:first-child').classList.add('showform');
+
+    // Tab Code
+    let tabitems = document.querySelectorAll('.signinform-inner .f-tab-item');
+    tabitems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            let datatab = e.target.getAttribute('data-tab');
+
+            // Remove active class from all tab items
+            tabitems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Add active class to clicked tab item
+            e.target.classList.add('active');
+
+            let tabDataItems = document.querySelectorAll('.cmn-form-group');
+            tabDataItems.forEach(function(dItem) {
+                dItem.classList.remove('showform');
+            });
+            document.querySelector(`.${datatab}`).classList.add('showform');
+        });
+    });
+    document.querySelector('.forgot.f-tab-item').addEventListener('click', function(e) {
+        document.querySelector('.form-tabs').classList.add('formtabs-show');
+    });
+
+    //Cancel Code
+    document.querySelector('.cancel-link').addEventListener('click', function(e) {
+        document.querySelector('.forgotpass-tab').classList.remove('showform');
+        document.querySelector('.form-tabs').classList.remove('formtabs-show');
+        document.querySelector('div[data-tab="login-tab"]').classList.add('active');
+        document.querySelector('.login-tab').classList.add('showform');
+    });
+
+    document.querySelector('.login-link').addEventListener('click', function(e) {
+        document.querySelector('div[data-tab="login-tab"]').classList.add('active');
+    });
+    document.querySelector('.signup-link').addEventListener('click', function(e) {
+        document.querySelector('div[data-tab="register-tab"]').classList.add('active');
+    });
+</script>
 </body>
-<script src="{{asset('js/jquery-3.7.min.js')}}"></script>
-<script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
+
 </html>

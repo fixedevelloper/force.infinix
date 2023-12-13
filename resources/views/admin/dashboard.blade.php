@@ -118,8 +118,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="">
-                                <span class="d-block text-end">Missed Profits</span>
-                                <span class="d-block text-end">400USD</span>
+                           {{--     <span class="d-block text-end">Missed Profits</span>
+                                <span class="d-block text-end">400USD</span>--}}
                             </div>
                             <div class="d-grid gap-2 align-self-end mt-5">
                                 <a href="{{route('preview')}}" class="d-block btn btn-primary align-self-end">Preview
@@ -143,14 +143,14 @@
                 <div class="col-md-6">
                     <p><img class="number_img" src="{{asset('img/admin/3.svg')}}"><span style="">Number of teams</span>
                     </p>
-                    <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span
-                            style="">Number of Recycling</span></p>
+                   {{-- <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span
+                            style="">Number of Recycling</span></p>--}}
                     <p><img class="number_img" src="{{asset('img/admin/7.svg')}}"><span style="">Level to upgrade</span>
                     </p>
                 </div>
                 <div class="col-md-6 text-right">
                     <p>TOTAL EARNINGS</p>
-                    <p class="h2">1200 USDC</p>
+                    <p class="h2" ><span id="total_earning"></span> USDC</p>
                 </div>
             </div>
         </div>

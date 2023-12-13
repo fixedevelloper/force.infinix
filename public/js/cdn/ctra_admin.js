@@ -106,21 +106,26 @@ async function setnumberDashboard(id){
     var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
     var patners = await window.mxgfcontract.methods.getDirectPartnersCount(adresse).call();
     var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
-    var getIndirectReferrerOfReferrerReward = await window.mxgfcontract.methods.getIndirectReferrerOfReferrerReward(adresse).call();
-    var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
+   // var getIndirectReferrerOfReferrerReward = await window.mxgfcontract.methods.getIndirectReferrerOfReferrerReward(adresse).call();
+   // var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
     var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
     var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();
     var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
     var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
-    currentLevel(getUserCurrentLevel)
+  //  var getChildAddress= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
+    var childs=await makeActivate(adresse);
+    console.log(childs)
+    currentLevel(getUserCurrentLevel,childs)
     currentLevelGrandiant(getUserCurrentLevel)
-    console.log(getUserCurrentLevel);
+   // console.log(getChildAddress[0]);
     $('#dash_partners').text(patners)
     $('#S10_INCOME').text("S10_INCOME:"+convertDiv(S10_INCOME))
     $('#getDirectReferrerReward')
         .text("DirectReferrerReward:"+convertDiv(getDirectReferrerReward))
     $('#S4_MACHINEIncome').text("S4_MACHINEIncome: "+convertDiv(S4_MACHINEIncome))
     $('#randomRewards').text("RandomRewards: "+convertDiv(randomRewards))
+    var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))+Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
+    $('#total_earning').text(total)
 }
 async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
@@ -293,16 +298,31 @@ function convertDiv(amount) {
     }
     return amount;
 }
-function currentLevel(level) {
+function currentLevel(level,childs) {
 const levels=[1,2,3,4,5,6,7,8,9,10]
+    const value=childs
+    console.log(value)
     for (const i of levels) {
         if (i<=level){
+            const isactivate=childs.includes(level)
+
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
                 '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
-                '</div><div class="row container d-flex justify-content-between"> <span class="circle_level rounded-circle"></span>' +
-                '<span class="circle_level rounded-circle"></span><span class="circle_level_activate rounded-circle"></span></div>' +
+                '</div><div class="row container d-flex justify-content-between"> <span class="circle_level_activate rounded-circle" id="lv1_'+i+'"></span>' +
+                '<span class="circle_level_activate rounded-circle" id="lv2_'+i+'"></span><span class="circle_level_activate rounded-circle" id="lv3_'+i+'"></span></div>' +
                 '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style="">1112</span></p></div>' +
-                '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg">29</div></div></div>')
+                '<div class="col-md-6 mt-3"></div></div></div>')
+
+            if (isactivate){
+                const id="#lv1_"+i
+                $(id).addClass("circle_level")
+                $(id).removeClass("circle_level_activate")
+            }
+        if (childs.length>1){
+            const id="#lv2_"+i
+            $(id).addClass("circle_level")
+            $(id).removeClass("circle_level_activate")
+        }
         }else {
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
                 '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
@@ -329,4 +349,59 @@ function currentLevelGrandiant(level) {
 async function upGradeLevel(level) {
     console.log(level)
     await buy_machin(level);
+}
+async function makeActivate(adresse) {
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+   var lv1=0;
+    let lv2 = 0;var lv3=0;var lv4=0;var lv5=0;var lv6=0;var lv7=0;var lv8=0;var lv9=0;var lv10=0;
+    var childs= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
+    var arrays=[];
+    for (let i = 0; i < childs[0].length; i++) {
+        var currentLevelChild = await window.mxgfcontract.methods.getUserCurrentLevel(childs[0][i]).call();
+        console.log(currentLevelChild)
+        arrays.push(currentLevelChild)
+        switch (currentLevelChild) {
+            case 1:
+                lv1++;
+                break;
+            case 2:
+                lv2++;
+                break;
+            case 3:
+                lv3++;
+                break;
+            case 4:
+                lv4++;
+                break;
+            case 5:
+                lv5++;
+                break;
+            case 6:
+                lv6++;
+                break;
+            case 7:
+                lv7++;
+                break;
+            case 8:
+                lv8++;
+                break;
+            case 9:
+                lv9++;
+                break;
+            case 10:
+                lv10++;
+                break;
+        }
+
+    }
+    return removeDuplicates(arrays)
+}
+
+function removeDuplicates(arr) {
+    let unique = arr.reduce(function (acc, curr) {
+        if (!acc.includes(curr))
+            acc.push(curr);
+        return acc;
+    }, []);
+    return unique;
 }
