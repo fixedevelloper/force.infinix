@@ -93,7 +93,19 @@ async function setnumberDashboard(id){
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
     var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
     var patners = await window.mxgfcontract.methods.getDirectPartnersCount(adresse).call();
+    var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
+    var getIndirectReferrerOfReferrerReward = await window.mxgfcontract.methods.getIndirectReferrerOfReferrerReward(adresse).call();
+    var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
+    var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
+   // var S4_INCOME = await window.mxgfcontract.methods.S4_INCOME(adresse).call();
+    var getDirectDownlineInfos = await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
+    var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
+    console.log(getDirectReferrerReward);
     $('#dash_partners').text(patners)
+    $('#S10_INCOME').text("S10_INCOME:"+S10_INCOME)
+    $('#getIndirectReferrerOfReferrerReward').text("IndirectReferrerOfReferrerReward:"+getIndirectReferrerOfReferrerReward)
+    //$('#getUserDirectReferrer').text("S4_INCOME: "+S4_INCOME)
+    $('#getDirectReferrerReward').text("DirectReferrerReward: "+getDirectReferrerReward)
 }
 async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
