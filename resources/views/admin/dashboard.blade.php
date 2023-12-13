@@ -64,7 +64,7 @@
                 <div class="card-body">
                     <h6 class="card-title fw-bolder mt-2">Patners</h6>
                     <h6 class="card-title fw-bolder mt-2"><span id="dash_partners"></span></h6>
-                    <span class="block"><span class="mdi mdi-arrow-top-right"></span>235</span>
+                    <span class="block"><span class="mdi mdi-arrow-top-right"></span></span>
                 </div>
             </div>
         </div>
@@ -89,10 +89,10 @@
                 <div class="card-body">
                     <h6 class="card-title fw-bolder mt-2">Profits</h6>
                     <h6 class="card-title fw-bolder mt-2">
-                        <span id="getDirectReferrerReward"></span>
-                        <span id="getIndirectReferrerOfReferrerReward"></span>
-                        <span id="S10_INCOME"></span>
-                        <span id="getUserDirectReferrer"></span></h6>
+                        <p id="randomRewards"></p>
+                        <p id="getDirectReferrerReward"></p>
+                        <p id="S10_INCOME"></p>
+                        <p id="S4_MACHINEIncome"></p></h6>
                 </div>
             </div>
         </div>
