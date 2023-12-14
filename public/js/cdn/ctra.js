@@ -96,9 +96,15 @@ async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
     return accounts[0];
 }
-
+async function loginAuto(){
+    const account = await getCurrentAccount();
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+    var id = await window.mxgfcontract.methods.userIDs(account).call();
+    window.location.href = configs.routes.dashboard+"?id="+id;
+}
 async function loginById(){
-
+    const id=document.getElementById("login_id").value;
+    window.location.href = configs.routes.dashboard+"?id="+id;
 }
 async function coinrate() {
     const account = await getCurrentAccount();
@@ -224,37 +230,13 @@ async function initRegister() {
         }
         else { alert('Registration failed' + JSON.stringify((result)));
             $('#spinner_register').hide();}
-     /* const ref = await window.mxgfcontract.methods.coreAddressByID(document.getElementById("referralid").value).call({ from: accountss });
 
-        if (ref == '') {
-            alert('Refrrel Id does not exists');
-        }
-        else {
-
-            const gasEstimated = await window.mxgfcontract.methods.subCore(ref).estimateGas({ from: accountss });
-              const result = await window.mxgfcontract.methods.subCore(ref).send({
-                from: accountss,
-                //gasLimit: gas.gasLimit,
-                ////gas: 400000,
-                //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
-                //maxFeePerGas: gas.maxFeePerGas,
-            });
-            console.log('Buy result : -' + result);
-            if (result.transactionHash) {
-                alert('Registration Successfully ');
-               // var url = "/Home/Success?userIDdd=" + accountss + "&referrerId=" + ref + "&txthash=" + result.transactionHash;
-              //  window.location.href = url;
-            }
-            else { alert('Registration failed' + result); }
-
-        }*/
     }
 
 
 }
 async function login() {
     const id=document.getElementById("login_id").value;
-    const referenceAdresse = await getIDUser(id);
     window.location.href = configs.routes.dashboard+"?id="+id;
 }
 function register() {
