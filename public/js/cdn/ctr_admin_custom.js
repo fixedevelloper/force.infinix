@@ -310,14 +310,14 @@ function currentLevel(level,childs) {
                 '<div class="col-md-6 mt-3"></div></div></div>')
 
             if (isactivate===true){
-                const id="#lv1_"+i
+                const id="#lv2_"+i
                 $(id).addClass("circle_level")
                 $(id).removeClass("circle_level_activate")
             }
-            if (count>1){
-                const id2="#lv2_"+i
-                $(id2).addClass("circle_level")
-                $(id2).removeClass("circle_level_activate")
+            if (childs.length>0){
+                const id1="#lv1_"+i
+                $(id1).addClass("circle_level")
+                $(id1).removeClass("circle_level_activate")
             }
         }else {
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
