@@ -316,13 +316,14 @@ function convertDiv(amount) {
 }
 function currentLevel(level,childs) {
     const levels=[1,2,3,4,5,6,7,8,9,10]
+    const levels_price=[10,20,30,40,100,200,300,500,1250,2500]
     for (const i of levels) {
         if (i<=level){
             const isactivate=childs.includes(i.toString())
             childs = childs.filter(element => element !== "0");
             let count = childs.filter(x => x === level.toString()).length
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
-                '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
                 '</div><div class="row container d-flex justify-content-between">' +
                 ' <span class="circle_level_activate rounded-circle" id="lv1_'+i+'"></span>' +
                 '<span class="circle_level_activate rounded-circle" id="lv2_'+i+'"></span><span class="circle_level_activate rounded-circle" id="lv3_'+i+'"></span></div>' +
@@ -354,9 +355,9 @@ function currentLevelGrandiant(level) {
     const levels=[1,2,3,4,5,6,7,8,9,10]
     for (const i of levels) {
         if (i<=level){
-            $('#level_gradian').append('<a class="btn btn-sm bg-success col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1"></a>')
+            $('#level_gradian').append('<div class="x_m bg-success col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
         }else {
-            $('#level_gradian').append('<a class="btn btn-sm bg-info col-xs-2 col-md-2 col-sm-4 col-xl-2 m-1"></a>')
+            $('#level_gradian').append('<div class="x_m bg-info col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
         }
 
     }
@@ -396,5 +397,39 @@ function removeDuplicates(arr) {
     }, []);
     return unique;
 }
+async function calculateTotalTeam( userAddress, visited = new Set()) {
+    window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
+    if (visited.has(userAddress)) {
+        return 0;
+    }
 
+    visited.add(userAddress);
+    const directCount = await getDirectPartnersCount(contract, userAddress);
+    let totalCount = directCount;
+
+    // Supposons que vous ayez une fonction pour obtenir les adresses des partenaires directs
+    const partnersAddresses = await getDirectPartnersAddresses(contract, userAddress);
+    for (const partnerAddress of partnersAddresses) {
+        totalCount += await calculateTotalTeam(contract, partnerAddress, visited);
+    }
+
+    return totalCount;
+}
+async function calculateTotalTeamImpl(contract, userAddress, visited = new Set()) {
+    if (visited.has(userAddress)) {
+        return 0;
+    }
+
+    visited.add(userAddress);
+    const directCount = await getDirectPartnersCount(contract, userAddress);
+    let totalCount = directCount;
+
+    // Supposons que vous ayez une fonction pour obtenir les adresses des partenaires directs
+    const partnersAddresses = await getDirectPartnersAddresses(contract, userAddress);
+    for (const partnerAddress of partnersAddresses) {
+        totalCount += await calculateTotalTeam(contract, partnerAddress, visited);
+    }
+
+    return totalCount;
+}
 
