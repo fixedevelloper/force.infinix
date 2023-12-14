@@ -179,5 +179,5 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('js/cdn/ctra_admin.js') }}"></script>
+    <script src="{{ asset('js/cdn/ctr_admin_custom.js') }}"></script>
 @endpush
