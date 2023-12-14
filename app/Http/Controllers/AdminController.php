@@ -42,7 +42,10 @@ class AdminController extends Controller
     public function statitics(){
         return view('admin.statistics', []);
     }
-    public function preview(){
-        return view('admin.preview', []);
+    public function preview(Request $request){
+        $id=$request->get('id');
+        return view('admin.preview', [
+            'id'=>$id,
+        ]);
     }
 }

@@ -433,3 +433,17 @@ async function calculateTotalTeamImpl(contract, userAddress, visited = new Set()
     return totalCount;
 }
 
+const click_item = document.getElementById("click_item");
+
+click_item.onclick = function() {
+    document.execCommand("copy");
+}
+
+click_item.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", click_item.textContent);
+        alert("Copied the text: " +event.clipboardData.getData("text"))
+        console.log(event.clipboardData.getData("text"))
+    }
+});

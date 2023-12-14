@@ -36,8 +36,9 @@
                                 <div class="d-flex justify-content-between align-items-baseline">
                                     <h6 class="card-title mb-0">Personal link</h6>
                                 </div>
-                                <div class="">
-                                    <span><a href="{{$link}}">{{$link}}</a></span>
+                                <div class="" style="cursor: pointer">
+                                   {{-- <span><a href="{{$link}}" id="click_item">{{$link}}</a></span>--}}
+                                    <span id="click_item">{{$link}}</span><img class="cas_img" src="{{asset('img/admin/9.svg')}}"/>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +122,7 @@
                                 <span class="d-block text-end">400USD</span>--}}
                             </div>
                             <div class="d-grid gap-2 align-self-end mt-5">
-                                <a href="{{route('preview')}}" class="d-block btn btn-primary align-self-end">Preview
+                                <a href="{{route('preview',['id'=>$id])}}" class="d-block btn btn-primary align-self-end">Preview
                                     <img style="height: 40px" src="{{asset('img/admin/11.svg')}}"></a>
                             </div>
 
@@ -134,7 +135,7 @@
         </div>
     </div>
 
-    <div class="card" style="background-image: url({{asset('img/admin/5.svg')}})">
+{{--    <div class="card" style="background-image: url({{asset('img/admin/5.svg')}})">
         <div class="card-body">
             <div class="row d-flex justify-content-center" id="level_users">
             </div>
@@ -142,8 +143,8 @@
                 <div class="col-md-6">
                     <p><img class="number_img" src="{{asset('img/admin/3.svg')}}"><span style="">Number of teams</span>
                     </p>
-                   {{-- <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span
-                            style="">Number of Recycling</span></p>--}}
+                   --}}{{-- <p><img class="number_img" src="{{asset('img/admin/8.svg')}}"><span
+                            style="">Number of Recycling</span></p>--}}{{--
                     <p><img class="number_img" src="{{asset('img/admin/7.svg')}}"><span style="">Level to upgrade</span>
                     </p>
                 </div>
@@ -154,7 +155,7 @@
             </div>
         </div>
 
-    </div>
+    </div>--}}
     <div class="row">
         <div class="col-md-8">
             <h3>Platform recent activity</h3>
