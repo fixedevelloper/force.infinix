@@ -94,7 +94,10 @@ async function getIDUser(id){
 async function setnumberDashboard(id){
     window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
     var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id)).call();
+
     $('#address_user_smart').text(adresse)
+    var newJoined = await window.mxgfcontract.methods.getLastRegistration().call();
+    $('#newJoined').text("ID: "+newJoined.userID)
     var patners = await window.mxgfcontract.methods.getDirectPartnersCount(adresse).call();
     $('#dash_partners').text(patners)
     var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
@@ -114,9 +117,15 @@ async function setnumberDashboard(id){
     $('#total_earning').text(roundDecimal(total))
     $('#order_total').text(roundDecimal(total)+' USD')
     var getChildAddress= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
-    console.log(getChildAddress[1])
+    console.log(getChildAddress)
     currentLevel(getUserCurrentLevel,getChildAddress[1])
     currentLevelGrandiant(getUserCurrentLevel)
+    let part=0;
+    for (let i = 0; i < getChildAddress[0].length; i++) {
+       let part_ = await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call();
+        part+=Number.parseInt(part_)
+    }
+    $('#direct_partners').text(part)
 }
 function roundDecimal(nombre, precision){
     var precision = precision || 2;
@@ -358,6 +367,14 @@ async function makeActivate(adresse) {
 
     }
     return arrays
+}
+async function calculDirectPaners(childs) {
+    window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(json_contractABI.responseText), stakingaddress);
+    let part=0;
+    for (let i = 0; i < childs.length; i++) {
+        part += await window.mxgfcontract.methods.getDirectPartnersCount(childs[i]).call();
+    }
+    $('#direct_partners').text(part)
 }
 
 function removeDuplicates(arr) {
