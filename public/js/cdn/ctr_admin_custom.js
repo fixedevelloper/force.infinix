@@ -123,10 +123,14 @@ async function setnumberDashboard(id){
     let part=Number.parseInt(patners);
     for (let i = 0; i < getChildAddress[0].length; i++) {
 
-      // let part_ = await window.mxgfcontract.methods.getDirectDownlineInfos(getChildAddress[0][i]).call();
+       let part_ = await window.mxgfcontract.methods.getDirectDownlineInfos(getChildAddress[0][i]).call();
        let direct= await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call()
         part+=Number.parseInt(direct)
         console.log(direct)
+        for (let j = 0; j <part_[0].length; j++) {
+            let direct_= await window.mxgfcontract.methods.getDirectPartnersCount(part_[0][i]).call()
+            part+=Number.parseInt(direct_)
+        }
     }
     $('#direct_partners').text(part)
 }
