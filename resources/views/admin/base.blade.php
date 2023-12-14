@@ -85,6 +85,16 @@
             $('.preloader').addClass('d-none');
         }, 1750);
     };
+    $('#menu-btn').click(function () {
+        if ($("#menu_sider").hasClass('d-none')){
+            $('#menu_sider').removeClass('d-none')
+            $('#menu_header').removeClass('d-none')
+
+        }else {
+            $('#menu_sider').addClass('d-none')
+            $('#menu_header').addClass('d-none')
+        }
+    })
 </script>
 @stack('scripts')
 </body>

@@ -1,7 +1,10 @@
 <div class="mt-3 mb-3 border-bottom p-2">
     <img src="{{asset('img/logo.svg')}}">
 </div>
-<ul class="">
+<div class="sider_bar">
+<input class="menu-btn" type="checkbox" id="menu-btn" />
+<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+<ul class="menu d-none d-sm-block" id="menu_sider">
     <li class="nav-item">
         <a href="{{route('admin.dashboard')}}" class="nav-link">
             <i class="link-icon" data-feather="box"></i>
@@ -29,3 +32,4 @@
 
 </ul>
 
+</div>
