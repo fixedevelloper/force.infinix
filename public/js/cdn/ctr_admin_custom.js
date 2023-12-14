@@ -121,18 +121,22 @@ async function setnumberDashboard(id){
     currentLevel(getUserCurrentLevel,getChildAddress[1])
     currentLevelGrandiant(getUserCurrentLevel)
     let part=Number.parseInt(patners);
-    for (let i = 0; i < getChildAddress[0].length; i++) {
-
+    for (let i = 0; i < filterAdresse(getChildAddress[0]).length; i++) {
        let part_ = await window.mxgfcontract.methods.getDirectDownlineInfos(getChildAddress[0][i]).call();
        let direct= await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call()
         part+=Number.parseInt(direct)
-        console.log(direct)
-        for (let j = 0; j <part_[0].length; j++) {
-            let direct_= await window.mxgfcontract.methods.getDirectPartnersCount(part_[0][i]).call()
+        console.log("direct******"+direct)
+        for (let j = 0; j <filterAdresse(part_[0]).length; j++) {
+            let direct_= await window.mxgfcontract.methods.getDirectPartnersCount(part_[0][j]).call()
             part+=Number.parseInt(direct_)
+            console.log("direct____"+direct_)
         }
     }
     $('#direct_partners').text(part)
+}
+function filterAdresse(tabs) {
+    childs = tabs.filter(element => element !== "0x0000000000000000000000000000000000000000");
+    return childs;
 }
 function roundDecimal(nombre, precision){
     var precision = precision || 2;
