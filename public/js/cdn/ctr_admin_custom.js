@@ -115,7 +115,7 @@ async function setnumberDashboard(id){
     $('#randomRewards').text("RandomRewards: "+roundDecimal(convertDiv(randomRewards)))
     var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))+Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
     $('#total_earning').text(roundDecimal(total))
-    $('#order_total').text(roundDecimal(total)+' USD')
+    $('#order_total').text(roundDecimal(total)+' USDC')
     var getChildAddress= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
     console.log(getChildAddress)
     currentLevel(getUserCurrentLevel,getChildAddress[1])

@@ -106,7 +106,7 @@
             <div class="card text-white card_gradiant">
                 <div class="card-body">
                     <div class="row">
-                        <span class="col-md-6 text-start h1">X3</span><span class="col-md-6 h1 text-end" id="order_total">10USD</span>
+                        <span class="col-md-6 text-start h1">X3</span><span class="col-md-6 h1 text-end" id="order_total">USDC</span>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
