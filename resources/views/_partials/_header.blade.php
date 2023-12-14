@@ -19,6 +19,7 @@
                             <li><a class="{{request()->routeIs('home')?'active':''}}" href="{{route('home')}}">HOME</a>
                             </li>
                             <li><a class="{{request()->routeIs('documentation')?'active':''}}" href="{{route('documentation')}}">Documentation</a></li>
+                            <li><a  href="{{route('login')}}">Login</a></li>
                             <li><a class="{{request()->routeIs('register')?'active':''}}" href="{{route('register')}}">Register</a></li>
                             <li> <w3m-core-button></w3m-core-button></li>
                         </ul>
@@ -40,6 +41,7 @@
                 <li><a href="{{route('home')}}">HOME</a>
                 </li>
                 <li><a  href="{{route('documentation')}}">Documentation</a></li>
+                <li><a  href="{{route('login')}}">Login</a></li>
                 <li><a  href="{{route('register')}}">Register</a></li>
             </ul>
           <w3m-core-button></w3m-core-button>

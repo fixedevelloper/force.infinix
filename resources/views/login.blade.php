@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet"  href="{{asset('libs/bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
     <title>Infinix login</title>
@@ -17,7 +17,10 @@
 <section class="signinform-scn">
     <div class="signinform-group">
         <div class="page-width">
-            <h3 class="text-center">LOGIN</h3>
+            <div class="d-flex justify-content-center">
+                <h3 class="text-center">LOGIN</h3>
+            </div>
+
             <div class="signinform-inner">
                 <a href="#" class="logo mt-3 mb-3">
                     <img src="{{asset('img/logo.svg')}}" alt="Coderwrap">
@@ -37,7 +40,6 @@
 
                 </div>
                 <div class="cw-form-info">
-                    <form>
                         <!--Login Form Start-->
                         <div class="cmn-form-group login-tab">
                             <h2>Automatic login</h2>
@@ -54,7 +56,6 @@
                             <button class="cmn-btn" type="button" onclick="loginById()">Preview</button>
                         </div>
                         <!--Create Account Form End-->
-                    </form>
                 </div>
             </div>
         </div>
