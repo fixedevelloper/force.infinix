@@ -120,10 +120,13 @@ async function setnumberDashboard(id){
     console.log(getChildAddress)
     currentLevel(getUserCurrentLevel,getChildAddress[1])
     currentLevelGrandiant(getUserCurrentLevel)
-    let part=0;
+    let part=Number.parseInt(patners);
     for (let i = 0; i < getChildAddress[0].length; i++) {
-       let part_ = await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call();
-        part+=Number.parseInt(part_)
+
+      // let part_ = await window.mxgfcontract.methods.getDirectDownlineInfos(getChildAddress[0][i]).call();
+       let direct= await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call()
+        part+=Number.parseInt(direct)
+        console.log(direct)
     }
     $('#direct_partners').text(part)
 }
