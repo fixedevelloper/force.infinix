@@ -32,7 +32,7 @@ Route::get('/login', [FrontController::class, 'login'])
 Route::get('/login_', [FrontController::class, 'loginwithaddress'])
     ->name('loginwithaddress');
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])
+    Route::match(["POST","GET"],'/dashboard', [AdminController::class, 'dashboard'])
         ->name('dashboard');
     Route::get('/partners', [AdminController::class, 'partners'])
         ->name('partners');

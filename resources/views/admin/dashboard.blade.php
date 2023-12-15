@@ -16,7 +16,7 @@
                                     <img class="rounded-circle card_img_dark" src="{{asset("img/admin/1.svg")}}" alt="">
                                 </div>
                                 <div class="col-md-8 text-start">
-                                    <h6 class="card-title fw-bolder mt-2">Username</h6>
+                                    <h6 class="card-title fw-bolder mt-2">@if($user) {{$user->name}} @else Username  <a  data-toggle="modal" data-target="#exampleModal"><img class="cas_img" src="{{asset("img/pen.png")}}" alt=""></a> @endif</h6>
                                     <h6 class="card-title fw-bolder mt-2">ID: <span id="id_user_smart">{{$id}}</span>
                                     </h6>
                                     <i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
@@ -177,6 +177,33 @@
         </div>
         <div class="col-md-4">
 
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Username</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="id_parent"  placeholder="Paul.K" id="parent_id">
+                            <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
+                            <input type="text" class="form-control" name="username" id="exampleFormControlInput1" placeholder="Paul.K">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
 @endsection
