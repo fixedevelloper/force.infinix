@@ -20,7 +20,7 @@ class AdminController extends Controller
             if (is_null($user)){
                 $user=new User();
                 $user->id_contract=$request->get('id');
-                $user->id_parent=$request->get('id_parent');
+                $user->address_parent=$request->get('id_parent');
             }
             $user->name=$request->get('username');
             logger($user);
