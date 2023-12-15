@@ -103,7 +103,7 @@ async function setnumberDashboard(id){
     var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
     // var getIndirectReferrerOfReferrerReward = await window.mxgfcontract.methods.getIndirectReferrerOfReferrerReward(adresse).call();
      var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
-   $('#parent_id').val(Number.parseInt(getUserDirectReferrer))
+    $('#parent_id').val(Number.parseInt(getUserDirectReferrer))
     var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
     $('#S10_INCOME').text("S10_INCOME:"+roundDecimal(convertDiv(S10_INCOME)))
     var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();

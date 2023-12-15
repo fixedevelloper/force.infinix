@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('id_contract')->nullable();
-            $table->integer('id_parent')->nullable();
+            $table->string('address_parent')->nullable();
             $table->integer('direct_patner_count')->nullable();
             $table->integer('total_team')->nullable();
             $table->string('email')->nullable();

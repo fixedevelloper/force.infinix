@@ -192,7 +192,7 @@
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="id_parent"  placeholder="Paul.K" id="parent_id">
+                            <input type="text" class="form-control" name="id_parent" hidden  placeholder="Paul.K" id="parent_id">
                             <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
                             <input type="text" class="form-control" name="username" id="exampleFormControlInput1" placeholder="Paul.K">
                         </div>
