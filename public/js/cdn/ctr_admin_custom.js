@@ -132,9 +132,11 @@ async function setnumberDashboard(id){
             console.log("direct____"+direct_)
         }
     }*/
+    $('.loader').show()
    let part= await calculateTotalTeam(adresse)
     console.log(part)
     $('#direct_partners').text(part)
+    $('.loader').hide()
 }
 function filterAdresse(tabs) {
     childs = tabs.filter(element => element !== "0x0000000000000000000000000000000000000000");

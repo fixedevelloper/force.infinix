@@ -77,6 +77,7 @@
                 background-position-x: right;">
                 <div class="card-body">
                     <h6 class="card-title fw-bolder mt-2">Teams</h6>
+                    <div class="loader"></div>
                     <h6 class="card-title fw-bolder mt-2" id="direct_partners"></h6>
                     <span class="block"><span class="mdi mdi-arrow-top-right"></span></span>
 
