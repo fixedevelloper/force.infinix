@@ -40,10 +40,10 @@ $('#spinner_register').hide();
 
 async function buy_machin(){
     $('#spinner_register').show();
-    const account =  $('#buy_address_user').val();
+    const account = await getCurrentAccount();
     const level =  $('#level_id').val();
     window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
-    var level_ = await window.mxgfcontract.methods.Buy_Machine_Qore_For(account,Number.parseInt(level)).send({
+    var level_ = await window.mxgfcontract.methods.Buy_Machine_Qore_For($('#buy_address_user').val(),Number.parseInt(level)).send({
         from: account,
     });
     console.log(level_)
@@ -65,7 +65,7 @@ async function getCurrentAccount() {
 async function register() {
     console.log("ready main buystt code!");
     $('#spinner_register').show();
-
+    const account = await getCurrentAccount();
     window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
 
     var refid = document.getElementById("parent_id").value;
@@ -84,7 +84,7 @@ async function register() {
         const p_id=await window.mxgfcontract.methods.idToAddress(Number.parseInt(refid)).call();
         console.log(p_id)
         const result = await window.mxgfcontract.methods.register(addres_user,p_id).send({
-            from: addres_user,
+            from: account,
         });
         console.log('Buy result : -' + result);
         console.log(JSON.stringify((result)));

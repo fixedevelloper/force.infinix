@@ -29,8 +29,10 @@ $(document).ready(async function () {
                 var id_user=$('#id_user_smart').text();
 
                 await setnumberDashboard(Number.parseInt(id_user))
+                $('#spinner_dashboard').hide()
             }
         } catch (error) {
+            $('#spinner_dashboard').hide()
             alert('Error: Out of Gas: please reload this page')
             console.log(error)
         }

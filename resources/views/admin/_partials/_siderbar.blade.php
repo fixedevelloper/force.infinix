@@ -14,13 +14,13 @@
     <li class="nav-item">
         <a href="{{route('admin.create_user')}}" class="nav-link">
             <img class="link-icon" data-feather="user" height="14" src="{{asset('img/pen.png')}}">
-            <span class="link-title">Create_user</span>
+            <span class="link-title">Create user</span>
         </a>
     </li>
     <li class="nav-item">
         <a href="{{route('admin.buy_machin')}}" class="nav-link">
             <img class="link-icon" data-feather="user" height="14" src="{{asset('img/admin/10.svg')}}">
-            <span class="link-title">Buy Machine</span>
+            <span class="link-title">Buy Machine user</span>
         </a>
     </li>
     <li class="nav-item">
