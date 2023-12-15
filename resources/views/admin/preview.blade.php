@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 @endpush
 @section('content')
-    <span id="id_user_smart">{{$id}}</span>
+    <span id="id_user_smart" hidden>{{$id}}</span>
     <div class="card" style="background-image: url({{asset('img/admin/5.svg')}})">
         <div class="card-body">
             <div class="row d-flex justify-content-center" id="level_users">

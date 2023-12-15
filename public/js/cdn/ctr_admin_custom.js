@@ -342,7 +342,7 @@ function currentLevel(level,childs) {
             }
         }else {
             $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
-                '<img class="cas_img" src="../img/admin/1.svg"><span>10</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
                 '</div><div class=" container d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
                 '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
                 '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
@@ -355,9 +355,9 @@ function currentLevelGrandiant(level) {
     const levels=[1,2,3,4,5,6,7,8,9,10]
     for (const i of levels) {
         if (i<=level){
-            $('#level_gradian').append('<div class="x_m bg-success col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
+            $('#level_gradian').append('<div class="x_m bg-blue col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
         }else {
-            $('#level_gradian').append('<div class="x_m bg-info col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
+            $('#level_gradian').append('<div class="x_m bg-gray600 col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
         }
 
     }

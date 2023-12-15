@@ -161,7 +161,7 @@ async function initApp_token() {
 
     const gasEstimated = await window.mxgfcontract.methods.approve(stakingaddress, BigInt(balance_MAIN)).estimateGas({ from: account });
    //const gas = await calcGas(gasEstimated);
- console.log(gasEstimated)
+    console.log(gasEstimated)
     var balance = await window.mxgfcontract.methods.approve(stakingaddress, BigInt(balance_MAIN)).send({
         from: account,
         gasLimit: gasEstimated,
@@ -172,7 +172,6 @@ async function initApp_token() {
         //maxFeePerGas: gas.maxFeePerGas,
     });
 
-    //var mxgfrate = await window.mxgfcontract.methods.TokenPrices().call();
     if (balance.transactionHash) {
         if (balance.transactionHash) {
             alert('Wallet approve successfully')

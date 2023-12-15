@@ -110,7 +110,7 @@
                         <span class="col-md-6 text-start h1">X3</span><span class="col-md-6 h1 text-end" id="order_total">USDC</span>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="row" id="level_gradian">
 
                             </div>

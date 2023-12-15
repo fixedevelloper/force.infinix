@@ -1,3 +1,9 @@
+.bg-blue{
+    background-color: #0aa4f9;
+}
+.bg-gray600{
+    background-color: #2d3748;
+}
 .pub img:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
@@ -40,10 +46,11 @@
     padding: 5px;
     background-color: #0069d9;
   /*  box-shadow: 0 0 5px 5px red;*/
+    padding-bottom: 3px;
 }
 .x_m{
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border: solid 1px;
     margin: 5px;
     border-radius: 10px;
