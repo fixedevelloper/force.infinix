@@ -31,7 +31,7 @@ $(document).ready(async function () {
                 await setnumberDashboard(Number.parseInt(id_user))
             }
         } catch (error) {
-            alert('Error loading')
+            alert('Error: Out of Gas: please reload this page')
             console.log(error)
         }
     }
