@@ -44,8 +44,8 @@
                 <li><a href="{{route('home')}}">HOME</a>
                 </li>
                 <li><a  href="{{route('documentation')}}">Documentation</a></li>
-                <li><a  href="{{route('login')}}">Login</a></li>
-                <li><a  href="{{route('register')}}">Register</a></li>
+                <li><a  href="#">Login</a></li>
+                <li><a  href="#">Register</a></li>
             </ul>
           <w3m-core-button></w3m-core-button>
         </div>
