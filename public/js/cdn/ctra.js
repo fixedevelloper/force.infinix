@@ -159,13 +159,13 @@ async function initApp_token() {
     console.log(account)
     window.mxgfcontract = await new window.web3.eth.Contract(JSON.parse(tokenmatrixAbi.responseText), tokenaddress);
 
-   // const gasEstimated = await window.mxgfcontract.methods.approve(stakingaddress, BigInt(balance_MAIN)).estimateGas({ from: account });
-   // const gas = await calcGas(gasEstimated);
-
+    const gasEstimated = await window.mxgfcontract.methods.approve(stakingaddress, BigInt(balance_MAIN)).estimateGas({ from: account });
+   const gas = await calcGas(gasEstimated);
+ console.log(gas)
     var balance = await window.mxgfcontract.methods.approve(stakingaddress, BigInt(balance_MAIN)).send({
         from: account,
-        gasLimit: 52742,
-        gas: 52742,
+        gasLimit: gas.gasLimit,
+        gas: gas.gasLimit,
         //gasLimit: gas.gasLimit,
         //gas: 400000,
         //maxPriorityFeePerGas: gas.maxPriorityFeePerGas,
