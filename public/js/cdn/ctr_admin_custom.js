@@ -120,7 +120,7 @@ async function setnumberDashboard(id){
     console.log(getChildAddress)
     currentLevel(getUserCurrentLevel,getChildAddress[1])
     currentLevelGrandiant(getUserCurrentLevel)
-    let part=Number.parseInt(patners);
+   /* let part=Number.parseInt(patners);
     for (let i = 0; i < filterAdresse(getChildAddress[0]).length; i++) {
        let part_ = await window.mxgfcontract.methods.getDirectDownlineInfos(getChildAddress[0][i]).call();
        let direct= await window.mxgfcontract.methods.getDirectPartnersCount(getChildAddress[0][i]).call()
@@ -131,7 +131,9 @@ async function setnumberDashboard(id){
             part+=Number.parseInt(direct_)
             console.log("direct____"+direct_)
         }
-    }
+    }*/
+   let part= await calculateTotalTeam(adresse)
+    console.log(part)
     $('#direct_partners').text(part)
 }
 function filterAdresse(tabs) {
@@ -404,13 +406,13 @@ async function calculateTotalTeam( userAddress, visited = new Set()) {
     }
 
     visited.add(userAddress);
-    const directCount = await getDirectPartnersCount(contract, userAddress);
-    let totalCount = directCount;
+    let totalCount =Number.parseInt( await window.mxgfcontract.methods.getDirectPartnersCount(userAddress).call());
 
     // Supposons que vous ayez une fonction pour obtenir les adresses des partenaires directs
-    const partnersAddresses = await getDirectPartnersAddresses(contract, userAddress);
-    for (const partnerAddress of partnersAddresses) {
-        totalCount += await calculateTotalTeam(contract, partnerAddress, visited);
+   // const partnersAddresses = await getDirectPartnersAddresses(contract, userAddress);
+    const partnersAddresses =  await window.mxgfcontract.methods.getDirectDownlineInfos(userAddress).call();
+    for (const partnerAddress of filterAdresse(partnersAddresses[0])) {
+        totalCount += Number.parseInt(await calculateTotalTeam( partnerAddress, visited)) ;
     }
 
     return totalCount;
