@@ -40,6 +40,14 @@ class AdminController extends Controller
         //logger($source);
         return view('admin.dashboardcss', []);
     }
+    public function create_user(){
+        return view('admin.create_user', []);
+
+    }
+    public function buy_machin(){
+        return view('admin.buy_machin', []);
+
+    }
     public function login(){
         return view('login', []);
 

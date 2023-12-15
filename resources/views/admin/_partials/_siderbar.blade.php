@@ -12,6 +12,24 @@
         </a>
     </li>
     <li class="nav-item">
+        <a href="{{route('admin.create_user')}}" class="nav-link">
+            <img class="link-icon" data-feather="user" height="14" src="{{asset('img/pen.png')}}">
+            <span class="link-title">Create_user</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{route('admin.buy_machin')}}" class="nav-link">
+            <img class="link-icon" data-feather="user" height="14" src="{{asset('img/admin/10.svg')}}">
+            <span class="link-title">Buy Machine</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{route('admin.partners')}}" class="nav-link">
+            <img class="link-icon" data-feather="user" height="14" src="{{asset('img/admin/9.svg')}}">
+            <span class="link-title">Partners</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a href="{{route('admin.partners')}}" class="nav-link">
             <img class="link-icon" data-feather="user" height="14" src="{{asset('img/admin/9.svg')}}">
             <span class="link-title">Partners</span>

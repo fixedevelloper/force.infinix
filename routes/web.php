@@ -40,6 +40,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('links');
     Route::get('/statitics', [AdminController::class, 'statitics'])
         ->name('statitics');
+    Route::get('/create_user', [AdminController::class, 'create_user'])
+        ->name('create_user');
+    Route::get('/buy_machin', [AdminController::class, 'buy_machin'])
+        ->name('buy_machin');
 });
 Route::get('/preview', [AdminController::class, 'preview'])
     ->name('preview');
