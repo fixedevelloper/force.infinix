@@ -107,15 +107,15 @@ async function setnumberDashboard(id){
      var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
     $('#parent_id').val(Number.parseInt(getUserDirectReferrer))
     var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
-    $('#S10_INCOME').text("S10_INCOME:"+roundDecimal(convertDiv(S10_INCOME)))
+    $('#S10_INCOME').text(roundDecimal(convertDiv(S10_INCOME)))
     var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();
     var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
     var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
 
     $('#getDirectReferrerReward')
-        .text("DirectReferrerReward:"+roundDecimal(convertDiv(getDirectReferrerReward)))
-    $('#S4_MACHINEIncome').text("S4_MACHINEIncome: "+roundDecimal(convertDiv(S4_MACHINEIncome)))
-    $('#randomRewards').text("RandomRewards: "+roundDecimal(convertDiv(randomRewards)))
+        .text(roundDecimal(convertDiv(getDirectReferrerReward)))
+    $('#S4_MACHINEIncome').text(roundDecimal(convertDiv(S4_MACHINEIncome)))
+    $('#randomRewards').text(roundDecimal(convertDiv(randomRewards)))
     var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))+Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
     $('#total_earning').text(roundDecimal(total))
     $('#order_total').text(roundDecimal(total)+' USDC')
@@ -329,8 +329,10 @@ function currentLevel(level,childs) {
             const isactivate=childs.includes(i.toString())
             childs = childs.filter(element => element !== "0");
             let count = childs.filter(x => x === level.toString()).length
-            $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
-                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
+            $('#level_users').append('<div class="cas"><div class="row">' +
+                '<div class="col-sm-6 col-md-6"><p>' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></p></div>' +
+                '<div class="col-sm-6 col-md-6"><span>LVL'+i+'</span></div> ' +
                 '</div><div class="row container d-flex justify-content-between">' +
                 ' <span class="circle_level_activate rounded-circle" id="lv1_'+i+'"></span>' +
                 '<span class="circle_level_activate rounded-circle" id="lv2_'+i+'"></span><span class="circle_level_activate rounded-circle" id="lv3_'+i+'"></span></div>' +
@@ -348,11 +350,13 @@ function currentLevel(level,childs) {
                 $(id1).removeClass("circle_level_activate")
             }
         }else {
-            $('#level_users').append('<div class="cas"><div class="row"><div class="col-md-6"><p>' +
-                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></p></div><div class="col-md-6"><span>LVL'+i+'</span></div> ' +
-                '</div><div class=" container d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
-                '<div class="row "><div class="col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
-                '<div class="col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
+            $('#level_users').append('<div class="cas"><div class="row">' +
+                '<div class="col-6 col-md-6">' +
+                '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></div>' +
+                '<div class="col-6 col-md-6"><span>LVL'+i+'</span></div> ' +
+                '</div><div class="d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
+                '<div class="row "><div class="col-6 col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
+                '<div class="col-6 col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
         }
 
     }

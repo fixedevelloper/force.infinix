@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontController::class, 'home'])
+Route::match(["POST","GET"],'/', [FrontController::class, 'home'])
     ->name('home');
 Route::get('/documentation', [FrontController::class, 'documentation'])
     ->name('documentation');

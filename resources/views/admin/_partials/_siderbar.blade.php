@@ -1,3 +1,52 @@
+<!--**********************************
+            Sidebar start
+        ***********************************-->
+<div class="deznav">
+    <div class="deznav-scroll">
+        <ul class="metismenu" id="menu">
+            <li><a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li><a href="{{route('admin.create_user')}}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user"></i>
+                    <span class="nav-text">Create User</span>
+                </a>
+            </li>
+            <li><a href="{{route('admin.buy_machin')}}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-transfer"></i>
+                    <span class="nav-text">Buy machine user</span>
+                </a>
+            </li>
+
+            <li><a href="{{route('admin.partners')}}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user-2"></i>
+                    <span class="nav-text">Partners</span>
+                </a>
+            </li>
+            <li><a href="{{route('admin.statitics')}}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-calculator"></i>
+                    <span class="nav-text">Calculator</span>
+                </a>
+            </li>
+        </ul>
+{{--
+        <div class="book-box">
+            <img src="images/book.png" alt="">
+            <a href="javascript:void(0);">Generate Report  ></a>
+        </div>
+        <div class="copyright">
+            <p><strong>Kripton Crypto Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+            <p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
+        </div>--}}
+    </div>
+</div>
+<!--**********************************
+    Sidebar end
+***********************************-->
+
+{{--
 <div class="mt-3 mb-3 border-bottom p-2">
     <img src="{{asset('img/logo.svg')}}">
 </div>
@@ -51,3 +100,4 @@
 </ul>
 
 </div>
+--}}

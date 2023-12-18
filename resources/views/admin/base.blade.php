@@ -25,47 +25,44 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/og.png">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('libs/spacing.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+    <link href="{{asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
     @stack('css_or_js')
 </head>
 
 <body>
-<div class="preloader">
-    <div class="top-bg-dark" id="top-bg"></div>
-    <div class="loader-middle" id="loader-middle"></div>
-    <div class="bottom-bg-dark" id="bottom-bg"></div>
+
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
 </div>
-<div class="home_dark">
-    <div class="hero">
+<!--*******************
+    Preloader end
+********************-->
+<div id="main-wrapper">
+    @include('admin._partials._header')
+    @include('admin._partials._siderbar')
+{{--    <div class="hero">
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2 border-right">
-            @include('admin._partials._siderbar')
+    </div>--}}
+    <div class="content-body">
+        <div class="container-fluid">
+        @yield('content')
         </div>
-        <div class="col-md-10">
-            @include('admin._partials._header')
-            @yield('content')
-        </div>
     </div>
-    <div class="hero">
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-    </div>
+
+
     @include('admin._partials._footer')
 </div>
 
@@ -74,29 +71,22 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
 <script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-<script src="{{asset('js/jquery-3.7.min.js')}}"></script>
-<script src="{{asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/vendor/global/global.min.js')}}"></script>
+<script src="{{asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('admin/js/custom.min.js')}}"></script>
+{{--<script src="{{asset('admin/vendor/apexchart/apexchart.js')}}"></script>
+<script src="{{asset('admin/vendor/owl-carousel/owl.carousel.js')}}"></script>--}}
+{{--<script src="{{asset('admin/js/dashboard/dashboard-4.js')}}"></script>--}}
+<script src="{{asset('admin/js/deznav-init.js')}}"></script>
 <script>
-    //preloader
-    if ($(".preloader").length > 0) {
-        $('#top-bg').delay(1500).slideUp();
-        $('#bottom-bg').delay(1500).slideUp();
-        $('#loader-middle').delay(1250).fadeOut();
-        // Preloader timeout
-        setTimeout(function() {
-            $('.preloader').addClass('d-none');
-        }, 1750);
-    };
-    $('#menu-btn').click(function () {
-        if ($("#menu_sider").hasClass('d-none')){
-            $('#menu_sider').removeClass('d-none')
-            $('#menu_header').removeClass('d-none')
+    jQuery(document).ready(function(){
+        setTimeout(function(){
+            dezSettingsOptions.version = 'dark';
+            new dezSettings(dezSettingsOptions);
+        }, 200);
 
-        }else {
-            $('#menu_sider').addClass('d-none')
-            $('#menu_header').addClass('d-none')
-        }
-    })
+    });
+
 </script>
 @stack('scripts')
 </body>

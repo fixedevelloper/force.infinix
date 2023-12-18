@@ -21,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(SmartContract::class)->group(function(){
 
     Route::get('getabi', 'getABI');
+    Route::post('contract', 'contract');
 
 });
