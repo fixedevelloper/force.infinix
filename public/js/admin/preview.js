@@ -53,13 +53,43 @@ var dashboard= function () {
             initialiseEtheruim();
             initialiseABI();
         },
-
         load:function(){
             initialiseEtheruim();
             completePreview();
+        },
+        buy_machin: async function (level) {
+            const account = await getCurrentAccount();
+            window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+            var level_ = await window.mxgfcontract.methods.Buy_Machine_Qore_For(account, Number.parseInt(level)).send({
+                from: account,
+            });
+            console.log(level_)
+            if (level_.status === true) {
+                window.location.reload()
+            } else {
+                alert("Echec: Buy Level error")
+            }
         }
     }
 }();
+
+async function getCurrentAccount() {
+    const accounts = await window.web3.eth.getAccounts();
+    return accounts[0];
+}
+async function buy_machin(level){
+    const account = await getCurrentAccount();
+    window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
+    var level_ = await window.mxgfcontract.methods.Buy_Machine_Qore_For(account,Number.parseInt(level)).send({
+        from: account,
+    });
+    console.log(level_)
+    if (level_.status===true){
+        window.location.reload()
+    }else {
+        alert("Echec: Buy Level error")
+    }
+}
 function currentLevel(level,childs) {
     const levels=[1,2,3,4,5,6,7,8,9,10]
     const levels_price=[10,20,30,40,100,200,300,500,1250,2500]
@@ -94,7 +124,7 @@ function currentLevel(level,childs) {
                 '<div class="col-6 col-md-6">' +
                 '<img class="cas_img" src="../img/admin/1.svg"><span>'+levels_price[i-1]+'</span></div>' +
                 '<div class="col-6 col-md-6"><span>LVL'+i+'</span></div> ' +
-                '</div><div class="d-flex justify-content-center"><a href="javascript:;" onclick="upGradeLevel('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
+                '</div><div class="d-flex justify-content-center"><a href="javascript:;" onclick="dashboard.buy_machin('+i+')"><img class="cas_img_buy" src="../img/admin/7.svg"></a> </div>' +
                 '<div class="row "><div class="col-6 col-md-6 mt-3"><p><img class="cas_img" src="../img/admin/3.svg"><span style=""></span></p></div>' +
                 '<div class="col-6 col-md-6 mt-3"><img class="cas_img" src="../img/admin/8.svg"></div></div></div>')
         }

@@ -55,7 +55,10 @@ class AdminController extends Controller
 
     }
     public function partners(){
-        return view('admin.partners', []);
+
+        return view('admin.partners', [
+            'id'=>Session::get("user_id")
+        ]);
 
     }
     public function links(){

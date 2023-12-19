@@ -38,37 +38,12 @@ var dashboard= function () {
 
         }
     }
-    var completeDashboard=async function () {
+    var getPatners=async function () {
         var id_user=$('#id_user_smart').text();
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
         var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id_user)).call();
-        $('#address_user_smart').text(adresse)
-        var newJoined = await window.mxgfcontract.methods.getLastRegistration().call();
-        $('#newJoined').text("ID: "+newJoined.userID)
-        var patners = await window.mxgfcontract.methods.getDirectPartnersCount(adresse).call();
-        $('#dash_partners').text(patners)
-        var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
-       var getUserDirectReferrer = await window.mxgfcontract.methods.getUserDirectReferrer(adresse).call();
-        var parent = await window.mxgfcontract.methods.userIDs(getUserDirectReferrer).call();
-        $('#parent_id').text(parent)
-        var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
-        $('#S10_INCOME').text(roundDecimal(convertDiv(S10_INCOME)))
-        var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();
-        var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
-        $('#getDirectReferrerReward')
-            .text(roundDecimal(convertDiv(getDirectReferrerReward)))
-        $('#S4_MACHINEIncome').text(roundDecimal(convertDiv(S4_MACHINEIncome)))
-        $('#randomRewards').text(roundDecimal(convertDiv(randomRewards)))
-        var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))+Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
-        $('#total_earning').text(roundDecimal(total))
-        $('#order_total').text(roundDecimal(total)+' USDC')
-        var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
-        currentLevelGrandiant(getUserCurrentLevel)
-        $('.loader').show()
-        let part= await calculateTotalTeam(adresse,initialiseABI().StakingnmatrixAbi,initialiseABI().stakingaddress)
-        console.log(part)
-        $('#direct_partners').text(part)
-        $('.loader').hide()
+        var getChildAddress= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
+        partners(getChildAddress,initialiseABI().StakingnmatrixAbi,initialiseABI().stakingaddress)
 
     }
     /* Function ============ */
@@ -80,50 +55,17 @@ var dashboard= function () {
 
         load:function(){
             initialiseEtheruim();
-            completeDashboard();
+            getPatners();
         }
     }
 }();
-function currentLevelGrandiant(level) {
-    const levels=[1,2,3,4,5,6,7,8,9,10]
-    for (const i of levels) {
-        if (i<=level){
-            $('#level_gradian').append('<div class="x_m bg-blue col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
-        }else {
-            $('#level_gradian').append('<div class="x_m bg-gray600 col-xs-2 col-md-3 col-sm-4 col-xl-3 m-1"></div>')
-        }
+async function partners(childs,stakingnmatrixAbi,stakingaddress) {
+    window.mxgfcontract = await new window.web3.eth.Contract(stakingnmatrixAbi, stakingaddress);
+    for (let i = 0; i < childs[0].length; i++) {
+        var id = await window.mxgfcontract.methods.userIDs(childs[0][i]).call();
 
+        $('#partner_table>tbody:last').append('<tr><td>' + i + '</td> <td>' + id + '</td><td>' + childs[0][i] + '</td><td>' + childs[1][i] + '</td></tr>')
     }
-    $('#spinner_dashboard').hide()
-}
-function roundDecimal(nombre, precision){
-    var precision = precision || 2;
-    var tmp = Math.pow(10, precision);
-    return Math.round( nombre*tmp )/tmp;
-}
-function convertDiv(amount) {
-    if (amount>0){
-        return amount/1000000000000000000;
-    }
-    return amount;
-}
-async function calculateTotalTeam( userAddress,StakingnmatrixAbi,stakingaddress, visited = new Set()) {
-    window.mxgfcontract = await new window.web3.eth.Contract(StakingnmatrixAbi, stakingaddress);
-    if (visited.has(userAddress)) {
-        return 0;
-    }
-
-    visited.add(userAddress);
-    let totalCount =Number.parseInt( await window.mxgfcontract.methods.getDirectPartnersCount(userAddress).call());
-
-    // Supposons que vous ayez une fonction pour obtenir les adresses des partenaires directs
-    // const partnersAddresses = await getDirectPartnersAddresses(contract, userAddress);
-    const partnersAddresses =  await window.mxgfcontract.methods.getDirectDownlineInfos(userAddress).call();
-    for (const partnerAddress of filterAdresse(partnersAddresses[0])) {
-        totalCount += Number.parseInt(await calculateTotalTeam( partnerAddress,StakingnmatrixAbi,stakingaddress, visited)) ;
-    }
-
-    return totalCount;
 }
 function filterAdresse(tabs) {
     childs = tabs.filter(element => element !== "0x0000000000000000000000000000000000000000");
@@ -132,7 +74,12 @@ function filterAdresse(tabs) {
 /* Document.ready Start */
 jQuery(document).ready(function() {
     'use strict';
-    dashboard.init();
+    try {
+        dashboard.init();
+    }catch (e) {
+        alert("it run Out of Gas")
+    }
+
 
 });
 /* Document.ready END */
@@ -140,5 +87,9 @@ jQuery(document).ready(function() {
 /* Window Load START */
 jQuery(window).on('load',function () {
     'use strict';
-    dashboard.load();
+    try {
+        dashboard.load();
+    }catch (e) {
+        alert("it run Out of Gas")
+    }
 });
