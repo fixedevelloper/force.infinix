@@ -132,7 +132,7 @@
                         <div class="col-md-6">
                             <div class="">
                             <div class="d-grid gap-2 align-self-end mt-5 mb-3">
-                                <span class="col-md-6 h1 text-end mb-2" id="order_total">USDC</span>
+                                <span class="col-md-6 h1 text-end mb-2 text-white" id="order_total">USDC</span>
                                 <a href="{{route('preview',['id'=>$id])}}" class="btn btn-primary d-block btn-lg text-uppercase align-self-end">Preview
                                     <i class="fa fa-caret-right ml-2 scale-2"></i></a>
                             </div>
