@@ -124,6 +124,7 @@
                 <div class="card-body pb-0">
                     <div class="row mt-3">
                         <div class="col-md-4">
+                            <i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
                         <div class="row"  id="level_gradian"></div>
                         </div>
                         <div class="col-md-6">
@@ -169,65 +170,21 @@
                                         <path d="M21 9.15527e-05C9.4021 9.15527e-05 9.15527e-05 9.4021 9.15527e-05 21C9.15527e-05 32.5979 9.4021 41.9999 21 41.9999C32.5979 41.9999 41.9999 32.5979 41.9999 21C41.9871 9.40759 32.5924 0.0129089 21 9.15527e-05ZM12.3281 19.4999H18.328C19.1566 19.4999 19.8281 20.1714 19.8281 21C19.8281 21.8286 19.1566 22.5001 18.328 22.5001H12.3281C11.4996 22.5001 10.828 21.8286 10.828 21C10.828 20.1714 11.5 19.4999 12.3281 19.4999ZM31.0841 17.3658L29.28 26.392C28.8552 28.4872 27.0155 29.9951 24.8777 30.0001H12.3281C11.4996 30.0001 10.828 29.3286 10.828 28.5C10.828 27.6714 11.5 26.9999 12.3281 26.9999H24.8777C25.5868 26.9981 26.197 26.4982 26.338 25.8033L28.1425 16.7771C28.3027 15.9715 27.7799 15.1887 26.9747 15.0285C26.8791 15.0097 26.782 15.0001 26.685 15.0001H15.3283C14.4998 15.0001 13.8282 14.3286 13.8282 13.5C13.8282 12.6714 14.4998 11.9999 15.3283 11.9999H26.685C29.1633 12.0008 31.1715 14.0099 31.1711 16.4883C31.1711 16.7826 31.1418 17.0765 31.0841 17.3658Z" fill="#3693FF"/>
                                     </svg>
                                     <div class="text-left ml-3">
-                                        <span class="d-block fs-16 text-black">Dash Coin</span>
+                                        <span class="d-block fs-16 text-black">RECENT SYSTEM ACTIVITY</span>
                                     </div>
                                     <i class="fa fa-angle-down scale5 ml-auto"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="javascript:void(0);">Bitcoin</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">ETH coin</a>
                                 </div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-center bg-info-hover tr-rounded">
                                     <thead>
                                     <tr>
-                                        <th class="text-left">Price</th>
-                                        <th class="text-center">Amount</th>
-                                        <th class="text-right">Total</th>
+                                        <th class="text-left">Address</th>
+                                        <th class="text-right">Time</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="text-left">82.3</td>
-                                        <td>0.15</td>
-                                        <td class="text-right">$134,12</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">83.9</td>
-                                        <td>0.18</td>
-                                        <td class="text-right">$237,31</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">84.2</td>
-                                        <td>0.25</td>
-                                        <td class="text-right">$252,58</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">86.2</td>
-                                        <td>0.35</td>
-                                        <td class="text-right">$126,26</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">91.6</td>
-                                        <td>0.75</td>
-                                        <td class="text-right">$46,92</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">92.6</td>
-                                        <td>0.21</td>
-                                        <td class="text-right">$123,27</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">93.9</td>
-                                        <td>0.55</td>
-                                        <td class="text-right">$212,56</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">94.2</td>
-                                        <td>0.18</td>
-                                        <td class="text-right">$129,26</td>
-                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -240,7 +197,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-header border-0 pb-0">
-                            <h4 class="mb-0 text-black fs-20">Buy Order</h4>
+                            <h4 class="mb-0 text-black fs-20 text-uppercase">Best recruiters in the system</h4>
                         </div>
                         <div class="card-body p-3">
                             <div class="table-responsive">
@@ -491,5 +448,5 @@
 @endsection
 @push('scripts')
 
-    <script src="{{ asset('js/cdn/ctr_admin_custom.js') }}"></script>
+    <script src="{{ asset('js/admin/dashboard.js') }}"></script>
 @endpush

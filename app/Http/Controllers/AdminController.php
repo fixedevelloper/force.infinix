@@ -7,14 +7,16 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Services\BscScanService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
 
     public function dashboard(Request $request){
-      //  $account=BscScanService::getBNBBalanceSingle("0x70F657164e5b75689b64B7fd1fA275F334f28e18");
-        //$source=BscScanService::getContratABISource("0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82");
-        //logger($source);
+
+        if (is_null(Session::get("user_id"))){
+            Session::put('user_id',$request->get('id'));
+        }
         $user=User::query()->firstWhere(['id_contract'=>$request->get('id')]);
         if ($request->method()=='POST'){
             if (is_null($user)){

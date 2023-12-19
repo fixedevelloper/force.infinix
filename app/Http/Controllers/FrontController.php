@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class FrontController extends Controller
 {
@@ -32,6 +33,7 @@ class FrontController extends Controller
 
     }
     public function login(){
+        Session::remove('user_id');
         return view('login', []);
 
     }

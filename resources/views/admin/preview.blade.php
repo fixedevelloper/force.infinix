@@ -29,5 +29,5 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('js/cdn/ctr_admin_custom.js') }}"></script>
+    <script src="{{ asset('js/admin/preview.js') }}"></script>
 @endpush

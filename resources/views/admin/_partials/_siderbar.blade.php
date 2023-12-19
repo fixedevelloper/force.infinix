@@ -4,7 +4,7 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
-            <li><a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
+            <li><a href="{{route('admin.dashboard',['id'=>\Illuminate\Support\Facades\Session::get('user_id')])}}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
