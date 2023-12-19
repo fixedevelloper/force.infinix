@@ -14,9 +14,7 @@ class AdminController extends Controller
 
     public function dashboard(Request $request){
 
-        if (is_null(Session::get("user_id"))){
-            Session::put('user_id',$request->get('id'));
-        }
+
         $user=User::query()->firstWhere(['id_contract'=>$request->get('id')]);
         if ($request->method()=='POST'){
             if (is_null($user)){
@@ -27,6 +25,10 @@ class AdminController extends Controller
             $user->name=$request->get('username');
             logger($user);
             $user->save();
+        }
+        if (is_null(Session::get("user_id"))){
+            Session::put('user_id',$request->get('id'));
+            Session::put('user_name',$user->name);
         }
         $id=$request->get('id');
         $link=route('register',['tx'=>$id]);

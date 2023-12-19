@@ -71,6 +71,7 @@ var dashboard= function () {
         $('.loader').hide()
 
     }
+
     /* Function ============ */
     return {
         init:function(){
@@ -81,9 +82,13 @@ var dashboard= function () {
         load:function(){
             initialiseEtheruim();
             completeDashboard();
+        },
+        copyText:function () {
+            console.log($('#click_item').text())
         }
     }
 }();
+
 function currentLevelGrandiant(level) {
     const levels=[1,2,3,4,5,6,7,8,9,10]
     for (const i of levels) {
@@ -134,6 +139,7 @@ jQuery(document).ready(function() {
     'use strict';
     dashboard.init();
 
+
 });
 /* Document.ready END */
 
@@ -141,4 +147,19 @@ jQuery(document).ready(function() {
 jQuery(window).on('load',function () {
     'use strict';
     dashboard.load();
+
+});
+const click_item = document.getElementById("click_item");
+
+click_item.onclick = function() {
+    document.execCommand("copy");
+}
+
+click_item.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", click_item.textContent);
+        alert("Copied the text: " +event.clipboardData.getData("text"))
+        console.log(event.clipboardData.getData("text"))
+    }
 });

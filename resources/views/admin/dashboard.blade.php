@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 @endpush
 @section('content')
-    <span id="click_item"></span>
     <span hidden id="id_user_smart">{{$id}}</span>
     <div class="row">
         <div class="col-xl-3 col-sm-6">
@@ -87,7 +86,7 @@
                                                 <a  data-toggle="modal" data-target="#exampleModal"><img class="cas_img" src="{{asset("img/pen.png")}}" alt=""></a> @endif</h6>
                                             <h6 class="card-title fw-bolder mt-2">ID: <span id="id_user_smart">{{$id}}</span>
                                             </h6>
-                                            <h6 class="card-title fw-bolder mt-2">Parent ID: <span id="parent_id"></span>
+                                            <h6 class="card-title fw-bolder mt-2">Upline ID: <span id="parent_id"></span>
                                             </h6>
                                             {{--<i class="fa fa-spinner fa-spin" id="spinner_dashboard"></i>
                                             <h6 class="card-title fw-bolder mt-2" id="address_user_smart"></h6>--}}
@@ -105,7 +104,7 @@
                                         </div>
                                         <div class="" style="cursor: pointer">
 
-                                    <span id="click_item">{{$link}}</span><img class="cas_img" src="{{asset('img/admin/9.svg')}}"/>
+                                    <span id="click_item" onclick='dashboard.copyText()'>{{$link}}</span><img class="cas_img" src="{{asset('img/admin/9.svg')}}"/>
                                 </div>
 
                         </div>
@@ -369,7 +368,7 @@
 
         </div>
     </div>
-
+--}}
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -396,7 +395,7 @@
             </div>
         </div>
     </div>
---}}
+
 @endsection
 @push('scripts')
 
