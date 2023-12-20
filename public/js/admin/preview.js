@@ -42,8 +42,17 @@ var dashboard= function () {
         var id_user=$('#id_user_smart').text();
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
         var adresse = await window.mxgfcontract.methods.idToAddress(Number.parseInt(id_user)).call();
+        var S10_INCOME = await window.mxgfcontract.methods.S10_INCOME(adresse).call();
+        var S4_MACHINEIncome = await window.mxgfcontract.methods.S4_MACHINEIncome(adresse).call();
+        var randomRewards = await window.mxgfcontract.methods.RandomRewards(adresse).call();
+        var getDirectReferrerReward = await window.mxgfcontract.methods.getDirectReferrerReward(adresse).call();
+        var total= Number(convertDiv(S10_INCOME))+Number(convertDiv(S4_MACHINEIncome))
+            +Number(convertDiv(getDirectReferrerReward))+Number(convertDiv(randomRewards));
+        $('#total_earning').text(roundDecimal(total))
+        $('#order_total').text(roundDecimal(total)+' USDC')
         var getUserCurrentLevel = await window.mxgfcontract.methods.getUserCurrentLevel(adresse).call();
         var getChildAddress= await window.mxgfcontract.methods.getDirectDownlineInfos(adresse).call();
+
         currentLevel(getUserCurrentLevel,getChildAddress[1])
 
     }
@@ -72,7 +81,17 @@ var dashboard= function () {
         }
     }
 }();
-
+function convertDiv(amount) {
+    if (amount>0){
+        return amount/1000000000000000000;
+    }
+    return amount;
+}
+function roundDecimal(nombre, precision){
+    var precision = precision || 2;
+    var tmp = Math.pow(10, precision);
+    return Math.round( nombre*tmp )/tmp;
+}
 async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
     return accounts[0];

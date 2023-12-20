@@ -67,6 +67,37 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-xl-6 col-sm-6">
+            <div class="card overflow-hidden">
+                <div class="card-header align-items-start border-0 pb-0">
+                    <div class="mr-auto">
+                        <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>74%(30 days)</p>
+                        <h2 class="text-black mb-0 font-w600"><span id="dash_partners"></span></h2>
+                        <h4 class="text-black mb-2 font-w600">Partners</h4>
+                    </div>
+                    <img src="{{asset('img/admin/2.svg')}}" width="62" height="62">
+                </div>
+                <div class="card-body p-0">
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-sm-6">
+            <div class="card overflow-hidden">
+                <div class="card-header align-items-start border-0 pb-0">
+                    <div class="mr-auto">
+                        <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>28%(30 days)</p>
+                        <div class="loader"></div>
+                        <h2 class="text-black mb-0 font-w600"><span id="direct_partners"></span></h2>
+                        <h4 class="text-black mb-2 font-w600">Teams</h4>
+                    </div>
+                    <img src="{{asset('img/admin/3.svg')}}" width="62" height="62">
+                </div>
+                <div class="card-body p-0">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-xl-6 col-xxl-12">
             <div class="card">
                 <div class="card-header d-block d-sm-flex border-0">

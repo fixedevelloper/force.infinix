@@ -1,11 +1,11 @@
 (function($) {
-    "use strict" 
+    "use strict"
 
 
  var dzChartlist = function(){
-	
+
 	var screenWidth = $(window).width();
-		
+
 	var widgetChart = function(){
 		if(jQuery('#widgetChart').length > 0 ){
 			const widgetChart = document.getElementById("widgetChart").getContext('2d');
@@ -29,7 +29,7 @@
 						pointHoverBackgroundColor: '#FFAB2D',
 						pointHoverBorderColor: '#FFAB2D',
 						backgroundColor: widgetChartgradientStroke,
-						
+
 						data: [10, 30, 20, 40, 30, 40, 30, 50, 35]
 					}]
 				},
@@ -44,7 +44,7 @@
 						yPadding: 10,
 						caretPadding: 10
 					},
-					
+
 					legend: {
 						display: !1
 					},
@@ -93,7 +93,7 @@
 
 		}
 	}
-	
+
 	var widgetChart2 = function(){
 		if(jQuery('#widgetChart2').length > 0 ){
 			const widgetChart2 = document.getElementById("widgetChart2").getContext('2d');
@@ -117,7 +117,7 @@
 						pointHoverBackgroundColor: '#3693FF',
 						pointHoverBorderColor: '#3693FF',
 						backgroundColor: widgetChart2gradientStroke,
-						
+
 						data: [10, 30, 20, 30, 20, 40, 30, 20, 35]
 					}]
 				},
@@ -132,7 +132,7 @@
 						yPadding: 10,
 						caretPadding: 10
 					},
-					
+
 					legend: {
 						display: !1
 					},
@@ -181,7 +181,7 @@
 
 		}
 	}
-	
+
 	var widgetChart3 = function(){
 		if(jQuery('#widgetChart3').length > 0 ){
 			const widgetChart3 = document.getElementById("widgetChart3").getContext('2d');
@@ -205,7 +205,7 @@
 						pointHoverBackgroundColor: '#7679AF',
 						pointHoverBorderColor: '#7679AF',
 						backgroundColor: widgetChart3gradientStroke,
-						
+
 						data: [40, 20, 30, 20, 50, 20, 30, 20, 35]
 					}]
 				},
@@ -220,7 +220,7 @@
 						yPadding: 10,
 						caretPadding: 10
 					},
-					
+
 					legend: {
 						display: !1
 					},
@@ -269,7 +269,7 @@
 
 		}
 	}
-	
+
 	var widgetChart4 = function(){
 		if(jQuery('#widgetChart4').length > 0 ){
 			const widgetChart4 = document.getElementById("widgetChart4").getContext('2d');
@@ -293,7 +293,7 @@
 						pointHoverBackgroundColor: '#AC4CBC',
 						pointHoverBorderColor: '#AC4CBC',
 						backgroundColor: widgetChart4gradientStroke,
-						
+
 						data: [10, 25, 20, 40, 30, 40, 30, 50, 20]
 					}]
 				},
@@ -308,7 +308,7 @@
 						yPadding: 10,
 						caretPadding: 10
 					},
-					
+
 					legend: {
 						display: !1
 					},
@@ -357,9 +357,9 @@
 
 		}
 	}
-	
-	var chartBarRunning = function(){
-		
+
+/*	var chartBarRunning = function(){
+
 		var chartBarRunningOptions = {
 				series: [{
 					name: 'Buy',
@@ -449,11 +449,11 @@
 				chart: {
 				type: 'rangeBar',
 				height: 370,
-				
+
 				toolbar: {
 					show: false,
 				},
-				
+
 			},
 			plotOptions: {
 			  bar: {
@@ -461,7 +461,7 @@
 				columnWidth: '55%',
 				endingShape: "rounded",
 				startingShape: "rounded",
-				
+
 			  },
 			},
 			colors:['#61C277', '#FF3E3E'],
@@ -476,7 +476,7 @@
 				fontSize: '12px',
 				labels: {
 					colors: '#000000',
-					
+
 					},
 				markers: {
 				width: 18,
@@ -484,7 +484,7 @@
 				strokeWidth: 0,
 				strokeColor: '#fff',
 				fillColors: undefined,
-				radius: 12,	
+				radius: 12,
 				}
 			},
 			stroke: {
@@ -542,7 +542,7 @@
 					plotOptions: {
 					  bar: {
 						columnWidth: '40%',
-						
+
 					  },
 					},
 					chart:{
@@ -562,11 +562,11 @@
 			var chartBarRunningObject = new ApexCharts(document.querySelector("#chartBarRunning"), chartBarRunningOptions);
 			chartBarRunningObject.render();
 
-			
+
 	}
-	
+
 	var chartBarRunning2 = function(){
-		
+
 		var chartBarRunningOptions = {
 				series: [{
 					name: 'Buy',
@@ -656,11 +656,11 @@
 				chart: {
 				type: 'rangeBar',
 				height: 370,
-				
+
 				toolbar: {
 					show: false,
 				},
-				
+
 			},
 			plotOptions: {
 			  bar: {
@@ -668,7 +668,7 @@
 				columnWidth: '55%',
 				endingShape: "rounded",
 				startingShape: "rounded",
-				
+
 			  },
 			},
 			colors:['#61C277', '#FF3E3E'],
@@ -683,7 +683,7 @@
 				fontSize: '12px',
 				labels: {
 					colors: '#000000',
-					
+
 					},
 				markers: {
 				width: 18,
@@ -691,7 +691,7 @@
 				strokeWidth: 0,
 				strokeColor: '#fff',
 				fillColors: undefined,
-				radius: 12,	
+				radius: 12,
 				}
 			},
 			stroke: {
@@ -703,7 +703,7 @@
 				borderColor: '#eee',
 			},
 			xaxis: {
-				
+
 			  labels: {
 			   style: {
 				  colors: '#787878',
@@ -747,7 +747,7 @@
 					plotOptions: {
 					  bar: {
 						columnWidth: '40%',
-						
+
 					  },
 					},
 					chart:{
@@ -766,11 +766,11 @@
 
 			var chartBarRunningObject = new ApexCharts(document.querySelector("#chartBarRunning2"), chartBarRunningOptions);
 			chartBarRunningObject.render();
-			
+
 	}
-	
+
 	var chartBarRunning3 = function(){
-		
+
 		var chartBarRunningOptions = {
 				series: [{
 					name: 'Buy',
@@ -860,11 +860,11 @@
 				chart: {
 				type: 'rangeBar',
 				height: 370,
-				
+
 				toolbar: {
 					show: false,
 				},
-				
+
 			},
 			plotOptions: {
 			  bar: {
@@ -872,7 +872,7 @@
 				columnWidth: '55%',
 				endingShape: "rounded",
 				startingShape: "rounded",
-				
+
 			  },
 			},
 			colors:['#61C277', '#FF3E3E'],
@@ -887,7 +887,7 @@
 				fontSize: '12px',
 				labels: {
 					colors: '#000000',
-					
+
 					},
 				markers: {
 				width: 18,
@@ -895,7 +895,7 @@
 				strokeWidth: 0,
 				strokeColor: '#fff',
 				fillColors: undefined,
-				radius: 12,	
+				radius: 12,
 				}
 			},
 			stroke: {
@@ -907,7 +907,7 @@
 				borderColor: '#eee',
 			},
 			xaxis: {
-				
+
 			  labels: {
 			   style: {
 				  colors: '#787878',
@@ -951,7 +951,7 @@
 					plotOptions: {
 					  bar: {
 						columnWidth: '40%',
-						
+
 					  },
 					},
 					chart:{
@@ -970,9 +970,9 @@
 
 			var chartBarRunningObject = new ApexCharts(document.querySelector("#chartBarRunning3"), chartBarRunningOptions);
 			chartBarRunningObject.render();
-			
+
 	}
-	
+
 	var lineChart = function(){
 		var options = {
           series: [{
@@ -1008,7 +1008,7 @@
 				  fontSize: '14px',
 				   fontFamily: 'Poppins',
 				  fontWeight: 100,
-				  
+
 				},
 			  },
 		},
@@ -1028,45 +1028,45 @@
 
         var chart = new ApexCharts(document.querySelector("#lineChart"), options);
         chart.render();
-	}
-	
+	}*/
+
 	/* Function ============ */
 		return {
 			init:function(){
 			},
-			
-			
+
+
 			load:function(){
-				widgetChart();				
-				widgetChart2();				
-				widgetChart3();				
-				widgetChart4();				
-				chartBarRunning();				
-				chartBarRunning2();				
-				chartBarRunning3();				
-				lineChart();				
+				widgetChart();
+				widgetChart2();
+				widgetChart3();
+				widgetChart4();
+/*				chartBarRunning();
+				chartBarRunning2();
+				chartBarRunning3();
+				lineChart();	*/
 			},
-			
+
 			resize:function(){
 			}
 		}
-	
+
 	}();
 
 	jQuery(document).ready(function(){
 	});
-		
+
 	jQuery(window).on('load',function(){
 		setTimeout(function(){
 			dzChartlist.load();
-		}, 1000); 
-		
+		}, 1000);
+
 	});
 
 	jQuery(window).on('resize',function(){
-		
-		
-	});     
+
+
+	});
 
 })(jQuery);
 
