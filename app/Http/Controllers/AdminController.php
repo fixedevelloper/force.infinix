@@ -28,7 +28,7 @@ class AdminController extends Controller
         }
         if (is_null(Session::get("user_id"))){
             Session::put('user_id',$request->get('id'));
-            Session::put('user_name',$user->name);
+            Session::put('user_name',is_null($user)?'':$user->name);
         }
         $id=$request->get('id');
         $link=route('register',['tx'=>$id]);
