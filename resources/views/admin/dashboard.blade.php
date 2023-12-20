@@ -11,6 +11,7 @@
                     <div class="mr-auto">
                         <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p>
                         <h2 class="text-black mb-0 font-w600">$<span id="getDirectReferrerReward"></span></h2>
+                        <h4 class="text-black mb-0 font-w600">DIRECT REFERRER</h4>
                     </div>
                     <img src="{{asset('img/admin/12/47_20231218_094800_0000.svg')}}" width="42" height="42">
                 </div>
@@ -25,6 +26,7 @@
                     <div class="mr-auto">
                         <p class="mb-2 fs-13"><i class="fa fa-caret-down scale5 mr-2 text-danger" aria-hidden="true"></i>4%(30 days)</p>
                         <h2 class="text-black mb-0 font-w600">$<span id="S10_INCOME"></span></h2>
+                        <h4 class="text-black mb-0 font-w600">S10 INCOME</h4>
                     </div>
                     <img src="{{asset('img/admin/12/48_20231218_094800_0001.svg')}}" width="42" height="42">
                 </div>
@@ -39,6 +41,7 @@
                     <div class="mr-auto">
                         <p class="mb-2 fs-13"><i class="fa fa-caret-down scale5 mr-2 text-danger" aria-hidden="true"></i>4%(30 days)</p>
                         <h2 class="text-black mb-0 font-w600">$<span id="S4_MACHINEIncome"></span></h2>
+                        <h4 class="text-black mb-0 font-w600">S4 MACHINE INCOME</h4>
                     </div>
                     <img src="{{asset('img/admin/12/49_20231218_094801_0002.svg')}}" width="42" height="42">
                 </div>
@@ -53,13 +56,9 @@
                     <div class="mr-auto">
                         <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p>
                         <h2 class="text-black mb-0 font-w600">$<span id="randomRewards"></span></h2>
+                        <h4 class="text-black mb-0 font-w600">RANDOM REWARDS</h4>
                     </div>
                     <img src="{{asset('img/admin/12/50_20231218_094801_0003.svg')}}" width="42" height="42">
-                {{--    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.5566 23.893C21.1991 24.0359 20.8009 24.0359 20.4434 23.893L16.6064 22.3582L21 31.1454L25.3936 22.3582L21.5566 23.893Z" fill="#AC4CBC"/>
-                        <path d="M21 20.8846L26.2771 18.7739L21 10.3304L15.7229 18.7739L21 20.8846Z" fill="#AC4CBC"/>
-                        <path d="M21 0.00012207C9.40213 0.00012207 0.00012207 9.40213 0.00012207 21C0.00012207 32.5979 9.40213 41.9999 21 41.9999C32.5979 41.9999 41.9999 32.5979 41.9999 21C41.9871 9.40762 32.5924 0.0129395 21 0.00012207ZM29.8417 20.171L22.3417 35.171C21.9714 35.9121 21.0701 36.2124 20.3294 35.8421C20.0387 35.697 19.8034 35.4617 19.6583 35.171L12.1583 20.171C11.9253 19.7032 11.9519 19.1479 12.2284 18.7043L19.7284 6.70453C20.2269 6.00232 21.1996 5.83661 21.9018 6.33511C22.0451 6.43674 22.1701 6.56125 22.2717 6.70453L29.7712 18.7043C30.0482 19.1479 30.0747 19.7032 29.8417 20.171Z" fill="#AC4CBC"/>
-                    </svg>--}}
                 </div>
                 <div class="card-body p-0">
                     <canvas id="widgetChart4" class="max-h80 mt-auto"></canvas>
@@ -118,7 +117,7 @@
             <div class="card">
                 <div class="card-header d-sm-flex d-block pb-0 border-0">
                     <div>
-                        <h4 class="fs-20 text-black">X MACHINE PROGRAMMS ET PREVIEW</h4>
+                        <h4 class="fs-20 text-black">X MACHINE PROGRAMMS</h4>
                       {{--  <p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>--}}
                     </div>
                 </div>
@@ -398,6 +397,7 @@
 
 @endsection
 @push('scripts')
-
+    <script src="{{ asset('admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/js/dashboard/dashboard-4.js') }}"></script>
     <script src="{{ asset('js/admin/dashboard.js') }}"></script>
 @endpush
