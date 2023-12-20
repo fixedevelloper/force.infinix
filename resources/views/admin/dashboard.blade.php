@@ -199,13 +199,14 @@
                             <div class="table-responsive">
                                 <table class="table text-center bg-info-hover tr-rounded">
                                     <thead>
-                                    <tr>
-                                        <th class="text-left">Address</th>
-                                        <th class="text-right">Time</th>
-                                    </tr>
+
                                     </thead>
                                     <tbody>
-
+                                    <tr>
+                                        <td><i class="fa fa-user"></i></td>
+                                        <td><span>new user joined</span><span class="table_span" id="newJoined">ID 124</span></td>
+                                        <td><span>2min ago</span></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
