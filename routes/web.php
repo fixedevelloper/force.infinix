@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +54,7 @@ Route::get('/preview', [AdminController::class, 'preview'])
     ->name('preview');
 Route::get('/d/d789745874458744', [AdminController::class, 'dashboardcss'])
     ->name('dashboardcss');
+Route::get('dash/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('dash/my_tirage', [DashboardController::class, 'my_tirage'])->name('my_tirage');
+Route::get('dash/participant', [DashboardController::class, 'particpant'])->name('particpant');
+Route::match(['POST','GET'],'/sendLottory', [DashboardController::class, 'sendLottory'])->name('sendlottory');

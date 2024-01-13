@@ -1,63 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-XTBFEB6MK2');
-    </script>
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-M2P5S6J');
-    </script>
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1154415581916992');
-        fbq('track', 'PageView');
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="facebook-domain-verification" content="0l0jqngf7hnpo17ssvrusxn79c0muc">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="next-head-count" content="4">
     <link rel="preload" href="{{asset('lmodel/m2/css/preview_next.css')}}" as="style">
     <link rel="stylesheet" href="{{asset('lmodel/m2/css/next.css')}}" data-n-g="">
-    <noscript data-n-css=""></noscript>
-    <script src="https://busd.forsage.io/_next/static/chunks/framework-314ca51961822e5b31d9.js" defer=""></script>
-    <script src="https://busd.forsage.io/_next/static/chunks/pages/_app-2edd8ae20f10bf963357.js" defer=""></script>
+    <link rel="stylesheet" href="{{asset('admin/css/custom_next.css')}}" data-n-g="">
     <script src="{{asset("lmodel/m2/js/next-dashboard.js")}}" defer=""></script>
     <style data-react-tooltip="true">
         .__react_component_tooltip {
@@ -133,10 +83,6 @@
     <title>Dashboard | Infinix</title>
 </head>
 <body style="overflow: unset; position: relative; min-height: 100%; top: 40px;">
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2P5S6J" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-</noscript>
 <div id="__next">
     <div class="relative flex bg-main-bg items-center justify-center min-h-screen min-w-full overflow-hidden">
         <div
@@ -166,10 +112,8 @@
                             </div>
                         </div>
                     </div>
-                    <button
-                        class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden">
-                        Connect wallet
-                    </button>
+                    <w3m-core-button class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap"></w3m-core-button>
+
                 </div>
                 <div class="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
                     <button
@@ -1153,10 +1097,14 @@
                                     </svg>
                                     <div class="flex justify-between w-full z-10">
                                         <div class="flex items-center"><span
-                                                class="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">Royal lottory</span>
+                                                class="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">ROYAL LOTTERY</span>
                                         </div>
-                                        <span
-                                            class="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">136.228 BNB</span>
+                                        <div>
+                                            <span class="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl break"><span id="current_balance"></span> BNB</span>
+                                            <span class="text-white text-1xl font-bold justify-end text-right sm:text-xl">Contract Balance</span>
+
+                                        </div>
+
                                     </div>
                                     <div class="flex justify-between h-full w-full">
                                         <div class="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
@@ -1164,7 +1112,7 @@
                                                 <div class="flex flex-wrap -m-1">
                                                     @for($i=1;$i<=30;$i++)
                                                         <button
-                                                            class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue " onclick="getLottoNumber({{$i}})">{{$i}}</button>
+                                                            class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue text-[#FFFFFF]" onclick="getLottoNumber({{$i}})">{{$i}}</button>
                                                     @endfor
 
                                                 </div>
@@ -1177,7 +1125,7 @@
                                                             class="flex justify-center items-center text-center
                                                              text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-cyan-300
                                                               hover:bg-hover-cyan-300 active:bg-active-cyan-300 z-0 sm:w-full text-white">
-                                                        <div class="flex flex-col space-y-1 items-start">
+                                                        <div class="flex flex-col space-y-1 items-center">
                                                             <div class="flex items-center">Send Now
                                                                 <i id="spinner_send" class="lds-dual-ring"></i>
                                                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -2414,7 +2362,9 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
 <script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
 <script src="{{asset("js/jquery-3.7.min.js")}}"></script>
 <script src="{{asset("contractjs/lotterie.js")}}"></script>
+<script type="module" src="{{asset('contractjs/connect-wallet.js')}}"></script>
 </body>
 </html>

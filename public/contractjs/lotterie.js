@@ -148,7 +148,7 @@ function getLottoNumber(num) {
         $("#lt_"+num).removeClass("btn-primary");
         $("#lt_"+num).addClass("btn-success");
         var idtd = "line_" + num;
-        $("#content_lotto").append("<a id='" + idtd + "' onclick='getLottoSelect("+num+")' class='flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue'>"+num+"</a>")
+        $("#content_lotto").append("<a id='" + idtd + "' onclick='getLottoSelect("+num+")' class='flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue-500 text-[#FFFFFF]'>"+num+"</a>")
     }
 }
 function item() {

@@ -24,7 +24,8 @@
 
                             {{--  <li><a  href="">Login</a></li>
                             <li><a class="{{request()->routeIs('register')?'active':''}}" href="{{route('register')}}">Register</a></li>
-                            --}}<li> <w3m-core-button></w3m-core-button></li>
+                            --}}
+                            <li> <w3m-core-button></w3m-core-button></li>
                         </ul>
                     </div>
                 </div>
