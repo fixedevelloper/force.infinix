@@ -1403,22 +1403,7 @@
                                             <div class="flex items-center sm:items-start justify-start sm:w-full">
                                                 <div
                                                     class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#2CFF4E" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M15.833 10v5.833a1.666 1.666 0 0 1-1.666 1.667H5.833a1.667 1.667 0 0 1-1.666-1.667V10"
-                                                            fill-opacity=".5"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M4.167 9.5a.5.5 0 0 1 .5.5v5.833A1.167 1.167 0 0 0 5.833 17h8.334a1.166 1.166 0 0 0 1.166-1.167V10a.5.5 0 1 1 1 0v5.833A2.167 2.167 0 0 1 14.167 18H5.833a2.167 2.167 0 0 1-2.166-2.167V10a.5.5 0 0 1 .5-.5Z"></path>
-                                                        <path
-                                                            d="M16.667 6.667H3.333A.833.833 0 0 0 2.5 7.5v1.667c0 .46.373.833.833.833h13.334c.46 0 .833-.373.833-.833V7.5a.833.833 0 0 0-.833-.833Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.333 7.167A.333.333 0 0 0 3 7.5v1.667c0 .184.15.333.333.333h13.334c.184 0 .333-.15.333-.333V7.5a.333.333 0 0 0-.333-.333H3.333ZM2 7.5c0-.736.597-1.333 1.333-1.333h13.334c.736 0 1.333.597 1.333 1.333v1.667c0 .736-.597 1.333-1.333 1.333H3.333A1.333 1.333 0 0 1 2 9.167V7.5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M8.139 3.954C7.541 3.29 6.884 2.989 6.259 3H6.25a1.583 1.583 0 0 0 0 3.167.5.5 0 0 1 0 1A2.583 2.583 0 0 1 6.246 2c.98-.016 1.897.464 2.636 1.285.444.493.82 1.103 1.118 1.795.298-.692.674-1.302 1.118-1.795.739-.821 1.655-1.3 2.636-1.285a2.583 2.583 0 0 1-.004 5.167.5.5 0 0 1 0-1 1.583 1.583 0 0 0 0-3.167h-.009c-.625-.011-1.282.29-1.88.954-.6.667-1.088 1.647-1.375 2.83a.5.5 0 0 1-.972 0c-.287-1.183-.775-2.163-1.375-2.83Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M10 6.167a.5.5 0 0 1 .5.5V17.5a.5.5 0 0 1-1 0V6.667a.5.5 0 0 1 .5-.5Z"></path>
-                                                    </svg>
+                                                    <img src="{{asset('lmodel/dart_icon.png')}}">
                                                 </div>
                                                 <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
                                                         class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
