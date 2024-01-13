@@ -755,7 +755,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-0 lg:order-3 sm:overflow-auto sm:w-full sm:flex-col sm:space-y-5">
+                                <div class="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-2">
                                     <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                         <img
                                             class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
