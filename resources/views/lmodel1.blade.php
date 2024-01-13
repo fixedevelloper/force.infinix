@@ -1553,55 +1553,6 @@
                                             </div>
                                         </div>
                                         @endforeach
-                              {{--          <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1637651">ID 1637651</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">10 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-light-purple"> x4 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x73bfe766bbd866066ff5ba463c8a6a51ff51ac4e39db6a9d633823190195f5fa">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>--}}
 
                                     </div>
                                     <button
@@ -1620,8 +1571,8 @@
                                         class="sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                         <div
                                             class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
-                                            <div class="flex items-center z-[10]"><span
-                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Members total</span>
+                                            <div class="flex items-center z-[10]">
+                                                <span class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Previous number Pair</span>
                                                 <div class="relative group">
                                                     <button
                                                         class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5 "
@@ -1633,8 +1584,7 @@
                                                                   d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"></path>
                                                         </svg>
                                                     </button>
-                                                    <div
-                                                        class="__react_component_tooltip t2b17e35d-5c2c-4eb6-bc2f-792570c1e6ef place-bottom type-dark"
+                                                    <div class="__react_component_tooltip t2b17e35d-5c2c-4eb6-bc2f-792570c1e6ef place-bottom type-dark"
                                                         id="Members total" data-id="tooltip">
                                                         <style aria-hidden="true">
                                                             .t2b17e35d-5c2c-4eb6-bc2f-792570c1e6ef {
@@ -1724,7 +1674,7 @@
                                                 </div>
                                             </div>
                                             <span
-                                                class="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">1 644 319</span>
+                                                class="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5" id="previous_number"></span>
                                         </div>
                                         <div
                                             class="p-5 pt-0 flex text-green-light text-base items-baseline notranslate sm:text-sm">
@@ -1736,9 +1686,10 @@
                                             560
                                         </div>
                                     </div>
-                                    <div class="bg-gray rounded p-5 flex flex-col max-w-full"><span
-                                            class="inline-flex items-center text-base text-white-500 sm:text-sm">Members received <div
-                                                class="relative group"><button
+                                    <div class="bg-gray rounded p-5 flex flex-col max-w-full">
+                                        <span class="inline-flex items-center text-base text-white-500 sm:text-sm">
+                                            Members received
+                                            <div      class="relative group"><button
                                                     class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5 "
                                                     data-tip="true" data-for="Members received"
                                                     currentitem="false"><span></span> <svg class="w-5 h-5 "

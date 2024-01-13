@@ -118,6 +118,13 @@ var lottery = function () {
       console.log(current_balance)
       $('#current_balance').text(current_balance/1000000000000000000)
     };
+    const getPreviousNumber=async function(){
+        var account= await lottery.getAccount()
+        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().abi, initialiseABI().address);
+        var current_balance=  await window.mxgfcontract.methods.getPreviousNumberPair().call();
+        console.log(Object.keys(current_balance))
+        $('#previous_number').text(Object.keys(current_balance)[0]+","+Object.keys(current_balance)[1])
+    };
     return {
         init: function () {
             initialiseEtheruim();
@@ -126,7 +133,8 @@ var lottery = function () {
         },
         load: function () {
             initialiseEtheruim();
-            currentBalance()
+            currentBalance();
+                getPreviousNumber();
         },
         getAccount,
         register,
