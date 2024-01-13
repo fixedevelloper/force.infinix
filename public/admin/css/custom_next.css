@@ -1,3 +1,35 @@
 .break{
     display: block;
 }
+
+/* Using codepen button style :) */
+.loading {
+    background-color: #CCC;
+    padding-right: 40px;
+}
+.loading:after {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    right: 6px;
+    width: 0px;
+    height: 0px;
+    margin-top: -2px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-left-color: #FFF;
+    border-top-color: #FFF;
+    animation: spin .6s infinite linear, grow .3s forwards ease-out;
+}
+@keyframes spin {
+    to {
+        transform: rotate(359deg);
+    }
+}
+@keyframes grow {
+    to {
+        width: 14px;
+        height: 14px;
+        margin-top: -8px;
+        right: 13px;
+    }
+}

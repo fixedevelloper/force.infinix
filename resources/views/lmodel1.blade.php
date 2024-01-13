@@ -1121,14 +1121,14 @@
                                                 <div class="flex" id="content_lotto">
                                                 </div>
                                                 <div class="flex sm:w-full">
-                                                    <button onclick="lottery.sendLottery()" type="button"
-                                                            class="flex justify-center items-center text-center
+                                                    <button onclick="lottery.sendLottery()" type="button" id="btn_lotto"
+                                                            class=" flex justify-center items-center text-center
                                                              text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-cyan-300
                                                               hover:bg-hover-cyan-300 active:bg-active-cyan-300 z-0 sm:w-full text-white">
                                                         <div class="flex flex-col space-y-1 items-center">
                                                             <div class="flex items-center">Send Now
-                                                                <i id="spinner_send" class="lds-dual-ring"></i>
-                                                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                                <i id="spinner_send" class="loading"></i>
+                                                                <svg id="spinner_send_svg" width="17" height="17" viewBox="0 0 17 17" fill="none"
                                                                      xmlns="http://www.w3.org/2000/svg">
                                                                     <path
                                                                         d="M8.74074 8.25926L2 6.7037L16 1M8.74074 8.25926L10.8148 15L16 1M8.74074 8.25926L16 1"
@@ -2026,7 +2026,8 @@
                                                             fill-rule="evenodd" clip-rule="evenodd"
                                                             d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"></path></svg></button><div
                                                     class="__react_component_tooltip t4caa0e02-5e0a-4d80-b008-ef018fb331f9 place-bottom type-dark"
-                                                    id="Members received" data-id="tooltip"><style aria-hidden="true">
+                                                    id="Members received" data-id="tooltip">
+                                                    <style aria-hidden="true">
   	.t4caa0e02-5e0a-4d80-b008-ef018fb331f9 {
         color: #fff;
         background: #222;
@@ -2366,5 +2367,13 @@
 <script src="{{asset("js/jquery-3.7.min.js")}}"></script>
 <script src="{{asset("contractjs/lotterie.js")}}"></script>
 <script type="module" src="{{asset('contractjs/connect-wallet.js')}}"></script>
+<script>
+    var configs={
+        routes:{
+            index: "{{\Illuminate\Support\Facades\URL::to('/')}}",
+            sendLottory: "{{\Illuminate\Support\Facades\URL::route('sendlottory')}}",
+        }
+    }
+</script>
 </body>
 </html>

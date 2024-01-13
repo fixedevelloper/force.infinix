@@ -76,6 +76,7 @@ var lottery = function () {
     };
     const sendLottery=async function(){
         $('#spinner_send').show();
+        $('#spinner_send_svg').hide()
         var account= await lottery.getAccount()
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().abi, initialiseABI().address);
         const gasEstimated = await window.mxgfcontract.methods.pick4Numbers(array[0],array[1],array[2],array[3]).estimateGas({ from: account,value:4000000000000000 });
@@ -97,10 +98,12 @@ var lottery = function () {
                 success: function (data) {
                     console.log(data)
                     $('#spinner_send').hide();
+                    $('#spinner_send_svg').show()
                     alert("Operation successful!")
-                    // window.location.reload(true);
+                     window.location.reload(true);
                 },
                 error: function (err) {
+                    $('#spinner_send_svg').show()
                     $('#spinner_send').hide();
                     alert("An error ocurred while loading data ...");
                 }
