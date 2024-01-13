@@ -29,7 +29,7 @@ class UpdateScore extends Command
     public function __construct(Web3Service $webService)
     {
         parent::__construct();
-        $this->webService = $webService;
+       // $this->webService = $webService;
     }
 
     /**
