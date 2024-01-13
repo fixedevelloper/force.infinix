@@ -122,8 +122,8 @@ var lottery = function () {
         var account= await lottery.getAccount()
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().abi, initialiseABI().address);
         var current_balance=  await window.mxgfcontract.methods.getPreviousNumberPair().call();
-        console.log(Object.keys(current_balance))
-        $('#previous_number').text(Object.keys(current_balance)[0]+","+Object.keys(current_balance)[1])
+        console.log(Object.values(current_balance))
+        $('#previous_number').text("First:"+Object.values(current_balance)[0]+" Second:"+Object.values(current_balance)[1])
     };
     return {
         init: function () {
