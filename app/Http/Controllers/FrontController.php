@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Lottory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -19,9 +20,13 @@ class FrontController extends Controller
 
     }
     public function lmodel1(){
-        return view('lmodel1', []);
+        $participants=Lottory::query()->orderByDesc('id')->get();;
+        return view('lmodel1', [
+            "participants"=>$participants
+        ]);
 
     }
+
     public function lmodel2(){
         return view('lmodel2', []);
 

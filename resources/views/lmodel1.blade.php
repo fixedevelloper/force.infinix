@@ -1354,7 +1354,7 @@
                                 <div
                                     class="notranslate w-full overflow-hidden flex flex-col col-span-2 p-5 bg-gray rounded h-[1000px]  lg:order-2 sm:rounded-none sm:p-5 sm:max-h-3/4">
                                     <div class="flex -mr-10 pr-10 flex-col flex-1 overflow-auto">
-                                        <div
+                                    {{--    <div
                                             class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
                                             <div class="flex items-center sm:items-start justify-start sm:w-full">
                                                 <div
@@ -1367,7 +1367,8 @@
                                                               d="M15.833 6.167a.5.5 0 0 1 .5.5v2h2a.5.5 0 1 1 0 1h-2v2a.5.5 0 1 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 .5-.5Z"></path>
                                                     </svg>
                                                 </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
+                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
+                                                    <a
                                                         class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max order-2"
                                                         href="/dashboard?user=1644320">ID 1644320</a>
                                                     <div
@@ -1378,7 +1379,8 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
+                                                <div class="flex items-center justify-end whitespace-nowrap h-full">
+                                                    <a
                                                         class="sm:order-2" target="_blank"
                                                         href="https://bscscan.com/tx/0xbb13bb22116c60fea0e19832bc825deebc74a3a7012163635be727cfed957667">
                                                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
@@ -1394,7 +1396,8 @@
                                                         class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>--}}
+                                        @foreach($participants as $participant)
                                         <div
                                             class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
                                             <div class="flex items-center sm:items-start justify-start sm:w-full">
@@ -1419,36 +1422,37 @@
                                                 </div>
                                                 <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
                                                         class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1358485">ID 1358485</a>
+                                                        href="#">ID {{$participant->id}}</a>
                                                     <div
                                                         class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
                                                         <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+ bonus</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">5 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-light-purple"> x4 </span></span>
+                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">{{Illuminate\Support\Str::of($participant->address)->limit(20)}}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="flex items-start">
                                                 <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0xbb13bb22116c60fea0e19832bc825deebc74a3a7012163635be727cfed957667">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
+                                                        class="sm:order-2" target="_blank">
+
                                                     </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
+                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                                        {{$participant->numbers}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start">
+                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
+                                                        class="sm:order-2" target="_blank" >
+
+                                                    </a><span
+                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                                        {{$participant->date}}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
+                                        @endforeach
+                              {{--          <div
                                             class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
                                             <div class="flex items-center sm:items-start justify-start sm:w-full">
                                                 <div
@@ -1496,391 +1500,8 @@
                                                         class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1531297">ID 1531297</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">5 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0xbb13bb22116c60fea0e19832bc825deebc74a3a7012163635be727cfed957667">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1023885">ID 1023885</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">80 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x1eae1eda49ae2870c91d596b79d6112d8997ac293e1f41bce0e0221e62f467d0">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1599160">ID 1599160</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">10 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x675849ef8392c8bbba8760de08426bdcec66f98e3fea47f89c339ee2942de4e4">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1182115">ID 1182115</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">80 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x1eae1eda49ae2870c91d596b79d6112d8997ac293e1f41bce0e0221e62f467d0">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-white-100 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-white w-5 h-5" width="20" height="20"
-                                                         fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M7.5 9.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667ZM2.5 17.5v-2.667A3.333 3.333 0 0 1 5.833 11.5h3.334a3.333 3.333 0 0 1 3.333 3.333V17.5"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M15.833 6.167a.5.5 0 0 1 .5.5v2h2a.5.5 0 1 1 0 1h-2v2a.5.5 0 1 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 .5-.5Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max order-2"
-                                                        href="/dashboard?user=1644319">ID 1644319</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 ml-0">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">new user joined</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x8ee675bec8dad488805a391eaf5a353b5230fa2bc38c539ff12ad9643eb400f3">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1622932">ID 1622932</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">5 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-light-purple"> x4 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x8ee675bec8dad488805a391eaf5a353b5230fa2bc38c539ff12ad9643eb400f3">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1599160">ID 1599160</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">5 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x8ee675bec8dad488805a391eaf5a353b5230fa2bc38c539ff12ad9643eb400f3">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                                            <div class="flex items-center sm:items-start justify-start sm:w-full">
-                                                <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                                                    <svg class="fill-current text-green w-5 h-5" viewBox="0 0 20 20"
-                                                         fill="#ffff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                                                              fill-opacity=".5"></path>
-                                                        <path
-                                                            d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                              d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
-                                                        class="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                                                        href="/dashboard?user=1637651">ID 1637651</a>
-                                                    <div
-                                                        class="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                                                        <span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">+</span><span
-                                                            class="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">5 BUSD </span><span
-                                                            class="text-white-500 text-base sm:text-sm sm:leading-30px">in <span
-                                                                class="notranslate text-main-blue"> x3 </span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="flex items-center justify-end whitespace-nowrap h-full"><a
-                                                        class="sm:order-2" target="_blank"
-                                                        href="https://bscscan.com/tx/0x8ee675bec8dad488805a391eaf5a353b5230fa2bc38c539ff12ad9643eb400f3">
-                                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#fff"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"></path>
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                  d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"></path>
-                                                        </svg>
-                                                    </a><span
-                                                        class="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">~ 1 hour</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>--}}
+
                                     </div>
                                     <button
                                         class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 w-full rounded-mini mt-5 flex justify-center items-center">
