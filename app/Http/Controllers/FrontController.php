@@ -26,7 +26,18 @@ class FrontController extends Controller
         ]);
 
     }
+    public function modelRegister(){
+        return view('register_next', []);
 
+    }
+    public function modelHome(){
+        return view('next_home', []);
+
+    }
+    public function modelPreview(){
+        return view('next_preview', []);
+
+    }
     public function lmodel2(){
         return view('lmodel2', []);
 

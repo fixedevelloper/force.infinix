@@ -10969,7 +10969,7 @@ select {
     background:conic-gradient(from -90deg at 50% 50%,#1df49a 0deg,#f4911d 91.88deg,#c91df4 178.77deg,#6f1adb 270deg,#1df49a 1turn)
 }
 .frgx-background {
-    background-image:url(/banners/frgx/bg.png);
+    background-image:url(../lmodel/bg.png);
     background-size:cover;
     background-position:100%
 }
