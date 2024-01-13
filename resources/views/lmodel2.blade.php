@@ -604,7 +604,7 @@
 </html>
 --}}
 <head>
-    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+{{--    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
     <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M2P5S6J"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
             type="text/javascript"></script>
@@ -613,7 +613,7 @@
     <script type="text/javascript" charset="UTF-8"
             src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.fr.lhOVdnRQs64.O/d=1/exm=el_conf/ed=1/rs=AN8SPfqxiQP03C1qjEURd0Ob0Tj_aG72hA/m=el_main"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTBFEB6MK2"></script>
-    <script>
+  --}}  <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -665,19 +665,19 @@
     <meta name="facebook-domain-verification" content="0l0jqngf7hnpo17ssvrusxn79c0muc">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="next-head-count" content="4">
-    <link rel="preload" href="/_next/static/css/ea1b7d16fe7857d4bad9.css" as="style">
+    <link rel="preload" href="{{asset('lmodel/m2/css/preview_next.css')}}" as="style">
     <link rel="stylesheet" href="{{asset('lmodel/m2/css/next.css')}}" data-n-g="">
     <noscript data-n-css=""></noscript>
-    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script>
-    <script src="/_next/static/chunks/webpack-2250e66fef106ed07835.js" defer=""></script>
-    <script src="/_next/static/chunks/framework-314ca51961822e5b31d9.js" defer=""></script>
-    <script src="/_next/static/chunks/main-5cde1a3215904d30b206.js" defer=""></script>
-    <script src="/_next/static/chunks/pages/_app-2edd8ae20f10bf963357.js" defer=""></script>
-    <script src="/_next/static/chunks/pages/dashboard-18b6bc7d02ab78c2060e.js" defer=""></script>
-    <script src="/_next/static/y1w4WVChXh33-jWJuKq5u/_buildManifest.js" defer=""></script>
-    <script src="/_next/static/y1w4WVChXh33-jWJuKq5u/_ssgManifest.js" defer=""></script>
-    <style id="abu-collapse-styles" type="text/css"></style>
-    <script async="" type="text/javascript" src="https://wchat.freshchat.com/js/widget.js" id="freshchat-lib"></script>
+{{--    <script defer="" nomodule="" src="https://busd.forsage.io/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script>
+    <script src="https://busd.forsage.io/_next/static/chunks/webpack-2250e66fef106ed07835.js" defer=""></script>--}}
+    <script src="https://busd.forsage.io/_next/static/chunks/framework-314ca51961822e5b31d9.js" defer=""></script>
+    {{--  <script src="https://busd.forsage.io/_next/static/chunks/main-5cde1a3215904d30b206.js" defer=""></script>--}}
+    <script src="https://busd.forsage.io/_next/static/chunks/pages/_app-2edd8ae20f10bf963357.js" defer=""></script>
+    <script src="{{asset("lmodel/m2/js/next-dashboard.js")}}" defer=""></script>
+{{--    <script src="https://busd.forsage.io/_next/static/y1w4WVChXh33-jWJuKq5u/_buildManifest.js" defer=""></script>
+    <script src="https://busd.forsage.io/_next/static/y1w4WVChXh33-jWJuKq5u/_ssgManifest.js" defer=""></script>--}}
+{{--    <style id="abu-collapse-styles" type="text/css"></style>
+    <script async="" type="text/javascript" src="https://wchat.freshchat.com/js/widget.js" id="freshchat-lib"></script>--}}
     <style data-react-tooltip="true">.__react_component_tooltip {
             border-radius: 3px;
             display: inline-block;
@@ -749,31 +749,31 @@
             text-align: center;
         }</style>
     <title>Dashboard | Forsage</title>
-    <link as="script" rel="prefetch" href="/_next/static/chunks/9285-a567676ee83175eb0f9b.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/index-bb1c2413e7ad0e26c85d.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/dashboard-18b6bc7d02ab78c2060e.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/1524-19d3524b038fd2a10b89.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/9869-bb84388245254b5a0639.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/6270-e05a13963412e9b661f0.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/partners-ec85f5bf29225e28c60e.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/links-4256de04aee5d4ea063a.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/stats-ba6b596a3e97d81c0c6c.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/MaxQoreMarathon-4c5bb0a89194834d50a9.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/3343-77d581d0b7ad7c2c38cc.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/social-1957f3e6027b049ee3a4.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/nft-68e30d7aa10eb1a706a4.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/promo-6bea4c573546c0a186c9.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/3145-395e191a0cec603e393f.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/dashboard/%5Bprogram%5D-8b030cda4ab626dd96ab.js">
-    <link as="script" rel="prefetch" href="/_next/static/chunks/pages/achievements-8892ff2016c295e9e4a0.js">
-    <link href="https://forsagesupport.freshchat.com/widget/css/widget.css?t=1705129143472" rel="stylesheet">
-    <link href="https://forsagesupport.freshchat.com/widget/css/cb.css?t=1705129146837" rel="stylesheet">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/9285-a567676ee83175eb0f9b.js">
+     {{--<link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/index-bb1c2413e7ad0e26c85d.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/dashboard-18b6bc7d02ab78c2060e.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/1524-19d3524b038fd2a10b89.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/9869-bb84388245254b5a0639.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/6270-e05a13963412e9b661f0.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/partners-ec85f5bf29225e28c60e.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/links-4256de04aee5d4ea063a.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/stats-ba6b596a3e97d81c0c6c.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/MaxQoreMarathon-4c5bb0a89194834d50a9.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/3343-77d581d0b7ad7c2c38cc.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/social-1957f3e6027b049ee3a4.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/nft-68e30d7aa10eb1a706a4.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/promo-6bea4c573546c0a186c9.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/3145-395e191a0cec603e393f.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/dashboard/%5Bprogram%5D-8b030cda4ab626dd96ab.js">
+     <link as="script" rel="prefetch" href="https://busd.forsage.io/_next/static/chunks/pages/achievements-8892ff2016c295e9e4a0.js">
+     <link href="https://forsagesupport.freshchat.com/widget/css/widget.css?t=1705129143472" rel="stylesheet">
+     <link href="https://forsagesupport.freshchat.com/widget/css/cb.css?t=1705129146837" rel="stylesheet">--}}
 </head>
 <body style="overflow: unset; position: relative; min-height: 100%; top: 40px;">
-<div style="" class="skiptranslate">
+{{--<div style="" class="skiptranslate">
     <iframe id=":2.container" class="VIpgJd-ZVi9od-ORHb-OEVmcd skiptranslate" frameborder="0" src="#"
             style="visibility:visible"></iframe>
-</div>
+</div>--}}
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2P5S6J" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
@@ -1103,7 +1103,7 @@
                                     <div>
                                         <div
                                             class="z-10 flex-shrink-0 relative w-34 h-34 rounded-full bg-black-light cursor-pointer sm:w-[100px] sm:h-[100px]">
-                                            <img alt="" class="max-w-full max-h-full" src="/UnknownUser.png"></div>
+                                            <img alt="" class="max-w-full max-h-full" src="{{asset("lmodel/UnknownUser.webp")}}"></div>
                                         <div
                                             class="flex justify-center items-center w-10 h-10 sm:w-7.5 sm:h-7.5 bg-status-gold rounded-full w-[36px] h-[36px] z-10 absolute right-0  bottom-2.5 ">
                                             <svg class="h-5 sm:h-3.5 fill-current text-gray" fill="none"
@@ -1286,9 +1286,9 @@
                                                 </div>
                                             </div>
                                             <img class="absolute right-0"
-                                                 src="/dashboardUnderRef/Token/buttonShadow.png"></div>
+                                                 src="{{asset("lmodel/buttonShadow.png")}}"></div>
                                         <img class="absolute w-[full] right-0 left-0 top-0 h-full z-[0] bottom-0 "
-                                             src="/dashboardUnderRef/Token/frgx.png">
+                                             src="{{asset('lmodel/frgx.webp')}}">
                                         <svg class="absolute right-1 top-1" width="20" height="20" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1311,7 +1311,7 @@
                                             class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                             <img
                                                 class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
-                                                src="/Partners.png">
+                                                src="{{asset("lmodel/Partners.png")}}">
                                             <div
                                                 class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
                                                 <div class="flex items-center z-[10]"><span
@@ -1331,14 +1331,14 @@
                                                         </svg>
                                                         7
                                                     </div>
-                                                    <img src="/icons/activity_green.png" class="ml-2.5 w-6 h-6"></div>
+                                                    <img src="{{asset('lmodel/activity_green.png')}}" class="ml-2.5 w-6 h-6"></div>
                                             </div>
                                         </div>
                                         <div
                                             class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                             <img
                                                 class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
-                                                src="/Team.png">
+                                                src="{{asset('lmodel/Team.webp')}}">
                                             <div
                                                 class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
                                                 <div class="flex items-center z-[10]"><span
@@ -1358,7 +1358,7 @@
                                                         </svg>
                                                         560
                                                     </div>
-                                                    <img src="/icons/activity_green.png" class="ml-2.5 w-6 h-6"></div>
+                                                    <img src="{{asset('lmodel/activity_green.png')}}" class="ml-2.5 w-6 h-6"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1366,7 +1366,7 @@
                                         class="lg:flex-grow sm:max-w-full sm:!min-h-0 sm:!flex-row flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                         <img
                                             class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] h-[70%] right-0 sm:h-full absolute bottom-0 sm:left-1/4 sm:-translate-x-1/2 z-[-11]"
-                                            src="/Ratio.png">
+                                            src="{{asset('lmodel/Ratio.png')}}">
                                         <div
                                             class="flex flex-col px-5 pt-5 w-full relative sm:!flex-row sm:!justify-between sm:!items-center sm:!px-2 sm:!py-0">
                                             <div class="flex items-center z-[10]"><span
@@ -1386,7 +1386,7 @@
                                                     </svg>
                                                     0 %
                                                 </div>
-                                                <img src="/icons/activity_white.png" class="ml-2.5 w-6 h-6"></div>
+                                                <img src="{{asset('lmodel/activity_white.webp')}}" class="ml-2.5 w-6 h-6"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1394,7 +1394,7 @@
                                     class="flex flex-1 lg:flex-0 sm:flex-0 h-full sm:max-w-full overflow-hidden w-full relative justify-start items-end bg-black-light rounded lg:max-w-full desktop-infoblock-chart-base">
                                     <div class="flex-shrink-0 relative flex flex-col bg-black-light rounded w-full"><img
                                             class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
-                                            src="/bnbBusd.png" alt="">
+                                            src="{{asset('lmodel/bnbBusd.png')}}" alt="">
                                         <div class="flex flex-col px-5 py-5 w-full">
                                             <div class="flex items-center mb-1"><span
                                                     class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
@@ -1442,12 +1442,12 @@
                         </div>
                         <div
                             class="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5 ">
-                            <div class="flex items-center justify-evenly w-full"><img src="/achievements/cup.svg"
+                            <div class="flex items-center justify-evenly w-full"><img src="{{asset('lmodel/cup.svg')}}"
                                                                                       class="w-[110px] sm:w-20"
                                                                                       alt=""><img
-                                    src="/achievements/cup.svg" class="w-[110px] sm:w-20" alt=""><img
-                                    src="/achievements/cup.svg" class="w-[110px] sm:w-20" alt=""><img
-                                    src="/achievements/cup.svg" class="w-[110px] sm:w-20" alt=""></div>
+                                    src="{{asset('lmodel/cup.svg')}}" class="w-[110px] sm:w-20" alt=""><img
+                                    src="{{asset('lmodel/cup.svg')}}" class="w-[110px] sm:w-20" alt=""><img
+                                    src="{{asset('lmodel/cup.svg')}}" class="w-[110px] sm:w-20" alt=""></div>
                             <div class="flex flex-row cursor-pointer pr-5 sm:w-full"><a class="w-full p-2.5"
                                                                                         href="/achievements?user=1">
                                     <div class="flex space-x-2.5 items-center justify-center sm:w-full"><span
@@ -1546,7 +1546,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/blue-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset('lmodel/blue-blur.png')}}); background-repeat: round; background-size: cover;"></div>
                                 </a><a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
                                     href="/dashboard/x4?user=1">
@@ -1617,7 +1617,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/purple-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset('lmodel/purple-blur.png')}}); background-repeat: round; background-size: cover;"></div>
                                 </a><a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
                                     href="/dashboard/xXx?user=1">
@@ -1688,7 +1688,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/pink-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset('lmodel/pink-blur.png')}}); background-repeat: round; background-size: cover;"></div>
                                 </a><a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
                                     href="/dashboard/xGold?user=1">
@@ -1765,7 +1765,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/gold-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset("lmodel/gold-blur.png")}}); background-repeat: round; background-size: cover;"></div>
                                 </a><a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
                                     href="/dashboard/xQore?user=1">
@@ -1836,7 +1836,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/tiffany-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset("lmodel/tiffany-blur.png")}}); background-repeat: round; background-size: cover;"></div>
                                 </a><a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
                                     href="/dashboard/maxQore?user=1">
@@ -1914,7 +1914,7 @@
                                         </div>
                                     </div>
                                     <div class="absolute w-full h-full inset-0"
-                                         style="background-image: url(&quot;/blurs/dashboard/green-blur.png&quot;); background-repeat: round; background-size: cover;"></div>
+                                         style="background-image: url({{asset("lmodel/green-blur.png")}}); background-repeat: round; background-size: cover;"></div>
                                 </a></div>
                         </div>
                         <div class="sm:px-5">
@@ -1929,9 +1929,9 @@
                                     </div>
                                     <div
                                         class="py-[25px] h-full flex items-center justify-center sm:order-2 sm:py-[30px] ">
-                                        <img src="/ambassador/text-logo.svg" class="max-h-[60px] sm:max-h-[50px] h-full"
+                                        <img src="{{asset("lmodel/text-logo.svg")}}" class="max-h-[60px] sm:max-h-[50px] h-full"
                                              alt=""></div>
-                                    <img src="/ambassador/logo-full.png"
+                                    <img src="{{asset("lmodel/logo-full.png")}}"
                                          class="pr-5 sm:pr-0 h-[130%] sm:h-[125px] sm:order-1" alt=""></div>
                             </div>
                         </div>
@@ -3040,7 +3040,7 @@
         </div>
         <div class=""></div>
     </div>
-    <div id="google_translate_element"
+{{--    <div id="google_translate_element"
          class=" hide_select__translate flex items-center justify-center w-auto h-[36px] text-base font-bold text-white outline-none py-0 px-3 bg-main-blue text-white min-w-40px rounded rounded-br-sm fixed right-5 bottom-24 z-40 lg:px-2">
         <svg
             class="fill-current text-white h-5 w-5 mr-2 sm:mr-0 lg:mr-0 pointer-events-none absolute left-4 lg:left-2.5 flex-shrink-0"
@@ -3058,14 +3058,14 @@
                             style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div>
         </div>
     </div>
-    <div class="Toastify"></div>
+    <div class="Toastify"></div>--}}
 </div>
-<script id="__NEXT_DATA__" type="application/json">
+{{--<script id="__NEXT_DATA__" type="application/json">
     {"props":{"pageProps":{"showActions":false},"initialReduxState":{"profile":{"currentUser":{},"authUser":{},"notifications":{"events":[]},"previewAccount":{},"accountBalance":{"isFirstLoaded":false}},"router":{"isLoadingRouter":false}},"userAgent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0"},"page":"/dashboard","query":{"user":"1"},"buildId":"y1w4WVChXh33-jWJuKq5u","runtimeConfig":{"API_URL":"/api/busd","SCAN_NETWORK":"https://bscscan.com/tx/","SCAN_NETWORK_ADDRESS":"https://bscscan.com/address/","CONTRACT_XBASE":"0x5acc84a3e955bdd76467d3348077d003f00ffb97","CONTRACT_TOKEN":"0xe9e7cea3dedca5984780bafc599bd69add087d56","CONTRACT_XXX":"0x2caa4694cb7daf7d49a198dc1103c06d4991ae52","CONTRACT_XGOLD":"0x98872a66D0749C720D8Dc1A80d496b24B04ff7C5","CONTRACT_XQORE":"0x1ee4A7a62726fDd1EDe780f90fd2a77f53F5Ba78","CONTRACT_MAXQORE":"0x27D6bBaC9112D2097FafA3B14Ae367539A7B1260","CONTRACT_FRGX":"0xc703da39ae3b9db67c207c7bad8100e1afdc0f9c","ALLOWED_CHAIN_ID":"56","STAND":"prod","PANCAKE_SWAP_CONTRACT":"0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16","CONTRACT_ADDRESS_ROUTER":"0x33C31572868f3Df6CD2647561D4c1f0BF1Bb9C9C","CONTRACT_PANCAKE_EXCHANGE":"0x10ED43C718714eb63d5aA57B78B54704E256024E","CONTRACT_MAXQORE_GAME_ATTEMPTS":"0xc77555C8240D3D1e352e246bB3D4675967001Da0"},"isFallback":false,"appGip":true,"locale":"en","locales":["en"],"defaultLocale":"en","scriptLoader":[]}
 </script>
 <img height="1" width="1" style="display:none"
-     src="https://www.facebook.com/tr?id=1154415581916992&amp;ev=PageView&amp;noscript=1">
-<div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
+     src="https://www.facebook.com/tr?id=1154415581916992&amp;ev=PageView&amp;noscript=1">--}}
+{{--<div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
      style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;"
      data-id="">
     <div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd">
@@ -3118,8 +3118,8 @@
 </div>
 <next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert"
                          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p>
-</next-route-announcer>
-<div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf">
+</next-route-announcer>--}}
+{{--<div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf">
     <div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO">
         <svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px"
              viewBox="0 0 66 66">
@@ -3127,27 +3127,27 @@
                     cy="33" r="30"></circle>
         </svg>
     </div>
-</div>
-<iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction"
+</div>--}}
+{{--<iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction"
         style="visibility: visible; box-sizing: content-box; width: 276px; height: 274px; display: none;"></iframe>
 <iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction"
         style="visibility: visible; box-sizing: content-box; width: 244px; height: 274px; display: none;"></iframe>
 <iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction"
-        style="visibility: visible; box-sizing: content-box; width: 230px; height: 71px; display: none;"></iframe>
-<div id="fc_frame" class="fc-widget-normal" style="bottom: 15px; right: 15px;">
+        style="visibility: visible; box-sizing: content-box; width: 230px; height: 71px; display: none;"></iframe>--}}
+{{--<div id="fc_frame" class="fc-widget-normal" style="bottom: 15px; right: 15px;">
     <iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" allowfullscreen="true"
             webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-</div>
-<script src="/_next/static/chunks/3145-395e191a0cec603e393f.js"></script>
+</div>--}}
+{{--<script src="/_next/static/chunks/3145-395e191a0cec603e393f.js"></script>
 <script src="/_next/static/chunks/pages/dashboard/%5Bprogram%5D-8b030cda4ab626dd96ab.js"></script>
 <script src="/_next/static/chunks/pages/achievements-8892ff2016c295e9e4a0.js"></script>
-<script type="text/javascript" src="https://forsagesupport.freshchat.com/widget/js/co-browsing.js"></script>
-<div id="fc_push_frame">
+<script type="text/javascript" src="https://forsagesupport.freshchat.com/widget/js/co-browsing.js"></script>--}}
+{{--<div id="fc_push_frame">
     <iframe id="fc_push"
             src="https://623368906118477.eu.webpush.freshchat.com/index.html?ref=aHR0cHM6Ly9idXNkLmZvcnNhZ2UuaW8="
             title="Chat" frameborder="0"></iframe>
-</div>
-<script src="/_next/static/chunks/1524-19d3524b038fd2a10b89.js"></script>
+</div>--}}
+{{--<script src="/_next/static/chunks/1524-19d3524b038fd2a10b89.js"></script>
 <script src="/_next/static/chunks/9869-bb84388245254b5a0639.js"></script>
 <script src="/_next/static/chunks/6270-e05a13963412e9b661f0.js"></script>
 <script src="/_next/static/chunks/pages/links-4256de04aee5d4ea063a.js"></script>
@@ -3158,5 +3158,5 @@
 <script src="/_next/static/chunks/pages/stats-ba6b596a3e97d81c0c6c.js"></script>
 <script src="/_next/static/chunks/pages/nft-68e30d7aa10eb1a706a4.js"></script>
 <script src="/_next/static/chunks/3343-77d581d0b7ad7c2c38cc.js"></script>
-<script src="/_next/static/chunks/pages/social-1957f3e6027b049ee3a4.js"></script>
+<script src="/_next/static/chunks/pages/social-1957f3e6027b049ee3a4.js"></script>--}}
 </body>
