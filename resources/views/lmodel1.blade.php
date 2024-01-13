@@ -1402,7 +1402,7 @@
                                             class="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
                                             <div class="flex items-center sm:items-start justify-start sm:w-full">
                                                 <div
-                                                    class="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                                                    class="bg-white-900 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
                                                     <img src="{{asset('lmodel/dart_icon.png')}}">
                                                 </div>
                                                 <div class="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5"><a
