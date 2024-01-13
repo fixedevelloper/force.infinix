@@ -38,6 +38,6 @@ class UpdateScore extends Command
     public function handle()
     {
         //$this->webService->AddressToID("0x77Fd63a360918A27451Dd23d1705Eb7afc3A6087");
-        $this->webService->IDToAddress(1);
+      //  $this->webService->IDToAddress(1);
     }
 }
