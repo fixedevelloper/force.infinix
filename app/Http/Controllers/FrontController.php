@@ -18,6 +18,14 @@ class FrontController extends Controller
         return view('documentation', []);
 
     }
+    public function lmodel1(){
+        return view('lmodel1', []);
+
+    }
+    public function lmodel2(){
+        return view('lmodel2', []);
+
+    }
     public function about_us(){
         return view('about_us', []);
 

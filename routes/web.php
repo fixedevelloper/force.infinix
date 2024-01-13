@@ -19,6 +19,10 @@ Route::match(["POST","GET"],'/', [FrontController::class, 'home'])
     ->name('home');
 Route::get('/documentation', [FrontController::class, 'documentation'])
     ->name('documentation');
+Route::get('/lmodel1', [FrontController::class, 'lmodel1'])
+    ->name('lmodel1');
+Route::get('/lmodel2', [FrontController::class, 'lmodel2'])
+    ->name('lmodel2');
 Route::get('/about_us', [FrontController::class, 'about_us'])
     ->name('about_us');
 Route::get('/registration', [FrontController::class, 'register'])
