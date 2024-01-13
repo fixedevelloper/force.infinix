@@ -575,8 +575,70 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="cursor-pointer h-[75px] w-full rounded z-[1] relative flex  items-end justify-end sm:pt-4 sm:h-[55px] hover:opacity-70">
+                                <div class="flex mr-2 space-x-2">
+                                    <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                        <img
+                                            class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
+                                            src="{{asset('lmodel/bnbBusd.png')}}" alt="">
+                                        <div class="flex flex-col px-5 py-5 w-full">
+                                            <div class="flex items-center mb-1"><span
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <div
+                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                    727.8 BUSD
+                                                </div>
+                                                <div class="flex p-1.5">
+                                                    <div
+                                                        class="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
+                                                        <div class="flex items-center justify-start">
+                                                            <svg class="stroke-current mr-1.5" width="8" height="11"
+                                                                 stroke="#2CFF4E" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
+                                                                      stroke-linejoin="round"></path>
+                                                            </svg>
+                                                            55.6
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                        <img
+                                            class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
+                                            src="{{asset('lmodel/bnbBusd.png')}}" alt="">
+                                        <div class="flex flex-col px-5 py-5 w-full">
+                                            <div class="flex items-center mb-1"><span
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <div
+                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                    11 BUSD
+                                                </div>
+                                                <div class="flex p-1.5">
+                                                    <div
+                                                        class="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
+                                                        <div class="flex items-center justify-start">
+                                                            <svg class="stroke-current mr-1.5" width="8" height="11"
+                                                                 stroke="#2CFF4E" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
+                                                                      stroke-linejoin="round"></path>
+                                                            </svg>
+                                                            55.6
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {{--<div class="cursor-pointer h-[75px] w-full rounded z-[1] relative flex  items-end justify-end sm:pt-4 sm:h-[55px] hover:opacity-70">
                                     <div
                                         class="w-full h-[75px] rounded relative overflow-hidden bg-[#1E1E1E] sm:h-[55px]">
                                         <div
@@ -605,24 +667,19 @@
                                                   fill="#fff"></path>
                                         </svg>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                         {{--end space user--}}
                         <div class="flex w-full mt-15 sm:mt-5 sm:px-5">
                             <div class="flex w-full flex-wrap lg:flex-col">
-                                <div
-                                    class="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-0 lg:order-3 sm:overflow-auto sm:w-full sm:flex-col sm:space-y-5">
+                                <div class="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-0 lg:order-3 sm:overflow-auto sm:w-full sm:flex-col sm:space-y-5">
                                     <div class="flex space-x-2 sm:space-x-5">
-                                        <div
-                                            class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-                                            <img
-                                                class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
+                                        <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                            <img class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
                                                 src="{{asset("lmodel/Partners.png")}}">
-                                            <div
-                                                class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
-                                                <div class="flex items-center z-[10]"><span
-                                                        class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Partners</span>
+                                            <div class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
+                                                <div class="flex items-center z-[10]"><span class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Partners</span>
                                                 </div>
                                                 <span
                                                     class="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">22139</span>
@@ -642,8 +699,7 @@
                                                          class="ml-2.5 w-6 h-6"></div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                        <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                             <img
                                                 class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
                                                 src="{{asset('lmodel/Team.webp')}}">
@@ -671,8 +727,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="lg:flex-grow sm:max-w-full sm:!min-h-0 sm:!flex-row flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                    <div class="lg:flex-grow sm:max-w-full sm:!min-h-0 sm:!flex-row flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
                                         <img
                                             class="h-[70%] sm:h-3/4 absolute  bottom-0 right-0 z-[-11] h-[70%] right-0 sm:h-full absolute bottom-0 sm:left-1/4 sm:-translate-x-1/2 z-[-11]"
                                             src="{{asset('lmodel/Ratio.png')}}">
@@ -700,8 +755,69 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 lg:flex-0 sm:flex-0 h-full sm:max-w-full overflow-hidden w-full relative justify-start items-end bg-black-light rounded lg:max-w-full desktop-infoblock-chart-base">
+                                <div class="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-0 lg:order-3 sm:overflow-auto sm:w-full sm:flex-col sm:space-y-5">
+                                    <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                        <img
+                                            class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
+                                            src="{{asset('lmodel/bnbBusd.png')}}" alt="">
+                                        <div class="flex flex-col px-5 py-5 w-full">
+                                            <div class="flex items-center mb-1"><span
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <div
+                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                    727.8 BUSD
+                                                </div>
+                                                <div class="flex p-1.5">
+                                                    <div
+                                                        class="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
+                                                        <div class="flex items-center justify-start">
+                                                            <svg class="stroke-current mr-1.5" width="8" height="11"
+                                                                 stroke="#2CFF4E" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
+                                                                      stroke-linejoin="round"></path>
+                                                            </svg>
+                                                            55.6
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
+                                        <img
+                                            class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
+                                            src="{{asset('lmodel/bnbBusd.png')}}" alt="">
+                                        <div class="flex flex-col px-5 py-5 w-full">
+                                            <div class="flex items-center mb-1"><span
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <div
+                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                    11 BUSD
+                                                </div>
+                                                <div class="flex p-1.5">
+                                                    <div
+                                                        class="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
+                                                        <div class="flex items-center justify-start">
+                                                            <svg class="stroke-current mr-1.5" width="8" height="11"
+                                                                 stroke="#2CFF4E" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
+                                                                      stroke-linejoin="round"></path>
+                                                            </svg>
+                                                            55.6
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                               {{-- <div class="flex flex-1 lg:flex-0 sm:flex-0 h-full sm:max-w-full overflow-hidden w-full relative justify-start items-end bg-black-light rounded lg:max-w-full desktop-infoblock-chart-base">
                                     <div class="flex-shrink-0 relative flex flex-col bg-black-light rounded w-full"><img
                                             class="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
                                             src="{{asset('lmodel/bnbBusd.png')}}" alt="">
@@ -746,7 +862,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                             <div class="hidden"><span>00:00:00:00</span></div>
                         </div>
