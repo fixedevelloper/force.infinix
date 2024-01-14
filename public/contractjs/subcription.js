@@ -61,9 +61,6 @@ var subcription = function () {
         if (window.ethereum) {
             window.web3 = new Web3(ethereum);
             try {
-                /*await ethereum.request({
-                    method: 'eth_requestAccounts'
-                });*/
                 var networkid = await web3.eth.net.getId()
                 if (networkid !== 56) {
                     alert('Connect to BNB Mainnet Network');
@@ -96,9 +93,9 @@ var subcription = function () {
         console.log(gasEstimated)*/
         var result = await window.mxgfcontract.methods.register(account, new_address).send({
             from: account,
-            value:4000000,
-            gasLimit: 52742,
-            gas: 52742,
+            value:40000000,
+            gasLimit: 400000,
+            gas: 400000,
 
         });
         console.log('Buy result : -' + result);
