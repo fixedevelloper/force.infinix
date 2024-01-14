@@ -499,11 +499,11 @@
                         <div class="flex space-x-2.5 sm:w-full">
                             <button onclick="subcription.approve()"
                                 class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue mt-10 py-5 !px-10 sm:py-3  sm:mt-7.5 sm:flex-1">
-                                Approuve
+                                Approuve <i id="spinner_approuve" class="lds-dual-ring"></i>
                             </button>
                             <button onclick="subcription.register()"
                                     class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue mt-10 py-5 !px-10 sm:py-3  sm:mt-7.5 sm:flex-1">
-                                Register
+                                Register <i id="spinner_register" class="lds-dual-ring"></i>
                             </button>
                         </div>
                         <div class="pl-[36px] group min-h-[24px] sm:pl-0 sm:pt-2">
