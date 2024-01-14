@@ -2287,7 +2287,6 @@
     </div>
 </div>
 
-@include('admin._partials._footer')
 
 
 <!-- vendor plugins -->
