@@ -447,7 +447,7 @@
                                 class="control-arrow control-prev control-disabled"></button>
                         <div class="slider-wrapper axis-horizontal">
                             <ul class="slider animated"
-                                style="transform: translate3d(-100%, 0px, 0px); transition-duration: 350ms;">
+                                style="transform: translate3d(-100%, 0px, 0px); transition-duration: 30ms;">
                                 <li class="slide previous">
                                     <div class="!flex !relative sm:px-5 sm:h-full sm:flex-col">
                                         <div
@@ -1920,7 +1920,7 @@
                         </div>
                     </div>
                     <div
-                        style="background-image: url(&quot;/blurs/login/blue-blur.png&quot;); background-repeat: round; background-size: cover;"
+                        style="background-image: url({{asset('lmodel/blue-blur.png')}}); background-repeat: round; background-size: cover;"
                         class="absolute left-1/2 -bottom-1/2 transform -translate-x-1/2 w-full h-full z-0 sm:hidden"></div>
                 </div>
                 <div class="sm:px-5">
@@ -1999,7 +1999,7 @@
                 </div>
             </footer>
         </div>
-        <div class=""></div>
+
     </div>
 </div>
 </body>
