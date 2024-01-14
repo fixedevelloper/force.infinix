@@ -81,6 +81,16 @@ var subcription = function () {
 
         }
     };
+    const activateLevel=async function(level){
+        $('#spinner_register').show();
+        const account=await getAccount()
+        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+        var level_ = await window.mxgfcontract.methods.Buy_Qore_For(account,Number.parseInt(level)).send({
+            from: account,
+            gasLimit: 600000,
+            gas: 600000,
+        });
+    }
     const register=async function(){
         $('#spinner_register').show();
         const account=await getAccount();
@@ -93,8 +103,8 @@ var subcription = function () {
         console.log(gasEstimated)*/
         var result = await window.mxgfcontract.methods.register(account, new_address).send({
             from: account,
-            gasLimit: 400000,
-            gas: 400000,
+            gasLimit: 600000,
+            gas: 600000,
 
         });
         console.log('Buy result : -' + result);
@@ -175,7 +185,8 @@ var subcription = function () {
         getAccount,
         register,
         login,
-        approve
+        approve,
+        activateLevel
     }
 }();
 jQuery(document).ready(function() {

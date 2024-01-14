@@ -392,7 +392,7 @@
                 <div class="flex flex-1 flex-col items-start mr-10 sm:mr-0 sm:items-stretch sm:max-w-full sm:p-5">
                     <div class="flex flex-col sm:flex-1"><span
                             class="inline-block text-two-half text-white mb-10 sm:mb-7.5 sm:text-2xl"> Registration <br> in <span
-                                class="notranslate"> Infinix BUSD</span></span>
+                                class="notranslate"> NEXACHAIN FDUSD</span></span>
                         <div class="flex flex-col mb-10 sm:mb-7.5">
                             <div class="w-full relative flex flex-col flex-grow-0 flex-shrink-0">
                                 <div class="flex items-baseline"><label
@@ -457,7 +457,7 @@
                                     </svg>
                                     <div
                                         class="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-red">
-                                        <span class="mr-1.5"><span>Balance</span><span>:</span></span><span class="">min 10.9 BUSD or 0.038 BNB</span>
+                                        <span class="mr-1.5"><span>Balance</span><span>:</span></span><span class="">min 5 FDUSD </span>
                                     </div>
                                 </div>
                                 <div class="hidden bg-white-100 rounded flex-col w-full p-5 mt-4 sm:flex">
@@ -469,12 +469,8 @@
                                                     fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M11.25 8a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM10.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v3.25H13a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75v-3.25H11a.75.75 0 0 1-.75-.75Z"
                                                     fill="#343A4D"></path></svg>Information</span>
-                                        <div class="flex flex-col"><span class="text-white">Insufficient balance for registration.</span><span
-                                                class=""><span>Registration requires <span
-                                                        class="text-white notranslate">10.9 BUSD</span> and at least <span
-                                                        class="text-white notranslate">0.005 BNB</span>.  <span>Your wallet balance: <span
-                                                            class="notranslate text-red">0.00 BUSD</span> and <span
-                                                            class="notranslate text-white">0.025 BNB</span>.</span></span></span><a
+                                        <div class="flex flex-col">
+                                            <a
                                                 target="_blank"
                                                 href="https://support.forsage.io/article/guides/registration-forsage-busd">
                                                 <button
