@@ -93,7 +93,6 @@ var subcription = function () {
         console.log(gasEstimated)*/
         var result = await window.mxgfcontract.methods.register(account, new_address).send({
             from: account,
-            value:40000000,
             gasLimit: 400000,
             gas: 400000,
 
