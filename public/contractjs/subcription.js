@@ -88,8 +88,12 @@ var subcription = function () {
         $('#spinner_register').show();
         const account=await getAccount();
         const new_address=await idToAddress();
+        console.log(new_address)
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
-        const gasEstimated = await window.mxgfcontract.methods.register(initialiseABI().stakingaddress, BigInt(initialiseABI().balance_MAIN)).estimateGas({ from: account});
+        const gasEstimated = await window.mxgfcontract.methods.register(account,new_address)
+            .estimateGas({ from: account});
+
+        console.log(gasEstimated)
         var result = await window.mxgfcontract.methods.register(account, new_address).send({
             from: account,
             gasLimit: gasEstimated,
@@ -166,6 +170,7 @@ var subcription = function () {
             initialiseEtheruim();
             initialiseABI();
             $('#spinner_register').hide();
+            $('#spinner_approuve').hide();
         },
         load: function () {
             initialiseEtheruim();
