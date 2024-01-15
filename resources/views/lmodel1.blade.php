@@ -197,7 +197,7 @@
                                         </div>
                                         <div class="border-solid border-[1px] border-[#363738] lg:hidden mx-2.5"></div>
                                         <div class="flex flex-col p-2.5 lg:py-0 lg:pr-0"><a class="undefined undefined"
-                                                                                            href="/partners?user=1">
+                                                                                            href="#">
                                                 <button
                                                     class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                                                     <div class="flex items-center text-left">
@@ -238,7 +238,8 @@
                                                         </svg>
                                                         <span class="text-white-500 text-base ml-2.5 false">Links</span></div>
                                                 </button>
-                                            </a><a class="undefined undefined" href="/stats?user=1">
+                                            </a>
+                                            <a class="undefined undefined" href="/stats?user=1">
                                                 <button
                                                     class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                                                     <div class="flex items-center text-left">
@@ -939,8 +940,7 @@
                                             <div class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
                                                 <div class="flex items-center z-[10]"><span class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Partners</span>
                                                 </div>
-                                                <span
-                                                    class="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">22139</span>
+                                                <span class="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">{{is_null($user)?0:$user->direct_patner_count}}</span>
                                             </div>
                                             <div class="flex p-2.5 w-full">
                                                 <div
