@@ -599,18 +599,18 @@
                                     <div class="flex"><a class="mr-1.5 text text-white-300 sm:text-sm"
                                                          href="{{route("lmodel1",["id"=>$id])}}"><span class="hover:text-white-500">ID {{$id}}</span>
                                             /</a></div>
-                                    <span class="text text-white whitespace-nowrap sm:text-sm">Nexachain x3</span><span
+                                    <span class="text text-white whitespace-nowrap sm:text-sm">Nexachain {{\Illuminate\Support\Str::upper($type)}}</span><span
                                         class="text text-white whitespace-nowrap ml-1.5 sm:text-sm">(<span
                                             class="inline sm:hidden">0 out of 10 levels</span><span
                                             class="hidden sm:inline">0/10</span>)</span></div>
                                 <div class="w-full flex justify-between flex-wrap">
                                     <div class="flex flex-wrap items-center"><span
-                                            class="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">Nexachain x3</span>
+                                            class="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">Nexachain {{\Illuminate\Support\Str::upper($type)}}</span>
                                     </div>
                                     <div class="flex flex-col items-end">
                                         <div
                                             class="self-end text-two-half text-white font-bold sm:text-2xl whitespace-nowrap">
-                                            368 535 BUSD
+                                            <span id="profit_type">0 </span> <span>&nbsp; FDUSD</span>
                                         </div>
                                     </div>
                                 </div>
@@ -621,81 +621,683 @@
                                 class="flex overflow-hidden relative w-full flex-col bg-black-light rounded p-7.5 pb-5 sm:p-5 sm:pl-2.5 sm:pr-2.5 sm:rounded-none "
                                 style="background-image: url(&quot;/blurs/program/blue-blur.png&quot;); background-repeat: round; background-size: cover;">
                                 <div class="flex z-10 flex-wrap -m-2 sm:-mx-px mb-7.5 sm:justify-around">
-                                    @for($i=1;$i<10;$i++)
-                                    <a href="#" onclick="subcription.activateLevel({{$i}})">
-                                        <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
-                                            <div class="flex w-full justify-between !mb-2.5">
-                                                <div class="flex space-x-1.5 items-center"><span
-                                                        class="text-white-500 text-base sm:text-sm">Lvl{{$i}}</span></div>
-                                                <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                        class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                 rx="12"
-                                                                                                 fill="#F3BA2F"></rect><path
-                                                            d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                            fill="#fff" stroke="#F0B90B"></path></svg>5</span></div>
-                                            <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
-                                                <div class="flex w-full justify-center items-center">
-                                                    <div class="relative flex w-full justify-evenly items-start false">
-                                                       @if($activate_level)
-                                                        <div class="flex w-full">
-                                                            <div
-                                                                class="flex flex-col w-full justify-evenly items-center space-y-1.5">
-                                                                <div class="relative">
+                                    @if($activate_level)
+
+                                    @else
+                                        <a href="#" onclick="subcription.activateLevel(1)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl1</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>10</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
                                                                     <div
-                                                                        class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex w-full">
-                                                            <div
-                                                                class="flex flex-col w-full justify-evenly items-center space-y-1.5">
-                                                                <div class="relative">
+                                                                <div class="flex w-full">
                                                                     <div
-                                                                        class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex w-full">
-                                                            <div
-                                                                class="flex flex-col w-full justify-evenly items-center space-y-1.5">
-                                                                <div class="relative">
+                                                                <div class="flex w-full">
                                                                     <div
-                                                                        class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
                                                         </div>
-                                                        @else
-                                                        <img src="{{asset("lmodel/cart.svg")}}" width="50">
-                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm"></span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(2)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl2</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>20</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(3)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl3</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>30</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+                                                    {{-- <div class="flex space-x-2 items-center">
+                                                         <svg class="w-5 h-5 stroke-current text-white-500"
+                                                              viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
+                                                              xmlns="http://www.w3.org/2000/svg">
+                                                             <path clip-rule="evenodd"
+                                                                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
+                                                         </svg>
+                                                         <span class="text-sm text-white font-normal sm:text-sm">8732</span>
+                                                     </div>--}}
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(4)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl4</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>50</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(5)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl5</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>100</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="flex flex-wrap space-x-2">
-                                                <div class="flex space-x-2 items-center">
-                                                    <svg class="w-5 h-5 stroke-current text-white-500"
-                                                         viewBox="0 0 16 16" fill="none" stroke="#fff"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                                                            stroke-width="1.333" stroke-linecap="round"
-                                                            stroke-linejoin="round"></path>
-                                                    </svg>
-                                                    <span class="text-sm text-white font-normal sm:text-sm">22141</span>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(6)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl6</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>250</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                               {{-- <div class="flex space-x-2 items-center">
-                                                    <svg class="w-5 h-5 stroke-current text-white-500"
-                                                         viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path clip-rule="evenodd"
-                                                              d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
-                                                    </svg>
-                                                    <span class="text-sm text-white font-normal sm:text-sm">8732</span>
-                                                </div>--}}
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+                                                    {{-- <div class="flex space-x-2 items-center">
+                                                         <svg class="w-5 h-5 stroke-current text-white-500"
+                                                              viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
+                                                              xmlns="http://www.w3.org/2000/svg">
+                                                             <path clip-rule="evenodd"
+                                                                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
+                                                         </svg>
+                                                         <span class="text-sm text-white font-normal sm:text-sm">8732</span>
+                                                     </div>--}}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                    @endfor
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(7)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl7</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>500</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+                                                    {{-- <div class="flex space-x-2 items-center">
+                                                         <svg class="w-5 h-5 stroke-current text-white-500"
+                                                              viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
+                                                              xmlns="http://www.w3.org/2000/svg">
+                                                             <path clip-rule="evenodd"
+                                                                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
+                                                         </svg>
+                                                         <span class="text-sm text-white font-normal sm:text-sm">8732</span>
+                                                     </div>--}}
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(8)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl8</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>1250</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(9)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl9</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>2500</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">22141</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" onclick="subcription.activateLevel(10)">
+                                            <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                                <div class="flex w-full justify-between !mb-2.5">
+                                                    <div class="flex space-x-1.5 items-center"><span
+                                                            class="text-white-500 text-base sm:text-sm">Lvl10</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
+                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
+                                                                                                     rx="12"
+                                                                                                     fill="#F3BA2F"></rect><path
+                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
+                                                                fill="#fff" stroke="#F0B90B"></path></svg>5000</span></div>
+                                                <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
+                                                    <div class="flex w-full justify-center items-center">
+                                                        <div class="relative flex w-full justify-evenly items-start false">
+                                                            @if($activate_level)
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex w-full">
+                                                                    <div
+                                                                        class="flex flex-col w-full justify-evenly items-center space-y-1.5">
+                                                                        <div class="relative">
+                                                                            <div
+                                                                                class="bg-hover-main-blue  rounded-full w-7.5 h-7.5 "></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap space-x-2">
+                                                    <div class="flex space-x-2 items-center">
+                                                        <svg class="w-5 h-5 stroke-current text-white-500"
+                                                             viewBox="0 0 16 16" fill="none" stroke="#fff"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
+                                                                stroke-width="1.333" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endif
+
                                 </div>
                                 <div class="flex items-center flex-wrap z-10">
                                     <div

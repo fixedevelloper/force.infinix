@@ -54,6 +54,7 @@ class FrontController extends Controller
     public function modelPreview(Request $request){
         $isLogged=false;
         $id= $request->get("id");
+        $type= $request->get("type");
         if(Session::get("id_connect")==$id){
             $isLogged=true;
         }
@@ -68,7 +69,8 @@ class FrontController extends Controller
             "id"=>$id,
             "isLogged"=>$isLogged,
             "user"=>$user,
-            "activate_level"=>$activate_level
+            "activate_level"=>$activate_level,
+            "type"=>$type
         ]);
     }
     public function next_login(){
