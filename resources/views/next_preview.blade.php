@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('lmodel/m2/css/next.css')}}" data-n-g="">
     <link rel="stylesheet" href="{{asset('admin/css/custom_next.css')}}" data-n-g="">
 
-    <title>Forsage x3 | Forsage</title>
+    <title>Preview | NEXACHAIN FDUSD</title>
     <style id="abu-collapse-styles" type="text/css"></style>
 
 </head>
@@ -32,7 +32,7 @@
                                           fill="#fff"></path>
                                 </svg>
                             </a><span class="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 false">Preview ID<span
-                                    class="hidden lg:inline ml-1.5">1</span></span>
+                                    class="hidden lg:inline ml-1.5">{{$id}}</span></span>
                             <div class="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:hidden">
                                 <input
                                     class="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none false"
@@ -44,10 +44,13 @@
                             </div>
                         </div>
                     </div>
+                    @if($isLogged)
+                    @else
                     <button
                         class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden">
                         Login to your account
                     </button>
+                    @endif
                 </div>
                 <div class="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
                     <button
@@ -81,7 +84,7 @@
                                 </svg>
                             </a><span
                                 class="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 lg:text-2xl lg:text-medium lg:mb-7.5">Preview ID<span
-                                    class="hidden lg:inline ml-1.5">1</span></span>
+                                    class="hidden lg:inline ml-1.5">{{$id}}</span></span>
                             <div class="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex"><input
                                     class="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1"
                                     value="1">
@@ -347,8 +350,7 @@
                                             </div>
                                         </button>
                                     </a>
-                                    <div
-                                        class="undefined bg-black-light lg:bg-transparent lg:!pb-0  min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
+                                    <div class="undefined bg-black-light lg:bg-transparent lg:!pb-0  min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                                         <div class="flex p-2.5 lg:px-0 lg:py-5">
                                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#8B8C8C"
                                                  stroke-linecap="round" stroke-linejoin="round"
@@ -428,8 +430,7 @@
                                             </a></div>
                                     </div>
                                     <a class="undefined undefined" href="/MaxQoreMarathon?user=1">
-                                        <button
-                                            class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between   lg:border-b lg:border-white-300">
+                                        <button class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between   lg:border-b lg:border-white-300">
                                             <div class="flex items-center text-left">
                                                 <svg class="w-6 h-6 stroke-current text-white-500 " viewBox="0 0 24 24">
                                                     <style>.st1 {
@@ -448,7 +449,8 @@
                                                 <span class="text-white-500 text-base ml-2.5 false">Marathon</span>
                                             </div>
                                         </button>
-                                    </a><a class="undefined undefined" href="/social?user=1">
+                                    </a>
+                                    <a class="undefined undefined" href="/social?user=1">
                                         <button
                                             class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between   lg:border-b lg:border-white-300">
                                             <div class="flex items-center text-left">
@@ -474,7 +476,8 @@
                                                     class="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">New</span>
                                             </div>
                                         </button>
-                                    </a><a class="undefined undefined" href="/nft?user=1">
+                                    </a>
+                                    <a class="undefined undefined" href="/nft?user=1">
                                         <button
                                             class="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between   lg:border-b lg:border-white-300">
                                             <div class="flex items-center text-left">
@@ -582,8 +585,7 @@
                     </div>
                 </div>
             </div>
-            <div
-                class="flex flex-shrink w-full flex-col items-center min-h-screen bg-main max-w-[calc(100% - 326px)] lg:max-w-full overflow-auto pt-20 sm:pt-14">
+            <div class="flex flex-shrink w-full flex-col items-center min-h-screen bg-main max-w-[calc(100% - 326px)] lg:max-w-full overflow-auto pt-20 sm:pt-14">
                 <div class="flex relative flex-1 py-10 pt-8.5 flex-col justify-between w-full px-10 sm:px-0 sm:pt-7.5">
                     <div class="flex flex-col space-y-10 sm:space-y-7.5">
                         <div class="flex flex-wrap justify-between notranslate ">
@@ -595,15 +597,15 @@
                                 <div class="notranslate"></div>
                                 <div class="flex items-center mb-1.5 sm:mb-2.5">
                                     <div class="flex"><a class="mr-1.5 text text-white-300 sm:text-sm"
-                                                         href="/dashboard?user=1"><span class="hover:text-white-500">ID 1</span>
+                                                         href="{{route("lmodel1",["id"=>$id])}}"><span class="hover:text-white-500">ID {{$id}}</span>
                                             /</a></div>
-                                    <span class="text text-white whitespace-nowrap sm:text-sm">Forsage x3</span><span
+                                    <span class="text text-white whitespace-nowrap sm:text-sm">Nexachain x3</span><span
                                         class="text text-white whitespace-nowrap ml-1.5 sm:text-sm">(<span
-                                            class="inline sm:hidden">12 out of 12 levels</span><span
-                                            class="hidden sm:inline">12/12</span>)</span></div>
+                                            class="inline sm:hidden">0 out of 10 levels</span><span
+                                            class="hidden sm:inline">0/10</span>)</span></div>
                                 <div class="w-full flex justify-between flex-wrap">
                                     <div class="flex flex-wrap items-center"><span
-                                            class="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">Forsage x3</span>
+                                            class="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">Nexachain x3</span>
                                     </div>
                                     <div class="flex flex-col items-end">
                                         <div
@@ -619,10 +621,9 @@
                                 class="flex overflow-hidden relative w-full flex-col bg-black-light rounded p-7.5 pb-5 sm:p-5 sm:pl-2.5 sm:pr-2.5 sm:rounded-none "
                                 style="background-image: url(&quot;/blurs/program/blue-blur.png&quot;); background-repeat: round; background-size: cover;">
                                 <div class="flex z-10 flex-wrap -m-2 sm:-mx-px mb-7.5 sm:justify-around">
-                                    @for($i=1;$i<9;$i++)
+                                    @for($i=1;$i<10;$i++)
                                     <a href="#" onclick="subcription.activateLevel({{$i}})">
-                                        <div
-                                            class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                                        <div class="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[158px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
                                             <div class="flex w-full justify-between !mb-2.5">
                                                 <div class="flex space-x-1.5 items-center"><span
                                                         class="text-white-500 text-base sm:text-sm">Lvl{{$i}}</span></div>
@@ -636,6 +637,7 @@
                                             <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                 <div class="flex w-full justify-center items-center">
                                                     <div class="relative flex w-full justify-evenly items-start false">
+                                                       @if($activate_level)
                                                         <div class="flex w-full">
                                                             <div
                                                                 class="flex flex-col w-full justify-evenly items-center space-y-1.5">
@@ -663,6 +665,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        @else
+                                                        <img src="{{asset("lmodel/cart.svg")}}" width="50">
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -678,7 +683,7 @@
                                                     </svg>
                                                     <span class="text-sm text-white font-normal sm:text-sm">22141</span>
                                                 </div>
-                                                <div class="flex space-x-2 items-center">
+                                               {{-- <div class="flex space-x-2 items-center">
                                                     <svg class="w-5 h-5 stroke-current text-white-500"
                                                          viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
                                                          xmlns="http://www.w3.org/2000/svg">
@@ -686,7 +691,7 @@
                                                               d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
                                                     </svg>
                                                     <span class="text-sm text-white font-normal sm:text-sm">8732</span>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
                                     </a>

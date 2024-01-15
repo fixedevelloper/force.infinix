@@ -66,3 +66,6 @@ Route::get('dash/dashboard', [DashboardController::class, 'dashboard'])->name('d
 Route::get('dash/my_tirage', [DashboardController::class, 'my_tirage'])->name('my_tirage');
 Route::get('dash/participant', [DashboardController::class, 'particpant'])->name('particpant');
 Route::match(['POST','GET'],'/sendLottory', [DashboardController::class, 'sendLottory'])->name('sendlottory');
+Route::match(['POST','GET'],'/register_ajax', [DashboardController::class, 'register_ajax'])->name('register_ajax');
+Route::match(['POST','GET'],'/activate_level', [DashboardController::class, 'activate_level'])->name('activate_level');
+Route::match(['POST','GET'],'/login_ajax', [DashboardController::class, 'login_next'])->name('login_next');

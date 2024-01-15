@@ -85,11 +85,31 @@ var subcription = function () {
         $('#spinner_register').show();
         const account=await getAccount()
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
-        var level_ = await window.mxgfcontract.methods.Buy_Qore_For(account,Number.parseInt(level)).send({
+        var result = await window.mxgfcontract.methods.Buy_Qore_For(account,Number.parseInt(level)).send({
             from: account,
             gasLimit: 600000,
             gas: 600000,
         });
+        if (result===true){
+            $.ajax({
+                url: configs.routes.activate_level,
+                type: "GET",
+                dataType: "JSON",
+                data: {
+                    'level':level,
+                    'address':account
+                },
+                success: function (data) {
+                    alert('Registration Successfully ');
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    $('#spinner_send_svg').show()
+                    $('#spinner_send').hide();
+                    alert("An error ocurred while loading data ...");
+                }
+            });
+        }
     }
     const register=async function(){
         $('#spinner_register').show();
@@ -107,10 +127,26 @@ var subcription = function () {
             gas: 600000,
 
         });
-        console.log('Buy result : -' + result);
-        console.log(JSON.stringify((result)));
         if (result.status===true) {
-            alert('Registration Successfully ');
+            $.ajax({
+                url: configs.routes.register_ajax,
+                type: "GET",
+                dataType: "JSON",
+                data: {
+                    'address_parent':new_address,
+                    'address':account
+                },
+                success: function (data) {
+                    alert('Registration Successfully ');
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    $('#spinner_send_svg').show()
+                    $('#spinner_send').hide();
+                    alert("An error ocurred while loading data ...");
+                }
+            });
+
             $('#spinner_register').hide();
            //  window.location.href = url;
         }
@@ -119,7 +155,35 @@ var subcription = function () {
             $('#spinner_register').hide();}
     };
     const login=async function(){
-        var account= await lottery.getAccount()
+        var account= await getAccount();
+        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+        var id=  await window.mxgfcontract.methods.userIDs(account).call();
+        console.log(id)
+        if (id>0){
+            $.ajax({
+                url: configs.routes.login_next,
+                type: "GET",
+                dataType: "JSON",
+                data: {
+                    'id':id,
+                    'address':account
+                },
+                success: function (data) {
+                    alert('Login Successfully ');
+                    var route=configs.routes.dashboard+"?id="+id
+                    window.location.href=route;
+                },
+                error: function (err) {
+                    $('#spinner_send_svg').show()
+                    $('#spinner_send').hide();
+                    alert("An error ocurred while loading data ...");
+                }
+            });
+        }else {
+            var route=configs.routes.dashboard+"?id="+id
+            window.location.href=route;
+            alert('Echec login ');
+        }
 
     };
     const sendLottery=async function(){

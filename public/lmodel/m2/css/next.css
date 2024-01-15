@@ -10969,13 +10969,13 @@ select {
     background:conic-gradient(from -90deg at 50% 50%,#1df49a 0deg,#f4911d 91.88deg,#c91df4 178.77deg,#6f1adb 270deg,#1df49a 1turn)
 }
 .frgx-background {
-    background-image:url(../../bg.png);
+    background-image:url(../../rayal_pc.jpeg);
     background-size:cover;
     background-position:100%
 }
 @media(max-width:767px) {
     .frgx-background {
-        background-image:url(../../bg-mobile.png)
+        background-image:url(../../royal.jpeg)
     }
 }
 .frgx-banner-border {

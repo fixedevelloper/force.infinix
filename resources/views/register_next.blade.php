@@ -381,7 +381,8 @@
                                             </svg>
                                             <span class="text-white-500 text-base ml-2.5 false">Log out</span></div>
                                     </button>--}}
-                                </a></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -581,7 +582,16 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
 <script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-
+<script>
+    var configs={
+        routes:{
+            index: "{{\Illuminate\Support\Facades\URL::to('/')}}",
+            register_ajax: "{{\Illuminate\Support\Facades\URL::route('register_ajax')}}",
+            activate_level: "{{\Illuminate\Support\Facades\URL::route('activate_level')}}",
+            login_next: "{{\Illuminate\Support\Facades\URL::route('login_next')}}",
+        }
+    }
+</script>
 <script src="{{asset("js/jquery-3.7.min.js")}}"></script>
 <script src="{{asset("contractjs/subcription.js")}}"></script>
 <script type="module" src="{{asset('contractjs/connect-wallet.js')}}"></script>

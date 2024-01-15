@@ -682,13 +682,13 @@
                                     <div
                                         class="flex justify-center items-center mb-1 sm:mb-2.5 sm:w-full sm:justify-between">
                                         <span
-                                            class="text-white notranslate font-bold text-3xl mr-2.5 sm:text-xl cursor-pointer">ID 1</span>
+                                            class="text-white notranslate font-bold text-3xl mr-2.5 sm:text-xl cursor-pointer">ID {{$id}}</span>
                                     </div>
                                     <div class="flex flex-col items-start w-full sm:hidden">
                                         <div class="flex justify-between w-full">
                                             <div class="flex flex-col">
                                                 <div class="flex items-center mb-1"><span
-                                                        class="text-white font-bold mr-2.5 text-base sm:text-sm">0x14Dc...207F</span>
+                                                        class="text-white font-bold mr-2.5 text-base sm:text-sm">{{is_null($user)?"Not system":$user->address}}</span>
                                                     <button>
                                                         <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#fff"
                                                              xmlns="http://www.w3.org/2000/svg">
@@ -821,10 +821,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <span class="hidden sm:block text-main-blue text-base font-bold notranslate">forsage.io/b/xqg1z8</span>
+                                        <span class="hidden sm:block text-main-blue text-base font-bold notranslate">{{is_null($user)?"Not system":$user->link}}</span>
                                     </div>
                                     <div class="flex items-center justify-between w-full"><span
-                                            class="text-main-blue text-xl font-bold notranslate sm:hidden">forsage.io/b/xqg1z8</span>
+                                            class="text-main-blue text-xl font-bold notranslate sm:hidden">{{is_null($user)?"Not system":$user->link}}</span>
                                         <div class="flex space-x-2.5 sm:w-full">
                                             <button
                                                 class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1">
@@ -1125,8 +1125,7 @@
                             <div class="hidden"><span>00:00:00:00</span></div>
                         </div>
                         {{--end space partner--}}
-                        <div
-                            class="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5 ">
+                        <div class="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5 ">
                             <div class="flex items-center justify-evenly w-full"><img src="{{asset('lmodel/cup.svg')}}"
                                                                                       class="w-[110px] sm:w-20"
                                                                                       alt=""><img
@@ -1152,7 +1151,7 @@
                         <div class="notranslate flex flex-col mt-15 sm:px-5">
                             <div class="flex items-center false"><span
                                     class="text-white text-3xl font-bold sm:text-2xl mr-2.5"><span><span
-                                            class="notranslate mr-1.5">Forsage</span> Programs</span></span>
+                                            class="notranslate mr-1.5">Nexachain</span> Programs</span></span>
                                 <button
                                     class="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue font-normal sm:items-center py-1">
                                     <svg class="w-5 h-5 mr-1.5" viewBox="0 0 20 20" fill="#fff"
@@ -1165,7 +1164,7 @@
                             <div class="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
                                 <a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-                                    href="/dashboard/x3?user=1">
+                                    href="{{route('nextpreviuos',['id'=>$id])}}">
                                     <svg class="absolute top-2 right-2 sm:top-1 sm:right-1 " width="20" height="20"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1237,7 +1236,7 @@
                                 </a>
                                 <a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-                                    href="/dashboard/x4?user=1">
+                                    href="{{route('nextpreviuos',['id'=>$id,'type'=>2])}}">
                                     <svg class="absolute top-2 right-2 sm:top-1 sm:right-1 " width="20" height="20"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1309,7 +1308,7 @@
                                 </a>
                                 <a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-                                    href="/dashboard/xXx?user=1">
+                                    href="{{route('nextpreviuos',['id'=>$id,'type'=>2])}}">
                                     <svg class="absolute top-2 right-2 sm:top-1 sm:right-1 " width="20" height="20"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
