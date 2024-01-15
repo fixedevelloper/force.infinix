@@ -266,7 +266,7 @@ var subcription = function () {
         var user_agin=  await window.mxgfcontract.methods.getUserGains(account).call();
         const total_free=Number(convertDiv(last_review_layer))+Number(convertDiv(randon_rewars))+Number(convertDiv(user_agin))
 
-        $('#profit_free').text(total_free+" ")
+        $('#profit_free').text(roundDecimal(total_free,2)+" ")
         console.log(total_free)
     };
     const getPreviousNumber=async function(){
@@ -307,4 +307,9 @@ function convertDiv(amount) {
         return amount/1000000000000000000;
     }
     return amount;
+}
+function roundDecimal(nombre, precision){
+    var precision = precision || 2;
+    var tmp = Math.pow(10, precision);
+    return Math.round( nombre*tmp )/tmp;
 }

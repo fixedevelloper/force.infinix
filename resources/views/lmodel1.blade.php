@@ -846,7 +846,7 @@
                                             </div>
                                             <div class="flex items-center justify-between">
                                                 <div class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                   <span id="profit_1">0 </span> FDUSD
+                                                   <span id="profit_1">0 </span>  <span>&nbsp; FDUSD</span>
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -874,9 +874,8 @@
                                                     class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">FREE EARNINGS</span>
                                             </div>
                                             <div class="flex items-center justify-between">
-                                                <div
-                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                    <span id="profit_free">0 </span> BUSD
+                                                <div class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                    <span id="profit_free">0 </span> <span>&nbsp; FDUSD</span>
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -887,7 +886,7 @@
                                                                 <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
                                                                       stroke-linejoin="round"></path>
                                                             </svg>
-                                                            55.6
+                                                           0
                                                         </div>
                                                     </div>
                                                 </div>
