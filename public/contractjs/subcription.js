@@ -260,13 +260,13 @@ var subcription = function () {
         var s10_come=  await window.mxgfcontract.methods.QORE_10_Income(account).call();
         var direct_ic=  await window.mxgfcontract.methods.getDirectReferrerReward(account).call();
         const total=Number(convertDiv(s4_come))+Number(convertDiv(s10_come))+Number(convertDiv(direct_ic))
-        $('#profit_1').text(total)
+        $('#profit_1').text(total+" ")
         var last_review_layer=  await window.mxgfcontract.methods.getLastLevelBuyerRewards(account).call();
         var randon_rewars=  await window.mxgfcontract.methods.RandomRewards(account).call();
         var user_agin=  await window.mxgfcontract.methods.getUserGains(account).call();
         const total_free=Number(convertDiv(last_review_layer))+Number(convertDiv(randon_rewars))+Number(convertDiv(user_agin))
 
-        $('#profit_free').text(total_free)
+        $('#profit_free').text(total_free+" ")
         console.log(total_free)
     };
     const getPreviousNumber=async function(){

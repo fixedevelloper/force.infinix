@@ -846,7 +846,7 @@
                                             </div>
                                             <div class="flex items-center justify-between">
                                                 <div class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                   <span id="profit_1">0 </span>&nbsp; FDUSD
+                                                   <span id="profit_1">0 </span> FDUSD
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -876,7 +876,7 @@
                                             <div class="flex items-center justify-between">
                                                 <div
                                                     class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                    <span id="profit_free">0 </span>&nbsp; BUSD
+                                                    <span id="profit_free">0 </span> BUSD
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
