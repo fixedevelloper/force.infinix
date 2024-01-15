@@ -20,6 +20,7 @@ var subcription = function () {
             'balance_MAIN':balance_MAIN,
         }
     }
+
     const approve= async function(){
         $('#spinner_approuve').show();
         const account=await getAccount();
@@ -246,6 +247,22 @@ var subcription = function () {
         console.log(new_adress)
         return new_adress;
     };
+    const getAccountBy_id=async function(){
+        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+        var new_adress=  await window.mxgfcontract.methods.idToAddress($('#user_id').text()).call();
+        console.log(new_adress)
+        return new_adress;
+    };
+    const profit=async function(){
+        var account= await getAccountBy_id();
+        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+        var s4_come=  await window.mxgfcontract.methods.QORE_4_Income(account).call();
+        var s10_come=  await window.mxgfcontract.methods.QORE_10_Income(account).call();
+        var direct_ic=  await window.mxgfcontract.methods.getDirectReferrerReward(account).call();
+        const total=Number(convertDiv(s4_come))+Number(convertDiv(s10_come))+Number(convertDiv(direct_ic))
+        $('#profit_1').text(total)
+        console.log(total)
+    };
     const getPreviousNumber=async function(){
         var account= await lottery.getAccount()
         window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().abi, initialiseABI().address);
@@ -257,6 +274,7 @@ var subcription = function () {
         init: function () {
             initialiseEtheruim();
             initialiseABI();
+            profit();
             $('#spinner_register').hide();
             $('#spinner_approuve').hide();
         },
@@ -267,7 +285,7 @@ var subcription = function () {
         register,
         login,
         approve,
-        activateLevel
+        activateLevel,
     }
 }();
 jQuery(document).ready(function() {
@@ -278,4 +296,9 @@ jQuery(window).on('load',function () {
     'use strict';
     subcription.load();
 });
-
+function convertDiv(amount) {
+    if (amount>0){
+        return amount/1000000000000000000;
+    }
+    return amount;
+}

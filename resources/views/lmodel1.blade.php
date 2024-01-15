@@ -84,6 +84,7 @@
 </head>
 <body style="overflow: unset; position: relative; min-height: 100%; top: 40px;">
 <div id="__next">
+    <span id="user_id">{{$id}}</span>
     <div class="relative flex bg-main-bg items-center justify-center min-h-screen min-w-full overflow-hidden">
         <div class="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
             <div
@@ -844,9 +845,8 @@
                                                     class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
                                             </div>
                                             <div class="flex items-center justify-between">
-                                                <div
-                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                    727.8 BUSD
+                                                <div class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                   <span id="profit_1">0</span> FDUSD
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -2295,8 +2295,10 @@
 
 <script src="{{asset("js/jquery-3.7.min.js")}}"></script>
 <script src="{{asset("contractjs/lotterie.js")}}"></script>
+<script src="{{asset("contractjs/subcription.js")}}"></script>
 <script type="module" src="{{asset('contractjs/connect-wallet.js')}}"></script>
 <script>
+
     var configs={
         routes:{
             index: "{{\Illuminate\Support\Facades\URL::to('/')}}",
