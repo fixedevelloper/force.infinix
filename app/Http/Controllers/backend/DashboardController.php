@@ -72,7 +72,11 @@ class DashboardController extends Controller
         $user->address=$request->get("address");
         $user->address_parent=$request->get("address_parent");
         $user->total_team=0;
+        $user->direct_patner_count=0;
         $user->save();
+        $parain=User::query()->firstWhere(['address'=>$request->get("address_parent")]);
+        $parain->direct_patner_count=$parain->total_team+1;
+        $parain->save();
         $activate=new ActivationLevel();
         $activate->address=$request->get("address");
         $activate->save();
