@@ -170,7 +170,6 @@ var subcription = function () {
                 },
                 success: function (data) {
                     alert('Login Successfully ');
-                    var route=configs.routes.dashboard+"?id="+id
                     window.location.href=route;
                 },
                 error: function (err) {
