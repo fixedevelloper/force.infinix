@@ -629,13 +629,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl1</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>10</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">10</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -683,7 +677,7 @@
                                                                 stroke-width="1.333" stroke-linecap="round"
                                                                 stroke-linejoin="round"></path>
                                                         </svg>
-                                                        <span class="text-sm text-white font-normal sm:text-sm"></span>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
                                                     </div>
 
                                                 </div>
@@ -694,13 +688,8 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl2</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>20</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm">
+                                                        <img src="{{asset("lmodel/small.png")}}" width="15">20</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -759,13 +748,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl3</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>30</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">30</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -815,15 +798,7 @@
                                                         </svg>
                                                         <span class="text-sm text-white font-normal sm:text-sm">0</span>
                                                     </div>
-                                                    {{-- <div class="flex space-x-2 items-center">
-                                                         <svg class="w-5 h-5 stroke-current text-white-500"
-                                                              viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
-                                                              xmlns="http://www.w3.org/2000/svg">
-                                                             <path clip-rule="evenodd"
-                                                                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
-                                                         </svg>
-                                                         <span class="text-sm text-white font-normal sm:text-sm">8732</span>
-                                                     </div>--}}
+
                                                 </div>
                                             </div>
                                         </a>
@@ -832,13 +807,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl4</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>50</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">50</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -897,13 +866,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl5</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>100</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">100</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -961,13 +924,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl6</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>250</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">250</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -1017,15 +974,7 @@
                                                         </svg>
                                                         <span class="text-sm text-white font-normal sm:text-sm">0</span>
                                                     </div>
-                                                    {{-- <div class="flex space-x-2 items-center">
-                                                         <svg class="w-5 h-5 stroke-current text-white-500"
-                                                              viewBox="0 0 20 20" fill="none" stroke="#2CFF4E"
-                                                              xmlns="http://www.w3.org/2000/svg">
-                                                             <path clip-rule="evenodd"
-                                                                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"></path>
-                                                         </svg>
-                                                         <span class="text-sm text-white font-normal sm:text-sm">8732</span>
-                                                     </div>--}}
+
                                                 </div>
                                             </div>
                                         </a>
@@ -1034,13 +983,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl7</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>500</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">500</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -1107,13 +1050,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl8</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>1250</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">1250</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -1171,13 +1108,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl9</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>2500</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">2500</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
@@ -1225,7 +1156,7 @@
                                                                 stroke-width="1.333" stroke-linecap="round"
                                                                 stroke-linejoin="round"></path>
                                                         </svg>
-                                                        <span class="text-sm text-white font-normal sm:text-sm">22141</span>
+                                                        <span class="text-sm text-white font-normal sm:text-sm">0</span>
                                                     </div>
 
                                                 </div>
@@ -1236,13 +1167,7 @@
                                                 <div class="flex w-full justify-between !mb-2.5">
                                                     <div class="flex space-x-1.5 items-center"><span
                                                             class="text-white-500 text-base sm:text-sm">Lvl10</span></div>
-                                                    <span class="flex items-center text-white text-base sm:text-sm"><svg
-                                                            class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24"
-                                                                                                     rx="12"
-                                                                                                     fill="#F3BA2F"></rect><path
-                                                                d="m12 4.32 1.903 1.943-4.791 4.777-1.903-1.897L12 4.32ZM14.889 7.2l1.902 1.943-7.68 7.657-1.902-1.897 7.68-7.703ZM6.223 10.08l1.903 1.943-1.903 1.897-1.903-1.897 1.903-1.943ZM17.777 10.08l1.903 1.943L12 19.68l-1.903-1.897 7.68-7.703Z"
-                                                                fill="#fff" stroke="#F0B90B"></path></svg>5000</span></div>
+                                                    <span class="flex items-center text-white text-base sm:text-sm"> <img src="{{asset("lmodel/small.png")}}" width="15">5000</span></div>
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
