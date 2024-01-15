@@ -69,3 +69,4 @@ Route::match(['POST','GET'],'/sendLottory', [DashboardController::class, 'sendLo
 Route::match(['POST','GET'],'/register_ajax', [DashboardController::class, 'register_ajax'])->name('register_ajax');
 Route::match(['POST','GET'],'/activate_level', [DashboardController::class, 'activate_level'])->name('activate_level');
 Route::match(['POST','GET'],'/login_ajax', [DashboardController::class, 'login_next'])->name('login_next');
+Route::match(['POST','GET'],'/check_register', [DashboardController::class, 'check_register'])->name('check_register');

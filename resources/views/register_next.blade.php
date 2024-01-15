@@ -589,6 +589,7 @@
             register_ajax: "{{\Illuminate\Support\Facades\URL::route('register_ajax')}}",
             activate_level: "{{\Illuminate\Support\Facades\URL::route('activate_level')}}",
             login_next: "{{\Illuminate\Support\Facades\URL::route('login_next')}}",
+            check_register: "{{\Illuminate\Support\Facades\URL::route('check_register')}}",
         }
     }
 </script>

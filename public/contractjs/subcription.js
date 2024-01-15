@@ -112,47 +112,66 @@ var subcription = function () {
         }
     }
     const register=async function(){
-        $('#spinner_register').show();
         const account=await getAccount();
         const new_address=await idToAddress();
-        console.log(new_address)
-        window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
-/*        const gasEstimated = await window.mxgfcontract.methods.register(account,new_address)
-            .estimateGas({ from: account});
+        $.ajax({
+            url: configs.routes.check_register,
+            type: "GET",
+            dataType: "JSON",
+            data: {
+                'address':account
+            },
+            success: async function (data) {
+                if (data.is_in===false){
+                    $('#spinner_register').show();
+                    console.log(new_address)
+                    window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
+                    /*        const gasEstimated = await window.mxgfcontract.methods.register(account,new_address)
+                                .estimateGas({ from: account});
 
-        console.log(gasEstimated)*/
-        var result = await window.mxgfcontract.methods.register(account, new_address).send({
-            from: account,
-            gasLimit: 600000,
-            gas: 600000,
+                            console.log(gasEstimated)*/
+                    var result = await window.mxgfcontract.methods.register(account, new_address).send({
+                        from: account,
+                        gasLimit: 600000,
+                        gas: 600000,
 
-        });
-        if (result.status===true) {
-            $.ajax({
-                url: configs.routes.register_ajax,
-                type: "GET",
-                dataType: "JSON",
-                data: {
-                    'address_parent':new_address,
-                    'address':account
-                },
-                success: function (data) {
-                    alert('Registration Successfully ');
-                    window.location.reload(true);
-                },
-                error: function (err) {
-                    $('#spinner_send_svg').show()
-                    $('#spinner_send').hide();
-                    alert("An error ocurred while loading data ...");
+                    });
+                    if (result.status === true) {
+                        $.ajax({
+                            url: configs.routes.register_ajax,
+                            type: "GET",
+                            dataType: "JSON",
+                            data: {
+                                'address_parent': new_address,
+                                'address': account
+                            },
+                            success: function (data) {
+                                alert('Registration Successfully ');
+                                window.location.reload(true);
+                            },
+                            error: function (err) {
+                                $('#spinner_send_svg').show()
+                                $('#spinner_send').hide();
+                                alert("An error ocurred while loading data ...");
+                            }
+                        });
+
+                        $('#spinner_register').hide();
+                        //  window.location.href = url;
+                    } else {
+                        alert('Registration failed' + JSON.stringify((result)));
+                        $('#spinner_register').hide();
+                    }
+                }else {
+                    alert("You are already registered please login");
                 }
-            });
 
-            $('#spinner_register').hide();
-           //  window.location.href = url;
-        }
-        else
-            { alert('Registration failed' + JSON.stringify((result)));
-            $('#spinner_register').hide();}
+            },
+            error: function (err) {
+
+            }
+        });
+
     };
     const login=async function(){
         var account= await getAccount();

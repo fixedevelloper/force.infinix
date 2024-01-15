@@ -85,6 +85,15 @@ class DashboardController extends Controller
         Session::put("address_connect",$address);
         return response()->json(['data' =>  [], 'status'=> true]);
     }
+    function check_register(Request $request){
+        $is_in=false;
+        $address=$request->get("address");
+        $user=User::query()->firstWhere(['address'=>$address]);
+        if (!is_null($user)){
+            $is_in=true;
+        }
+        return response()->json(['is_in' =>  $is_in, 'status'=> true]);
+    }
     function activate_level(Request $request){
         $activate=ActivationLevel::query()->firstWhere(['address'=>$request->get("address")]);
         switch ($request->get("level")){
