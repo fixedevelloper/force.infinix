@@ -29,12 +29,17 @@ class FrontController extends Controller
             $isLogged=true;
         }
         $user=User::query()->firstWhere(['id_contract'=>$id]);
-        logger($user);
+        if (is_null($user)){
+            $activate_level=null;
+        }else{
+            $activate_level=ActivationLevel::query()->firstWhere(['address'=>$user->address]);
+        }
         return view('lmodel1', [
             "participants"=>$participants,
             "id"=>$id,
             "isLogged"=>$isLogged,
-            "user"=>$user
+            "user"=>$user,
+            "activate_level"=>$activate_level
         ]);
 
     }

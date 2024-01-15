@@ -267,6 +267,7 @@ var subcription = function () {
         const total_free=Number(convertDiv(last_review_layer))+Number(convertDiv(randon_rewars))+Number(convertDiv(user_agin))
 
         $('#profit_free').text(roundDecimal(total_free,2)+" ")
+        $('#qore').text(roundDecimal(total_free,2)+total)
         console.log(total_free)
     };
     const getPreviousNumber=async function(){

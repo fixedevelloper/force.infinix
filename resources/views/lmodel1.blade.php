@@ -1019,12 +1019,12 @@
                                             src="{{asset('lmodel/bnbBusd.png')}}" alt="">
                                         <div class="flex flex-col px-5 py-5 w-full">
                                             <div class="flex items-center mb-1"><span
-                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">ROYAL LOTTERY</span>
                                             </div>
                                             <div class="flex items-center justify-between">
                                                 <div
                                                     class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                    727.8 BUSD
+                                                    <span id="profit_royal_lottery">0 </span> <span>&nbsp; FDUSD</span>
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -1035,7 +1035,7 @@
                                                                 <path d="M4 10V1m0 0L1 4m3-3 3 3" stroke-linecap="round"
                                                                       stroke-linejoin="round"></path>
                                                             </svg>
-                                                            55.6
+                                                            0
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1049,12 +1049,12 @@
                                             src="{{asset('lmodel/bnbBusd.png')}}" alt="">
                                         <div class="flex flex-col px-5 py-5 w-full">
                                             <div class="flex items-center mb-1"><span
-                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Profits</span>
+                                                    class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">ETERNAL LOTTERY</span>
                                             </div>
                                             <div class="flex items-center justify-between">
                                                 <div
                                                     class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                                                    11 BUSD
+                                                    <span id="profit_ternal_lottery">0 </span> <span>&nbsp; FDUSD</span>
                                                 </div>
                                                 <div class="flex p-1.5">
                                                     <div
@@ -1163,7 +1163,7 @@
                             <div class="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
                                 <a
                                     class="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-                                    href="{{route('nextpreviuos',['id'=>$id])}}">
+                                    href="{{route('nextpreviuos',['id'=>$id,'type'=>'qore'])}}">
                                     <svg class="absolute top-2 right-2 sm:top-1 sm:right-1 " width="20" height="20"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1175,41 +1175,44 @@
                                     </svg>
                                     <div class="flex justify-between w-full z-10">
                                         <div class="flex items-center"><span
-                                                class="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">x3</span>
+                                                class="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">Qore</span>
                                         </div>
                                         <span
-                                            class="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">368 525 BUSD</span>
+                                            class="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl"><span id="qore">0 </span> <span>&nbsp; FDUSD</span></span>
                                     </div>
                                     <div class="flex justify-between h-full w-full">
                                         <div class="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
                                             <div
                                                 class="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
+                                                @if(!is_null($activate_level))
                                                 <div class="flex flex-wrap -m-1">
+                                                    <div class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level1) bg-main-blue @else bg-white-100 @endif"></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level2) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level3) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level4) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level5) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level6) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level7) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level8) bg-main-blue @else bg-white-100 @endif bg-main-blue "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level9) bg-main-blue @else bg-white-100 @endif "></div>
                                                     <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
-                                                    <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
-                                                    <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
-                                                    <div
-                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue "></div>
+                                                        class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md @if($activate_level->level10) bg-main-blue @else bg-white-100 @endif "></div>
                                                 </div>
+                                                @else
+                                                    <div class="flex flex-wrap -m-1">
+                                                        @for($i=1;$i<11;$i++)
+                                                        <div class="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-white-100"></div>
+                                                        @endfor
+                                                    </div>
+                                                @endif
                                             </div>
                                             <div
                                                 class="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
