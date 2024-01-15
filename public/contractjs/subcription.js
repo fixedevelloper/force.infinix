@@ -114,6 +114,8 @@ var subcription = function () {
     const register=async function(){
         const account=await getAccount();
         const new_address=await idToAddress();
+/*        var id=  await window.mxgfcontract.methods.userIDs(new_address).call();
+        console.log(id)*/
         $.ajax({
             url: configs.routes.check_register,
             type: "GET",
@@ -126,10 +128,6 @@ var subcription = function () {
                     $('#spinner_register').show();
                     console.log(new_address)
                     window.mxgfcontract = await new window.web3.eth.Contract(initialiseABI().StakingnmatrixAbi, initialiseABI().stakingaddress);
-                    /*        const gasEstimated = await window.mxgfcontract.methods.register(account,new_address)
-                                .estimateGas({ from: account});
-
-                            console.log(gasEstimated)*/
                     var result = await window.mxgfcontract.methods.register(account, new_address).send({
                         from: account,
                         gasLimit: 600000,
@@ -137,13 +135,15 @@ var subcription = function () {
 
                     });
                     if (result.status === true) {
+                        var id=  await window.mxgfcontract.methods.userIDs(account).call();
                         $.ajax({
                             url: configs.routes.register_ajax,
                             type: "GET",
                             dataType: "JSON",
                             data: {
                                 'address_parent': new_address,
-                                'address': account
+                                'address': account,
+                                'id': id
                             },
                             success: function (data) {
                                 alert('Registration Successfully ');

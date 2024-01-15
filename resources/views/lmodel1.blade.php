@@ -940,7 +940,7 @@
                                             <div class="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
                                                 <div class="flex items-center z-[10]"><span class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">Partners</span>
                                                 </div>
-                                                <span class="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">{{is_null($user)?0:$user->direct_patner_count}}</span>
+                                                <span class="text-white text-2xl font-bold sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">{{is_null($user)?0:$user->direct_patner_count}}</span>
                                             </div>
                                             <div class="flex p-2.5 w-full">
                                                 <div

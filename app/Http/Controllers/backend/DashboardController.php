@@ -71,10 +71,12 @@ class DashboardController extends Controller
         $user->name=$request->get("address");
         $user->address=$request->get("address");
         $user->address_parent=$request->get("address_parent");
+        $user->id_contract=$request->get("id");
         $user->total_team=0;
         $user->direct_patner_count=0;
         $user->save();
         $parain=User::query()->firstWhere(['address'=>$request->get("address_parent")]);
+
         $parain->direct_patner_count=$parain->total_team+1;
         $parain->save();
         $activate=new ActivationLevel();
@@ -85,6 +87,11 @@ class DashboardController extends Controller
     function login_next(Request $request){
         $id=$request->get("id");
         $address=$request->get("address");
+        $user=User::query()->firstWhere(['address'=>$address]);
+        if (is_null($user->id_contract)){
+            $user->id_contract=$request->get("id");
+            $user->save();
+        }
         Session::put("id_connect",$id);
         Session::put("address_connect",$address);
         return response()->json(['data' =>  [], 'status'=> true]);
