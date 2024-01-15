@@ -64,7 +64,7 @@ class FrontController extends Controller
         }else{
             $activate_level=ActivationLevel::query()->firstWhere(['address'=>$user->address]);
         }
-
+        logger($activate_level);
         return view('next_preview', [
             "id"=>$id,
             "isLogged"=>$isLogged,
