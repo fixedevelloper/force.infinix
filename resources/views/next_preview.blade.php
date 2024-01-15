@@ -633,13 +633,13 @@
                                                 <div class="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">
                                                     <div class="flex w-full justify-center items-center">
                                                         <div class="relative flex w-full justify-evenly items-start false">
-                                                            @if($activate_level)
+                                                            @if($activate_level->level1)
                                                                 <div class="flex w-full">
                                                                     <div
                                                                         class="flex flex-col w-full justify-evenly items-center space-y-1.5">
                                                                         <div class="relative">
                                                                             <div
-                                                                                class="bg-white  rounded-full w-7.5 h-7.5 "></div>
+                                                                                class="@if($activate_level->level1) @else  bg-white @endif rounded-full w-7.5 h-7.5 "></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>

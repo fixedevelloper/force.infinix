@@ -1052,8 +1052,7 @@
                                                     class="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">ETL LOTTERY</span>
                                             </div>
                                             <div class="flex items-center justify-between">
-                                                <div
-                                                    class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
+                                                <div class="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
                                                     <span id="profit_ternal_lottery">0 </span> <span>&nbsp; FDUSD</span>
                                                 </div>
                                                 <div class="flex p-1.5">

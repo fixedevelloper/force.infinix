@@ -101,7 +101,7 @@ var subcription = function () {
                     'address':account
                 },
                 success: function (data) {
-                    alert('Registration Successfully ');
+                    alert('Activation Successfully ');
                     window.location.reload(true);
                 },
                 error: function (err) {
