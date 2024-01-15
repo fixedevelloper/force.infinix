@@ -189,7 +189,7 @@ var subcription = function () {
                 },
                 success: function (data) {
                     alert('Login Successfully ');
-                    window.location.href=route;
+                    window.location.href=configs.routes.dashboard + "?id=" + id;
                 },
                 error: function (err) {
                     $('#spinner_send_svg').show()
@@ -198,8 +198,7 @@ var subcription = function () {
                 }
             });
         }else {
-            var route=configs.routes.dashboard+"?id="+id
-            window.location.href=route;
+            //window.location.href=configs.routes.dashboard + "?id=" + id;
             alert('Echec login ');
         }
 
