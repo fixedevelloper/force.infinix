@@ -29,6 +29,7 @@ class FrontController extends Controller
             $isLogged=true;
         }
         $user=User::query()->firstWhere(['id_contract'=>$id]);
+        logger($user);
         return view('lmodel1', [
             "participants"=>$participants,
             "id"=>$id,
